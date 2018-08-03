@@ -1,0 +1,46 @@
+---
+title: "Creating Projects in RStudio"
+author: "Jinko Graham"
+date: '2018-08-02'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Click "Project (None)" in the upper-right of RStudio and 
+choose "New Project":
+
+\begin{center}
+\includegraphics[height=2in]{ss1.png}
+\end{center}
+
+\bigskip
+
+2. Select "New Directory" or "Existing Directory" as appropriate
+(I selected "New Directory" for this demo)
+
+\begin{center}
+\includegraphics[height=4in]{ss2.png}
+\end{center}
+
+\clearpage
+
+3. For the "Project Type" choose "New Project"
+
+\begin{center}
+\includegraphics[height=4in]{ss3.png}
+\end{center}
+
+\bigskip
+
+4. Choose a directory name and click "Create Project"
+
+\begin{center}
+\includegraphics[height=4in]{ss4.png}
+\end{center}
+
+\bigskip
+
+
