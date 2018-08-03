@@ -2,7 +2,7 @@
 title: "Getting started with R and RStudio"
 author: "Jinko Graham and Brad McNeney"
 date: '2018-08-03'
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
