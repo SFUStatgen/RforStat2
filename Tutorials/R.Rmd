@@ -5,10 +5,6 @@ date: '2018-08-05'
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 
 [R](http://www.r-project.org) is a powerful environment for
 statistical computing and graphics. We will be using R for
@@ -33,7 +29,7 @@ integrating text, R code and R output that will simplify
 the process of doing your assignments:
 
 1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
-2. RStudio Cloud -- To get started, see Getting started with RStudio Cloud for instructions.
+2. RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
 3. R via Jupyter -- To get started, see the Stat Workshop's R/Jupyter page  [**ADD LINK to the Stat Workshop's R/Jupyter page for Fall 2018 once it is created**]
 
 These interfaces are all supported by the Stat Workshop. A partial list of the pros and cons of each interface are given in the table below:
