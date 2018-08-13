@@ -5,10 +5,6 @@ date: '2018-08-03'
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 
 These notes are adapted from Stat 341 and are intended for students who are more confident with computing and installing software. Information on getting started with R and RStudio is given below. Please **install R first**, and RStudio second.
 

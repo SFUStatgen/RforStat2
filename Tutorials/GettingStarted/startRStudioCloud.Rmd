@@ -5,10 +5,6 @@ date: '2018-08-03'
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 RStudio Cloud is a cloud-based interface to R. The interface looks like the usual desktop version of RStudio. To get started, follow the steps below.
 
 1. Go to [https://rstudio.cloud/], click the "Get Started" button and follow the prompts to sign up for the service.
