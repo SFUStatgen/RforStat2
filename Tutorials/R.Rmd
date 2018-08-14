@@ -1,5 +1,5 @@
 ---
-title: "R for homework assignments"
+title: "Overview of R for assignments"
 author: "Jinko Graham"
 date: '2018-08-14'
 output: pdf_document
