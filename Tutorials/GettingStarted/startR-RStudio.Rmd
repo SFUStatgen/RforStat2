@@ -18,7 +18,8 @@ These notes are adapted from Stat 341 and are intended for students who are more
 
 ## RStudio Projects
 
-Your work in Stat 305 should be contained in an RStudio "Project". You can read more about RStudio Projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects). We've also prepared a short [step-by-step tutorial](https://github.com/SFUStatgen/RforStat2) **FIX LINK** on creating a project.
+Your work in Stat 305 should be contained in an RStudio "Project". You can read more about RStudio Projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects). We've also prepared a short [step-by-step tutorial](https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/CreateProjRStudio/createProj.pdf)
+on creating a project.
 
 ## R packages
 
