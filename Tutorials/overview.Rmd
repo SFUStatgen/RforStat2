@@ -40,6 +40,6 @@ RStudio Desktop | pros | You install your own (free) copy on your personal compu
 | RStudio Cloud | pros | No installation required; instead access is through the internet. A CloudFront (Amazon) server with the same interface as RStudio Desktop. |
 |    | cons  | As an internet server it can be slow to respond and experience outages. |
 | R via Jupyter | pros | No installation required; instead access is through the internet. A UBC server with the Jupyter interface. Jupyter tutorials are available from the SFU Stat Workshop Canvas site.|
-|   | cons | Server for undergrads at both UBC and SFU, and so slowdowns or outages may occur before assignments are due or during other high-volume periods. |
+|   | cons | As an internet server for undergrads at BC universities, it may have slowdowns or outages before assignments are due or during other high-volume periods of the semester. |
 
 
