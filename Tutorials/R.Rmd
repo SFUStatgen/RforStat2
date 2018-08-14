@@ -10,8 +10,7 @@ output: pdf_document
 statistical computing and graphics. We will be using R for
 homework assignments as it is supported by the Stats Workshop. 
 I would not say that you will "learn R" in this course. 
-Instead you will get templates to start your homework
-assignments, and example code in class notes that you can 
+Instead you'll get example code in class notes or templates that you can 
 modify to do your analyses. Your focus should be on getting
 practice with data wrangling, analysis, and **interpretation**
 of the results. In the course of doing the homework assignments
@@ -39,8 +38,8 @@ These interfaces are all supported by the Stat Workshop. A partial list of the p
 RStudio Desktop | pros | Can be installed on your personal computer. Has well-developed tools for authoring documents such as homework assignments. Supported by an extensive online community of users. |
 |   | cons  | Can be difficult to install for some with non-standard setups on their computers such as Chinese characters. |
 | RStudio Cloud | pros | Access via the internet. A server with the same interface as RStudio Desktop, but you don't have to install it yourself. |
-|    | cons  | As an internet server it can be slow to respond and can experience outages. |
+|    | cons  | As an internet server it can be slow to respond and experience outages. |
 | R via Jupyter | pros | Access via the internet, so you don't have to install anything yourself. Local server maintained at UBC. Jupyter tutorials are available from the Stat Workshop Canvas site.|
-|   | cons | As an internet server it can be slow to respond and can experience outages. |
+|   | cons | As it serves undergraduate students at both UBC and SFU, there have been problems in the past with outages before assignments are due. |
 
 
