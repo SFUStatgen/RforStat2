@@ -1,7 +1,7 @@
 ---
-title: "R for homework"
+title: "R for homework assignments"
 author: "Jinko Graham"
-date: '2018-08-05'
+date: '2018-08-14'
 output: pdf_document
 ---
 
