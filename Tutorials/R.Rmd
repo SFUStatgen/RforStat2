@@ -37,9 +37,9 @@ These interfaces are all supported by the Stat Workshop. A partial list of the p
 | -------------- | --------- | -------------------------------------------------- |
 RStudio Desktop | pros | Can be installed on your personal computer. Has well-developed tools for authoring documents such as homework assignments. Supported by an extensive online community of users. |
 |   | cons  | Can be difficult to install for some with non-standard setups on their computers such as Chinese characters. |
-| RStudio Cloud | pros | Access via the internet. A server with the same interface as RStudio Desktop, but you don't have to install it yourself. |
+| RStudio Cloud | pros | Access via the internet. A Cloudera (Amazon) server with the same interface as RStudio Desktop, but you don't have to install it yourself. |
 |    | cons  | As an internet server it can be slow to respond and experience outages. |
 | R via Jupyter | pros | Access via the internet, so you don't have to install anything yourself. Local server maintained at UBC. Jupyter tutorials are available from the Stat Workshop Canvas site.|
-|   | cons | As it serves undergraduate students at both UBC and SFU, there have been problems in the past with outages before assignments are due. |
+|   | cons | Serves undergrads at both UBC and SFU, and so slowdowns or outages may occur before assignments are due or during other high-volume periods. |
 
 
