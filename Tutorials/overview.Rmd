@@ -22,10 +22,10 @@ interested in learning R should consider taking Stat 341.
 R may be downloaded from the 
 [Comprehensive R Archive Network](http://cran.r-project.org) 
 and comes with its own user interface called the R console.
-However, I recommend that you use one of the following three 
-R user interfaces, because they all have facilities for
+However, I recommend using one of the following 3 
+user interfaces for R, because they all have facilities for
 integrating text, R code and R output that will simplify 
-the process of doing your assignments:
+the process of doing assignments:
 
 1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
 2. RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
