@@ -1,0 +1,187 @@
+---
+title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'R Demo for Chapter 11 : Inference for Two Means'
+author: "Jinko Graham"
+date: '2018-09-01'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Example Data: Low Birthweight Infants
+
+* Data on 100 infants born with birth weight less than
+1500g. 
+    + Variables are: head circumference (cm), birth length (cm), gestational
+    age (wks), birth weight (g), mother's age (yrs), and 
+    toxemia (1=high blood pressure during pregnancy, 0=not)
+    
+\scriptsize
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/lbwt.csv")
+lbwt <- read.csv(uu)
+head(lbwt) 
+```
+
+## Software Notes
+
+* Recall that `read.csv()` reads comma-separated-values (CSV) files into R.
+<!--    + By default, reads files from the "working" directory
+    in which R is running (e.g., the project directory 
+    of your RStudio project, or the folder of
+    your Jupyter notebook), but
+    it can read files from URLs too.
+    + The `url()` function takes a quoted URL as input and
+    returns an object that `read.csv()` can use to fetch
+    the file.
+-->
+* A more general data-reading function is `read.table()`,
+which can read many different plain-text formats; e.g., 
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/lbwt.csv")
+lbwt2 <- read.table(uu,header=TRUE,sep=",")
+head(lbwt2,n=3) 
+```
+
+\normalsize
+
+* The `header=TRUE` argument tells `read.table` that
+the first row of the data file contains the variable
+names.
+* The `sep` argument specifies the delimiter that separates values in the data file; in this case it is a comma.
+    
+## Gestational Age by Toxemia: Boxplots
+
+* Explore differences graphically with boxplots:
+
+\scriptsize
+
+```{r,fig.height=2,fig.width=3,message=FALSE,warning=FALSE}
+library(dplyr)
+lbwt <- mutate(lbwt,toxCateg = factor(toxemia))
+library(ggplot2)
+ggplot(lbwt,aes(x=toxCateg,y=gestage)) +
+         labs(x="Toxemia",y="Gestational Age") + geom_boxplot()
+```
+
+## Software Notes
+
+* Use `mutate()` to make changes to a dataset.
+    + In the example, we added a new variable called `toxCateg` to 
+the `lbwt` dataset.
+    + Whereas `toxemia` is a numeric variable with values 0 and 1,
+    `toxCateg` is an explicitly categorical (or `factor`) variable,
+    still having values 0 and 1.
+    + In
+    R, categorical variables are known as "factors".
+* We have used `ggplot()` to do the boxplots of 
+`gestage` by toxemia categories (`toxCateg`). 
+    + For a boxplot, the call to aesthetic argument, `aes`, must specify an x-variable that is a factor.
+    + `labs()` specifies the x- and y-axis labels.
+    + `geom_boxplot()` adds the boxplots.
+* Note: **Don't panic!** "Data wrangling" and 
+statistical graphics in R can be
+difficult (that's why data scientists get paid
+big bucks), but I will always 
+give you templates to work from.
+
+## Gestational Age by Toxemia: Histograms
+
+\scriptsize
+
+```{r,fig.height=2.5,fig.width=3.5,message=FALSE,warning=FALSE}
+ggplot(lbwt,aes(x=gestage,fill=toxCateg)) +
+         labs(x="Gestational Age") + geom_histogram(binwidth=1)
+```
+
+## Software Note
+
+* For a histogram, setting the aesthetic argument `fill` to `fill=toxCateg` specifies that the bars
+of the histogram are to be filled with different colors
+for the different categories of `toxCateg`. 
+    + Gives the impression of histograms stacked one upon the 
+    other.
+    
+
+## Gestational Age by Toxemia: Summary Statistics
+
+* The sample means and SDs of gestational age for
+each toxemia category are summarized below. 
+
+\footnotesize
+```{r,warning=FALSE,message=FALSE}
+library(dplyr) 
+lbwt %>% 
+  group_by(toxCateg) %>%
+  summarize(mean=mean(gestage),sd=sd(gestage))
+```
+
+## Software Notes
+
+\footnotesize
+```{r,warning=FALSE,message=FALSE,eval=FALSE}
+library(dplyr) 
+lbwt %>% 
+  group_by(toxCateg) %>%
+  summarize(mean=mean(gestage),sd=sd(gestage))
+```
+
+\normalsize
+
+* The code that produced the summaries should be read as:
+    + Start with the `lbwt` dataset,
+    + Group observations in this dataset by the variable `toxCateg`; i.e., partition
+    the observations into groups defined 
+    by the categories of `toxCateg`, and
+    + Summarize the sample mean and SD of the `gestage` 
+    variable within each group.
+    + The "forward pipe" `%>%` is the "glue" that connects
+    these steps together.
+    
+## `t.test()` for Gestational Age by Toxemia
+
+\scriptsize
+
+```{r}
+t.test(gestage ~ toxCateg,data=lbwt,conf.level=0.90)
+```
+
+\normalsize
+
+* In R, a "formula" such as `gestage ~ toxCateg` says
+to model `gestage` as a function of `toxCateg`.
+    + We will make extensive use of R formulas, later, 
+    when we study regression.
+* The argument `conf.level` sets the level, or 
+coverage probability, of the CI.
+
+## Using R to Calculate $p$-values
+
+* In the lecture notes we calculated the t-statistic,
+$t$, from sample means and SDs and needed to find
+the corresponding $p$-value, $2 P( T\geq |t|)$, for a 2-sided
+alternative hypothesis.
+    + Here $T$ is a random variable having
+    a t distribution on $\nu=31.465$ degrees of freedom.
+* In the "old" days we looked up p-values in 
+statistical tables; now we use computer software:
+
+\scriptsize
+
+```{r}
+tstat <- -4.4745; nu <- 31.465
+2*pt(abs(tstat),df=nu,lower.tail=FALSE)
+```
+\normalsize
+
+* `pt()` with the `lower.tail=FALSE` argument calculates upper-tail probabilities for the t distribution.
+* `abs(tstat)` is the absolute value of `tstat`.
+* The `df` argument specifies the number of degrees of freedom.
