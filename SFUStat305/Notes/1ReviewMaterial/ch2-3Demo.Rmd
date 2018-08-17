@@ -1,6 +1,6 @@
 ---
 title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
-subtitle: 'R Demo for Chapters 2 and 3: Data presentations and summaries'
+subtitle: 'R Demo for Chapters 2 & 3: Data presentations and summaries'
 author: "Jinko Graham"
 date: '2018-09-01'
 output: 
@@ -13,16 +13,13 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Note on Slides
 
 ## Demo Slides
 
 * This document shows and explains the R commands
-used to create the data summaries of the Chapters 2 and 3
+used to create the data summaries of the Chapters 2 & 3
 lecture slides. 
-    + For brevity, I omit slides and remarks that do not pertain
-    to computations done in R.
-* This document should be read **after** reading the lecture slides.
+* This document should be read **after** reading the lecture slides for Chapters 2 & 3.
 * You may find the R commands in this demo useful for 
 your homework assignments.
 
@@ -47,15 +44,22 @@ with(Mungan,table(Gender))
 ## Software Notes: Reading Data Into R
 
 * `read.csv()` reads comma-separated-value (CSV) files into R.
-    + By default it reads files from the "working" directory
-    in which R is running (e.g., the folder of
+    + By default this function reads files from the "working" directory
+    in which R is running (e.g., the project directory of your RStudio project or the folder of
     your Jupyter notebook), but
     it can read files from URLs too.
     + The `url()` function takes a quoted URL as input and
     returns an object that `read.csv()` can use to fetch
-    the file.
-* `read.table()` is a more flexible function for reading 
-tabular data into R; e.g.,
+    the file from the internet.
+    
+##
+
+* `read.table()` is a more flexible function than `read.csv()' for reading 
+data into R.
+
+* It can easily read in comma-separated-value (CSV) files as well as files with values separated by other characters such as blank spaces or tabs.
+
+* For example, the CSV file `mung.csv` can be read into R with `read.table()` as follows:
 
 \scriptsize
 
@@ -66,22 +70,24 @@ Mungan <- read.table(uu,header=TRUE,sep=",")
 
 \small
 
-* `read.table()` options include the following (type `help("read.table")` into R for a full list):
+* `read.table()` options include the following:
     + `header` (default `FALSE`): Does the first line of 
     the file contain the variable names?
     + `sep` (default "", for blank spaces)
+
+* To get a full list of options for 'read.table()', type `help("read.table")` into R.
 
 ## Software Notes: `head()`,`with()` and `table()`
 
 * The `head()` function looks at the first few rows
 (default is six) of a dataset.
     + In the example, the dataset is called `Mungan`, 
-    having variables `Gender` and `Cancer.Stage`.
+    and has variables `Gender` and `Cancer.Stage`.
     + Datasets have as many rows as there are 
     sampled units (e.g., people) and as many 
     columns as there are variables measured on the sampled units.
 * The `with()` function takes a dataset as its first
-argument and the summary to compute as its second.
+argument and the summary to compute as its second argument.
     + In the above example, the summary is a table of the 
     values of the `Gender` variable in the `Mungan` dataset.
 * The `table()` function tabulates the unique values
@@ -132,7 +138,7 @@ names(Mungan)
 ## Software Notes: Add-on Packages
 
 * The code chunk that draws the histogram
-loads an add-on package for R. 
+of the hysterectomy data loads an add-on package for R called `ggplot2`. 
 * R consists of a "base" distribution plus
 many add-on packages that contain useful functions.
     + For example, 
@@ -160,7 +166,7 @@ Error: could not find function "ggplot"
 * See the video https://www.youtube.com/watch?v=CtOSryChcGg
 for more on R packages. 
 * RStudio users (RStudio Desktop or RStudio Cloud)
-will need to install the packages they need. 
+will need to install the packages they need before they can load them. 
     + RStudio Desktop users should consult the 
     **R Packages** section 
     of the getting started document at
@@ -182,7 +188,7 @@ course installed.
 * `ggplot2` is an add-on package for R that implements the
 graphics function `ggplot()`.
     + We will use `ggplot()` throughout the course.
-* The call was
+* To draw the histogram of the hysterectomy data, the call to `ggplot()` was
 
 \scriptsize
 
@@ -206,14 +212,19 @@ different features of the graph.
 
 ## Centre: The mean
 
-* The mean is the ordinary arithmetic average of the observations.
-* Hysterectomy example data: 
+* The population mean, $\mu$, is the ordinary arithmetic average of a variable in the population.
+
+* The corresponding statistic is the sample mean, $\bar{x}$.
+
+* The sample mean is the ordinary arithmetic average of the observations in a random sample from the population.
+
+* For example, the hysterectomy example data: 
 ```
 20 25 25 27 28 31 33 34 36 37 44 50 59 85 86 
 ```
-has mean 
+has sample mean 
 $$
-\frac{20+25+\ldots+86}{n}=41.3
+\bar{x}=\frac{20+25+\ldots+86}{n}=41.3
 $$
 
 \scriptsize
@@ -237,15 +248,20 @@ tools for manipulating datasets in R.
 
 ## Centre: The Median
 
-* The median is the ``middle value'' of the variable 
+* The population median is the ``middle value'' of the variable in the population.
 
+* The corresponding statistic is the sample median, $M$.
+
+* The sample median is the middle value of the variable in a random sample from the population.
+
+* The sample median of the hysterectomy data is:
 \footnotesize
 
 20, 25, 25, 27, 28, 31, 33, **34**, 36, 37, 44, 50, 59, 85, 86  
 
 \normalsize
 
-* The centre observation is the median, $M=34$.
+* The centre observation is $M=34$.
 
 \scriptsize
 
@@ -256,9 +272,13 @@ summarize(hyst,median(numHyster))
 
 ## Spread: The Standard Deviation (SD) and Variance
 
-* The SD measures spread about the mean.
-* The sample variance, $s^2$, can be viewed as the average of the squared 
-deviations, and the sample SD, $s$, as its square root.
+* The variance, $\sigma^2$, is the average of squared deviations from the mean in the population
+* The SD, $\sigma$, is the square-root of the variance and measures spread about the mean.
+
+* As for the corresponding statistics:
+    + The sample variance, $s^2$, is (almost) an average of squared 
+deviations from the sample mean in a random sample from the population.
+    + The sample SD, $s$, is the square root of the sample mean.
 
 * Hysterectomy example: $s=20.6$ 
 
@@ -270,8 +290,8 @@ summarize(hyst,sd(numHyster))
 
 ## Spread: The Inter-Quartile Range (IQR)
 
-* The first and third quartiles mark the first and third quarters of the observations
-    + These are also called the 25th and 75th percentile
+* The first and third quartiles mark the first and third quarters of the observations, whether in a population or in a random sample from the population.
+    + These are also called the 25th and 75th percentiles, respectively.
 
 \scriptsize
 
@@ -297,7 +317,7 @@ summarize(hyst,IQR(numHyster))
 
 * The five number summary is the minimum, maximum, median,
 1st and 3rd quartiles. 
-* Graphed with a boxplot:
+* Graphed with a boxplot in the hysterectomy data:
 
 \scriptsize
 

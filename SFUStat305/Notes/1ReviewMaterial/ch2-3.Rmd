@@ -98,7 +98,7 @@ ggplot(hyst,aes(x=numHyster)) + geom_histogram(binwidth=10)
     + It looks like they were set at 15 to 25, 25 to 35,
     etc.
 * Which bin do the 25's go in?
-    + The default is in the 15-25 bin. Bins don't include
+    + The 15-25 bin. The bins in R's `histogram()` function don't include
     their left end-point, but do include their right end-point
     
 # Summary Statistics (Chapter 3)
@@ -118,7 +118,10 @@ min, max, median,
 
 ## Centre: The mean
 
-* The sample mean is the ordinary arithmetic average of the observations in the sample.
+* The population mean, $\mu$, is the ordinary arithmetic average of a variable in the population.
+
+* The corresponding statistic is the sample mean, $\bar{x}$.
+* The sample mean, $\bar{x}$, is the ordinary arithmetic average of the observations in a random sample from the population.
     + Notation: Let $x_1,x_2,\ldots,x_n$ denote the observed values of a variable measured
 on $n$ individuals. The sample mean, $\overline{x}$ is 
 $$
@@ -130,12 +133,18 @@ $$
 ```
 has sample mean 
 $$
-\frac{20+25+\ldots+86}{n}=41.3
+\bar{x}=\frac{20+25+\ldots+86}{n}=41.3
 $$
 
 ## Centre: The Median
 
-* The sample median is the ``middle value'' of the variable 
+* The population median is the “middle value” of the variable in the population.
+
+* The corresponding statistic is the sample median, $M$.
+
+* The sample median is the ``middle value'' of the variable in a random sample from the population.
+
+* The sample median of the hysterectomy data is:
 
 \footnotesize
 
@@ -143,17 +152,20 @@ $$
 
 \normalsize
 
-* The centre observation is the median, $M=34$.
+* The centre observation is $M=34$.
 * The median represents a ``typical'' observation.
 
 ## Spread: The Standard Deviation (SD) and Variance
 
-* The SD measures the spread about the mean.
-* The sample variance, $s^2$, can be viewed as an average (almost) of the squared 
-deviations about the sample mean
-* The sample SD, $s$, is the square root of the sample variance.
-    +  Notation: $x_1,x_2,\ldots,x_n$  are observed measurements
-    on $n$ individuals with sample mean $\overline{x}$. 
+* The variance, $\sigma^2$, is the average of squared deviations from the mean in the population.
+  
+* The SD, $\sigma$, measures spread about the mean.
+
+* The corresponding statistics are:
+    + the sample variance, $s^2$, an average (almost) of the squared deviations about the sample mean in a random sample from the population
+    +  the sample SD, $s$, the square root of the sample variance.
+
+* Notation: $x_1,x_2,\ldots,x_n$ are observed measurements on $n$ individuals with sample mean $\overline{x}$. 
 \begin{eqnarray*}
 s^2 & = & \frac{1}{n-1}\sum_{i=1}^n (x_i-\overline{x})^2 \\
 s & = & \sqrt{s^2} =   \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_i-\overline{x})^2}
@@ -165,8 +177,8 @@ s & = & \sqrt{s^2} =   \sqrt{\frac{1}{n-1}\sum_{i=1}^n (x_i-\overline{x})^2}
 
 ## Spread: The Inter-Quartile Range (IQR)
 
-* The first and third quartiles mark the first and third quarters of the observations
-    + These are also called the 25th and 75th percentile
+* The first and third quartiles mark the first and third quarters of the observations, whether in a population or in a random sample from the population.
+    + These are also called the 25th and 75th percentiles, respectively.
 * For the hysterectomy data, R
 calculates these quartiles to be 27.5 and 47, respectively.
     +  Details of how R calculates quartiles are unimportant to us. 
