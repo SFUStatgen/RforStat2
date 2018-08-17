@@ -16,15 +16,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Goals for course
 
-* You're here because your program of study requires you to learn stats procedures such as t and chi-square tests, regression etc.
 
-* Some of you may plan to use stats in your future work. Great!
-
-* But others may plan to sell the text and forget everything after the final exam. That's fine, too.
-
-* What is most important to me is that you get some idea of how to think statistically from this course. 
+* The overarching goal is to get some idea of how to think statistically. 
     + Specific techniques are less important than the general way of thinking. 
-    + If your program wants me to show you t tests, or chi-squared tests, etc. fine.
+    + Doing t tests, or chi-squared tests, etc. is all well and good. However there are bigger ideas to pursue.
 
 * I'll try to bring in the bigger ideas: quantifying uncertainty and avoiding bias to make inference from data. 
     + The syllabus is tilted towards quantifying uncertainty rather than bias, but I'll try to work in both throughout the course.
@@ -37,14 +32,14 @@ knitr::opts_chunk$set(echo = FALSE)
 \medskip 
 
 * Its _sampling distribution_ is the distribution we obtain
-by repeatedly drawing samples of data from the population,
+by repeatedly drawing random samples of data from the population,
 and recalculating the statistic
 \medskip
 
 * A _parameter_ is a population quantity, such as the population mean.
 \medskip
 
-* Statistical inference: Using data to drawing conclusions about  _parameters_.
+* Statistical inference: Using data from random samples to drawing conclusions about  _parameters_.
 \medskip
 
 * To make inference about a parameter, we need a statistic to estimate the parameter and the sampling distribution of the statistic.
@@ -106,7 +101,7 @@ regardless of the shape of the population distribution
 
 ## Confidence Intervals
 
-* Estimates of a parameter without some indication of precision are useless.
+* Estimates of a parameter without some indication of their precision are useless.
 * Confidence intervals (CIs), sometimes called interval estimates,
 attach a measure of precision to an estimate.
 * Intervals are often of the form estimate $\pm$ margin of error.
@@ -125,9 +120,10 @@ http://wise.cgu.edu/portfolio/demo-confidence-interval-creation/
 
 * If the SD $\sigma$ is known, a
 level-$C$ CI for
-$\mu$ is $\bar{x} \pm z^* \times \sigma/\sqrt{n}$
+$\mu$ is 
+$$\bar{x} \pm z^* \times \sigma/\sqrt{n},$$
 where $z^*$ is the upper $(1-C)/2$ critical value 
-of the standard-normal distribution .
+of the standard-normal distribution.
     + Note: The text calls this a 2-sided CI, 
       and also discusses 1-sided intervals. 
     We will restrict attention to 2-sided only. 
@@ -136,8 +132,10 @@ be within $z^*=1.96$ of its SDs (i.e. within $1.96 \times \sigma/\sqrt{n}$) of
 $\mu$ 95\% of the time.
     + So $\bar{X} \pm 1.96 \times \sigma/\sqrt{n}$ will cover $\mu$ 95\% of the
 time.
-* The margin of error gets smaller as the confidence level $C$ gets smaller, the population standard deviation $\sigma$ gets smaller and/or the sample size
-$n$ gets bigger
+* The margin of error gets smaller as:
+    + the confidence level or coverage probability $C$ gets smaller (e.g.$C=99$ decreases to $C=95$),
+    + the population standard deviation $\sigma$ gets smaller,
+    + the sample size $n$ gets bigger
 
 ## CI for a Mean -- Unknown SD
 
@@ -178,8 +176,7 @@ in $\mu g/l$, for $n=10$ infants receiving antacids that contain aluminum.
     + The sample mean of the plasma aluminum levels is $\bar{x} = 37.20 \mu g/l$, and the sample SD is $s=7.13$
 * To calculate a 95% CI we need the upper  $(1-C)/2 = (1-0.95)/2=0.025$
 critical value for the $t$-distribution with $n-1=9$ df.
-    + Statistical tables, such as Table A.4 of the text, or
-    statistical software tell us
+    + Statistical software tells us
     that the critical value is $t^*= 2.262$.
 * The 95% CI is therefore $\bar{x}\pm t^* \times s/\sqrt{n}$, or
 \footnotesize
@@ -196,10 +193,10 @@ $$
 data against a null hypothesis, $H_0$, in favour of an 
 alternative hypothesis, $H_a$ (denoted $H_A$ in the text).
 * Will illustrate with testing a null hypothesis about the value of a population mean
-* Some key points to watch for:
-    + Hypotheses are in terms of population parameters of interest
+* Some key points to remember:
+    + Hypotheses are phrased in terms of population parameters of interest (e.g. population means, **not sample means**)
     + The alternative hypothesis can be one-sided or two-sided 
-    + We use a test statistic with a known sampling 
+    + To assess the evidence for or against a hypothesis in a sample of data, we use a test statistic with a known sampling 
     distribution under the null hypothesis
     + Extreme values of the test statistic are taken as 
     evidence against the null hypothesis in favour of 
@@ -240,8 +237,8 @@ or more extreme than what we have observed, when the null hypothesis is true.
 ## Extreme Values of $T$ when $H_a: \mu \not= \mu_0$
 
 * $H_a: \mu \not= \mu_0$ vs. $H_0: \mu = \mu_0$.
-* Use $\bar{X}$ as a proxy for $\mu$
-* Observed values $\bar{x}$ that are far from $\mu_0$ are taken as evidence 
+* Use the statistic $\bar{X}$ as a proxy for the parameter $\mu$
+* Observed values $\bar{x}$ that are far from the hypothesized value $\mu_0$ are taken as evidence 
 in favour of $H_a$.
 * Since the numerator of the $t$-statistic,
 $T$, is $\bar{X}-\mu_0$, this is equivalent to $T$ having an observed value $t$ that is far from zero.
@@ -322,7 +319,7 @@ which computer software reports to be `1.36833e-07`.
     + What??? This is the computer representation of 
     $1.36833\times 10^{-7}$, or 
     $0.000000136833$ 
-    + decimal, six zeros, then the number
+    + Move the decimal point 7 places to the left of its current position in 1.36833.
 
 ## Hypothesis Tests
 
@@ -330,13 +327,14 @@ which computer software reports to be `1.36833e-07`.
 of the alternative hypothesis.
 * We may set a level $\alpha$ in advance that marks the point at which
 evidence against the null hypothesis is considered strong enough to "reject" it.
-    + If we don't reject the null hypothesis we retain it.
+    + If we don't reject the null hypothesis we **retain** it. 
+    + **Caution**: Some people are really bothered by `accept $H_0$'. Best say 'retain $H_0$' to avoid offending them (and losing marks).
 * If the $p$-value is less than $\alpha$, we say that we "reject $H_0$ at level $\alpha$".
 * Historically, such a test result was described as 
 "statistically significant", but this terminology is going out of style.
     + In part because statistical significance says nothing about
 practical significance.
-    + For example, in a large clinical trial, a drug may lower cholesterol ever-so-slightly,
+    + For example, in a large clinical trial with thousands of subjects, a drug may lower cholesterol ever-so-slightly,
 to the point of statistical significance (because the trial is so large), but without any clinical
 significance.
 
@@ -401,7 +399,7 @@ to achieve a given power (text, Section 10.6).
 ## Summary of Statistical Inference of a Population Mean
 
 * Statistical inference: Learning about population
-parameters from data that are subject to random variation.
+parameters from data of a random sample from the population that are subject to random variation.
 * Key point: We know the (approximate) distribution of pivotal
 quantities such as  
 $$\frac{\bar{X} - \mu}{\sigma /\sqrt{n}}, \; \sigma \mbox{ known;} \quad \mbox{or} \quad  
