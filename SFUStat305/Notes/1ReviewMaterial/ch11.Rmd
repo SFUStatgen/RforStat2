@@ -18,8 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 Context
 
 * We have measurements sampled from two populations. 
-* Want to make inference about the difference between 
-population distributions.
+* Want to make inference about the difference between distributions.
 * In particular, we're interested in the difference
 between the two population means, denoted $\mu_1$ and $\mu_2$.
 
@@ -27,23 +26,23 @@ Notation
 
 * Let $x_{11},\ldots,x_{1n_1}$ denote a sample from the first population
 and $x_{21},\ldots,x_{2n_2}$ denote a sample from the second.
-* The averages $\bar{x}_1$ and $\bar{x}_2$ estimate the means
-$\mu_1$ and $\mu_2$, respectively, 
+* The sample averages $\bar{x}_1$ and $\bar{x}_2$ estimate the population means
+$\mu_1$ and $\mu_2$, respectively; 
 so $\bar{x}_1 - \bar{x}_2$ estimates $\mu_1 - \mu_2$.
 * We're interested in confidence intervals for $\mu_1-\mu_2$
 and tests of $H_0: \mu_1 - \mu_2 = 0$
-versus $H_a: \mu_1 - \mu_2 \not= 0$.
+vs. $H_a: \mu_1 - \mu_2 \not= 0$.
 
 
 ## Example: Low Birthweight Infants
 
-* Data on 100 infants born with birth weight less than
+* Data on 100 infants with birth weight less than
 1500g. 
     + Variables are: head circumference (cm), birth length (cm), gestational
-    age (wks), birth weight (g), mother's age (yrs), and 
+    age (wks), birth weight (g), mother's age (yrs), and mother's status for
     toxemia (1=high blood pressure during pregnancy, 0=not)
     
-* Compare variables such as age and birth weight in moms with vs. without toxemia 
+* Compare the distribution of variables such as age and birth weight in moms with to mom's without toxemia 
 
 * The first few rows of the data set are as follows:
 
@@ -56,11 +55,10 @@ head(lbwt)
 
 ## Gestational Age by Toxemia
 
-* Does the distribution of 
+* Question: Does the distribution of 
 gestational age differ in moms with toxemia vs. moms without toxemia? 
 
-* Explore differences graphically with boxplots (below) and 
-with histograms (later, two slides from now) by toxemia 
+* Explore differences by toxemia status graphically, using boxplots (below) and histograms (next slide) in the sample.
 
 \scriptsize
 
@@ -111,7 +109,7 @@ be due to chance?
     a _pivotal quantity_ $T$.
 * Confidence intervals and hypothesis tests follow from the sampling 
 distribution of $T$.
-* Note: We will omit the following topics in text:
+* Note: The following topics from the text are omitted:
     + Paired-samples $t$-test (Section 11.1 of text) 
     + Two-sample $t$-test assuming equal SDs (Section 11.2.1)
 
@@ -219,7 +217,7 @@ group | sample mean ($\bar{x}$) | sample SD ($s$) | sample size ($n$)
 * The text suggests an interpretation such as: 
     + "90% of intervals constructed in this way cover the 
 true difference between mean gestational age in 
-the **non-toxemia** (`toxCateg` 0) and **toxemia** (`toxCateg` 1)
+the **non-toxemia** and **toxemia** 
 groups."
 * Another common style of interpretation is:
     + "We are 90% confident that the true difference between 
@@ -269,7 +267,7 @@ $p$-value for a 2-sided
 alternative hypothesis is equal to $9.4\times 10^{-5}$, 
 or 0.000094.
     + This $p$-value is twice the probability that a 
-    random variable, $T$, having a t distribution 
+    random variable, $T$, with a t distribution 
     on 31.465 degrees of freedom, is greater than or 
     equal to the absolute value of the observed t statistic, $|t|$.
 
@@ -302,7 +300,7 @@ might report our results as:
 * Our two-sample t test has revealed that toxemia and 
 gestational age are **associated**.
     + The distribution of gestational age is different 
-    in the two toxemia groups (different means).
+    in the two toxemia groups (different means, lower in toxemia group).
 * But, an association does **not** mean that toxemia has a causal effect on gestational age.
     + It could be that gestational age affects toxemia.
     + Or, there could be a hidden _confounding variable_ 
