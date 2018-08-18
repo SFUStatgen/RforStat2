@@ -90,8 +90,7 @@ the `lbwt` dataset.
 * Note: **Don't panic!** "Data wrangling" and 
 statistical graphics in R can be
 difficult (that's why data scientists get paid
-big bucks), but I will always 
-give you templates to work from.
+big bucks), but we will have templates to work from in this class.
 
 ## Gestational Age by Toxemia: Histograms
 
@@ -128,7 +127,6 @@ lbwt %>%
 
 \footnotesize
 ```{r,warning=FALSE,message=FALSE,eval=FALSE}
-library(dplyr) 
 lbwt %>% 
   group_by(toxCateg) %>%
   summarize(mean=mean(gestage),sd=sd(gestage))
@@ -166,12 +164,11 @@ coverage probability, of the CI.
 ## Using R to Calculate $p$-values
 
 * In the lecture notes we calculated the t-statistic,
-$t$, from sample means and SDs and needed to find
-the corresponding $p$-value, $2 P( T\geq |t|)$, for a 2-sided
-alternative hypothesis.
+$t$, from sample means and SDs and found
+the corresponding $p$-value, $2 P( T\geq |t|)$, for a 2-sided alternative hypothesis.
     + Here $T$ is a random variable having
     a t distribution on $\nu=31.465$ degrees of freedom.
-* In the "old" days we looked up p-values in 
+* Used to look up p-values in 
 statistical tables; now we use computer software:
 
 \scriptsize
@@ -181,6 +178,8 @@ tstat <- -4.4745; nu <- 31.465
 2*pt(abs(tstat),df=nu,lower.tail=FALSE)
 ```
 \normalsize
+
+* the pvalue is .00009366115
 
 * `pt()` with the `lower.tail=FALSE` argument calculates upper-tail probabilities for the t distribution.
 * `abs(tstat)` is the absolute value of `tstat`.
