@@ -9,7 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Chapter 11, problem 14. 
+Chapter 11, problem 14 with clarified wording. 
+The dataset `lowbwt` contains information
+for a sample of 100 low birth weight infants born in two 
+teaching hospitals in Boston, MA. Measurements of systolic 
+blood pressure are saved under the variable name `sbp` and
+indicators of gender -- with 1 respresenting a male and 0 a
+femaile -- under the name `sex`.
 
 ```{r}
 uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.txt")
@@ -17,9 +23,11 @@ lowbwt <- read.table(uu,header=TRUE)
 head(lowbwt)
 ```
 
-(a) 
-You are to plot a histogram of systolic blood
+(a) Construct a histogram of systolic blood
 pressure (SBP) with observations **grouped by sex**.
+Based on the graph, does blood pressure look as though it is 
+approximately normally distributed in each gender?
+
 To group by sex, we need to create a categorical variable out
 of the numeric `sex` variable in the dataset. 
 
@@ -39,11 +47,13 @@ library(ggplot2)
 # histogram commands go here
 ```
 
-*Comment on normality goes here*
+*Add your comments on the approximate normality here*
 
+(b) Test the null hypothesis that among low-birth-weight infants,
+the mean systolic blood pressure for boys is equal to the mean 
+for girls. Use a 2-sided test at 0.05 level of significance.
+What do you conclude?
 
-
-(b) 
 See the `ch11Demo.Rmd` demo for an example two-sample 
 t-test with the `t.test()` function.
 
@@ -53,4 +63,5 @@ t-test with the `t.test()` function.
 # t.test commands go here
 ```
 
-*Interpretation here*
+*Add your comments here on the interpretation of the results 
+from the 2-sample t-test.*

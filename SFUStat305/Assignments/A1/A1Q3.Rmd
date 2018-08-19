@@ -9,15 +9,24 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Chapter 10, problem 16. 
-Include histograms of PDI and MDI scores. 
-Note: There is some ambiguity in the question about whether 
-we are supposed to use the data on all 143 babies or just 
-the 70 babies with "trtment" variable equal to one. 
-Please use the data on all 143 babies. (The "trtment" 
-variable indicates the type of surgery that the babies 
-obtained to correct the heart abnormality that they 
-were born with.)
+Chapter 10, problem 16, but with modification. 
+Specifically, we will use the data on all 143 babies with
+congenital heart disease rather than just the 70 babies 
+who undergo reparative heart surgery during the first 3 
+months of life (and so have "trtment" variable equal to one).
+
+The Bayley Scales of Infant 
+Development yield scores on 2 indices -- the Psychomotor 
+Development Index (PDI) and the Mental Development Index (MDI)
+-- which can be used to assess a child's level of functioning
+in each of these areas at approximately one year of age.
+The Bayley Scales were
+administered to a sample of one-year-old infants born with
+congenital heart disease. 
+
+Before you do parts (a) - (d), draw a histogram of the PDI and
+MDI scores. The histogram should be handed in with your assignment. 
+
 
 **Answer to histogram question**
 
@@ -29,7 +38,12 @@ library(ggplot2)
 # Put your histogram commands here
 ```
 
-(a) 
+(a) At the 0.05 level of significance, test the null hypothesis
+that the mean PDI score for children born with congenital
+heart disease is equal to 100, the mean score for healthy
+children. Use a 2-sided test. What is the pvalue? What
+do you conclude?
+
 **Answer** 
 
 Use the `t-test()` function to perform the test,
@@ -38,19 +52,27 @@ and then interpret the results.
 # t.test commands go here
 ```
 
-*Interpretation here*
+*Add your comments on interpretation here*
 
 
-(b) 
+(b) Conduct the analogous test of hypothesis for the mean MDI
+score. What do you conclude?
+
 **Answer**
 
 ```{r}
 # t.test commands go here
 ```
 
-*Interpretation here*
+*Add your comments on interpretation here*
 
 
+(c) Construct 95\% CIs for the true mean PDI score
+and the true mean MDI score for this population of
+children with congenital heart disease. Does either of
+these intervals contain the value 100? Would you have
+expected that they would?
 
-(c) 
 **Answer**
+
+*Add your interpretation here of the CI results in the t.test( ) output above.*
