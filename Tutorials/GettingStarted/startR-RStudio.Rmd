@@ -29,6 +29,13 @@ Tools -> Install Packages ...
 ```
 menu item or by clicking "Install" from  the "Packages" tab on the bottom-right pane of the RStudio. Enter a comma-separated list of package names on the pop-up menu. Make sure the "Install Dependencies" check box is checked and then click "Install".
 
+As part of getting started, please install
+`tidyverse`. Tidyverse is a collection of packages for 
+common data science tasks such as reading, manipulating
+and graphical display of data. It includes the 
+`dplyr` and `ggplot2` packages that we will use frequently.
+
+
 ## Known issues with installation
 
 1. Character set mixup
