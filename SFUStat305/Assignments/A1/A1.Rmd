@@ -13,8 +13,10 @@ This assignment consists of 4 questions. Templates
 for each question are given in the numbered
 list below:
 
-1. LINK to A1Q1 as Rmd and ipynb
-2. etc.
+1. Question 1 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q1.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
+2. Question 2 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q2.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
+3. Question 3 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q3.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
+4. Question 4 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q4.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 
 **For each question** do the following:
 
