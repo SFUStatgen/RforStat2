@@ -1,0 +1,51 @@
+---
+title: "Assignment 1"
+author: "Jinko Graham"
+date: '2018-08-18'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This assignment consists of 4 questions. Templates
+for each question are given in the numbered
+list below:
+
+1. LINK to A1Q1 as Rmd and ipynb
+2. etc.
+
+**For each question** do the following:
+
+* Download the question template to your computer.
+To do so, click on the link to the RMarkdown
+(`.Rmd`) file if
+you use RStudio (Desktop or Cloud) or the 
+Jupyter notebook (`.ipynb`) if you use Jupyter.
+Look for and click the "Raw" button to see the 
+file in its raw form. Use your browser's 
+`File -> Save As`
+feature to save the file to your computer.
+* If your R interface is a server (RStudio Cloud or
+Jupyter), upload the template to the server.
+* Start your R interface and open the template.
+* Change the name, student ID and date in the 
+header of the template to your own.
+* Add your answers to the template.
+* When you are finished adding your
+answers, knit (RStudio) or run (Jupyter) the 
+document and save the output as a PDF file. 
+    + RStudio Desktop users should knit their RMarkdown
+    file to HTML, and then use their browser to print
+    the HTML file to PDF.
+    + RStudio Cloud users should 
+    make the following change to the header of the template 
+    (lines 1-6): replace the line
+    `output: html_document` with `output: pdf_document`. Then
+    knitting will produce a PDF file.
+    + Jupyter users should follow the Stat Workshop 
+    tutorials on printing assignments.
+* Now follow the Stat Workshop's instructions for
+uploading a question to Crowdmark.
+

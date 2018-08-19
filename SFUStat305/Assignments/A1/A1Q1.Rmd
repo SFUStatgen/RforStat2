@@ -1,0 +1,52 @@
+---
+title: "Assignment 1, Question 1"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+To answer this question we need a data frame 
+that contains the numbers of hysterectomies for the
+15 Swiss doctors.
+We can create a data frame called `hyst` with one 
+variable `numHyster`, as follows:
+```{r}
+hyst <- data.frame(numHyster = c(20,25,25,27,28,31,33,34,
+                                 36,37,44,50,59,85,86))
+```
+
+Notice that I'm cutting-and-pasting from the `ch2-3Demo.Rmd`
+demo. You
+will find lots of useful R code in the demos that 
+you can use, with little or no modification.
+
+(a) Draw a histogram of the data. Do you see any outliers?
+
+**Answer:**
+
+```{r}
+library(ggplot2)
+# Add commands to draw a histogram here -- see the
+# lecture notes for inspiration.
+```
+
+*Write your comments about outliers here*
+
+(b) Compute the mean, standard deviation, median, 25th
+percentile and 75th percentile. Comment on the difference
+between the mean and the median, and the difference 
+between the SD and the IQR.
+
+**Answer:**
+
+```{r}
+library(dplyr)
+# Use the summarize command as in the demo in ch2-3Demo.Rmd.
+```
+
+*Add your comments here*
+

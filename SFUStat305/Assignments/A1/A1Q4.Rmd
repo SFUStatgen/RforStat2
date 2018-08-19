@@ -1,0 +1,56 @@
+---
+title: "Assignment 1, Question 4"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Chapter 11, problem 14. 
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.txt")
+lowbwt <- read.table(uu,header=TRUE)
+head(lowbwt)
+```
+
+(a) 
+You are to plot a histogram of systolic blood
+pressure (SBP) with observations **grouped by sex**.
+To group by sex, we need to create a categorical variable out
+of the numeric `sex` variable in the dataset. 
+
+```{r, fig.height=3,fig.width=4}
+library(dplyr)
+lowbwt <- mutate(lowbwt,sexCateg = factor(sex))
+```
+
+Refer to the example histograms in the `ch11Demo.Rmd` demo
+to see how to "fill" the bars of your histogram 
+with different colours for different values of `sexCateg`.
+
+**Answer** 
+
+```{r}
+library(ggplot2)
+# histogram commands go here
+```
+
+*Comment on normality goes here*
+
+
+
+(b) 
+See the `ch11Demo.Rmd` demo for an example two-sample 
+t-test with the `t.test()` function.
+
+**Answer**
+
+```{r}
+# t.test commands go here
+```
+
+*Interpretation here*

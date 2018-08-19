@@ -1,0 +1,56 @@
+---
+title: "Assignment 1, Question 3"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Chapter 10, problem 16. 
+Include histograms of PDI and MDI scores. 
+Note: There is some ambiguity in the question about whether 
+we are supposed to use the data on all 143 babies or just 
+the 70 babies with "trtment" variable equal to one. 
+Please use the data on all 143 babies. (The "trtment" 
+variable indicates the type of surgery that the babies 
+obtained to correct the heart abnormality that they 
+were born with.)
+
+**Answer to histogram question**
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/heart.txt")
+heart <- read.table(uu,header=TRUE)
+head(heart)
+library(ggplot2)
+# Put your histogram commands here
+```
+
+(a) 
+**Answer** 
+
+Use the `t-test()` function to perform the test,
+and then interpret the results.
+```{r}
+# t.test commands go here
+```
+
+*Interpretation here*
+
+
+(b) 
+**Answer**
+
+```{r}
+# t.test commands go here
+```
+
+*Interpretation here*
+
+
+
+(c) 
+**Answer**

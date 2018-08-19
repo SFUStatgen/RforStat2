@@ -1,0 +1,44 @@
+---
+title: "Assignment 1, Question 2"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Chapter 9, problem 12. 
+Before you do parts (a) - (d), draw a histogram of the data. The histogram should be handed in with your assignment. 
+
+**Answer to histogram question**
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/serzinc.txt")
+serzinc <- read.table(uu,header=TRUE)
+head(serzinc)
+# Put your histogram commands here
+```
+
+(a) 
+**Answer** 
+
+Note: If you look at the `ch8-10.Rmd` demo, you will
+see that confidence intervals 
+can be constructed from summary statistics
+and quantiles (the "do-it-yourself" method) or read
+from the output of the
+`t.test()` function. You won't 
+get extra marks for do-it-yourself, so you might
+as well use `t.test()`.
+
+(b) 
+**Answer**
+
+
+(c) 
+**Answer**
+
+(d) 
+**Answer**
