@@ -21,8 +21,7 @@ hyst <- data.frame(numHyster = c(20,25,25,27,28,31,33,34,
 
 Notice that I'm cutting-and-pasting from the `ch2-3Demo.Rmd`
 demo. You
-will find lots of useful R code in the demos that 
-you can use, with little or no modification.
+will find lots of useful R code in the demos to draw from, with little or no modification.
 
 (a) Draw a histogram of the data. Do you see any outliers?
 
@@ -30,11 +29,18 @@ you can use, with little or no modification.
 
 ```{r}
 library(ggplot2)
-# Add commands to draw a histogram here -- see the
-# lecture notes for inspiration.
+# Add your R commands to draw a histogram here -- the R demos in 
+# the lecture notes should be helpful. Note that the Workshop is
+# there to help you with working things out and getting comfortable 
+# with R; please make use of this excellent resource. Go early to 
+# avoid the last-minute rush and crashing the servers. Watch out 
+# especially for crashing Crowdmark if you are trying to upload 
+# your assignment at the last minute. The Workshop is not 
+# responsible for late assignments due to Crowdmark crashing.  
 ```
 
-*Write your comments about outliers here*
+*Insert your written comments here about the outliers that you see
+in the histogram.*
 
 (b) Compute the mean, standard deviation, median, 25th
 percentile and 75th percentile. Comment on the difference
@@ -45,8 +51,10 @@ between the SD and the IQR.
 
 ```{r}
 library(dplyr)
-# Use the summarize command as in the demo in ch2-3Demo.Rmd.
+# Add your R commands to do this question here. You can use
+# the summarize() function as in the demo in ch2-3Demo.Rmd.
 ```
 
-*Add your comments here*
+*Add your written comments that interpret the output of the R 
+commands here*
 
