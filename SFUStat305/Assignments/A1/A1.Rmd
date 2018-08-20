@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 This assignment consists of 5 questions. Templates
 for each question are given in the numbered
 list below. Detailed instructions on how to fill in the templates
-is given [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/Instructions/instructions.Rmd)
+are given [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/Instructions/instructions.Rmd).
 
 1. Question 1. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q1.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 2. Question 2. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q2.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
