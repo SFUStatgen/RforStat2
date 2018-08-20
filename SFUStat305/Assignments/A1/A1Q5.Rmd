@@ -34,7 +34,7 @@ e. Choose one: An SD is a parameter if it is computed from the (i) statistic, (i
 f. Choose all that apply: Hypotheses are written in terms of (i) statistics, (ii) parameters 
 
 **Answer:** *Insert your answer here. Your response can be short, just the words that apply.*
-
+ 
 g. Choose all that apply: 
     (i) We use statistics such as the sample mean to assess the evidence in a sample for statistical hypotheses.
     (ii) Statistical hypotheses ask questions about sample quantities known as statistics.
@@ -50,7 +50,7 @@ h. Choose all that apply: The difference between $s$ and $\sigma$ in the class n
 
 **Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
     
-i. Choose all that apply: Correct examples of parameters are
+i. Choose all that apply: 
     (i) s and $\sigma$ are statistics.
     (ii) $\mu$ and $\sigma$ are statistics
     (iii) $\mu$ and $s$ are parameters
