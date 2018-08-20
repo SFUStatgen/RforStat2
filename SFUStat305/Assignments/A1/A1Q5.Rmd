@@ -36,9 +36,9 @@ f. Choose all that apply: Hypotheses are written in terms of (1) statistics, (2)
 **Answer:** *Insert your answer here. Your response can be short, just the words that apply.*
  
 g. Choose all that apply: 
-    1. We use statistics such as the sample mean to assess the evidence in a sample for statistical hypotheses.
-    2. Statistical hypotheses ask questions about sample quantities known as statistics.
-    3. Statistical hypotheses ask questions about population quantities known as parameters.
+    a. We use statistics such as the sample mean to assess the evidence in a sample for statistical hypotheses.
+    b. Statistical hypotheses ask questions about sample quantities known as statistics.
+    c. Statistical hypotheses ask questions about population quantities known as parameters.
 
 **Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
     
