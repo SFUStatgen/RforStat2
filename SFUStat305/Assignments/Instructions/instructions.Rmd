@@ -30,7 +30,7 @@ For example, RStudio Cloud users can use the upload button
 found in the files pane in the lower right corner of their RStudio.
     + Jupyter users will find that the templates require a
     few minor modifications before you start. See
-    the instructions [here]("instructions.Rmd")
+    the instructions [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/Instructions/TemplateMods.pdf)
 * Start your R interface and open the template.
 * Change the name, student ID and date in the 
 header of the template to your own.
