@@ -19,3 +19,5 @@ list below:
 4. Question 4 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q4.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 5. Question 5 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q5.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 
+Detailed instructions on how to fill in the templates
+is given [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/Instructions/instructions.Rmd)
