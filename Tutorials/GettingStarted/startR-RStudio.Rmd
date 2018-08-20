@@ -64,3 +64,8 @@ Answer No. You likely don't have the necessary tools on your computer to build a
 
 3. Missing fonts
 You may see an error about "missing polygons" or other shapes when trying to do graphics due to missing or disabled fonts on your system. See a recent [stackexchange](http://stackoverflow.com/questions/10581440/error-in-grid-calll-textbounds-as-graphicsannotxlabel-xx-xy-polygon) conversation for some tips on how to resolve the issue.
+
+4. Testing
+    (a) what
+    (b) is
+    (c) going on 
