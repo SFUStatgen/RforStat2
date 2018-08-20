@@ -1,0 +1,62 @@
+---
+title: "Assignment 1, Question 5"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+a. A survey is given to 100 patients randomly selected from 
+BC residents aged 65 years or more on the waiting list for heart surgery. What is the population? What is the sample?
+
+**Answer:**
+*Insert your answer here. Your response should be short; e.g. a couple of sentences at most. *
+
+b. Fifty batches of vaccine for diphtheria, tetanus, and pertussis were randomly selected from the set of all batches produced by a large national pharmaceutical company in 2017. What are the fifty batches called; how about the set of all batches? 
+
+**Answer:**  *Insert your answer here. Your response should be short (e.g. two words).*
+
+c. Choose one: A mean is a statistic if it is computed from the (1) parameter, (2) population, (3) sample.
+
+**Answer:** *Insert your answer here. Your response can be one word.*
+
+d. Choose one: A mean could be (1) a parameter only, (2) a statistic only, (3) a parameter or a statistic.
+
+**Answer:** *Insert your answer here. Your response can be one word.*
+
+e. Choose one: An SD is a parameter if it is computed from the (1) statistic, (2) population, (3) sample.
+
+**Answer:** *Insert your answer here. Your response can be one word.*
+
+f. Choose all that apply: Hypotheses are written in terms of (1) statistics, (2) parameters 
+
+**Answer:** *Insert your answer here. Your response can be short, just the words that apply.*
+ 
+g. Choose all that apply: 
+    + 1. We use statistics such as the sample mean to assess the evidence in a sample for statistical hypotheses.
+    + 2. Statistical hypotheses ask questions about sample quantities known as statistics.
+    + 3. Statistical hypotheses ask questions about population quantities known as parameters.
+
+**Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
+    
+* h. Choose all that apply: The difference between $s$ and $\sigma$ in the class notes is that
+    + (1) $s$ is for a sample and $\sigma$ is for a population, 
+    + (2) $s$ is for a population and $\sigma$ is for a sample.
+    + (3) $s$ is a parameter and $\sigma$ is not
+    + (4) $s$ is a statistic and $\sigma$ is a parameter
+
+**Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
+    
+i. Choose all that apply: 
+    1. s and $\sigma$ are statistics.
+    2. $\mu$ and $\sigma$ are statistics
+    3. $\mu$ and $s$ are parameters
+    4. $\bar{x}$ and $s$ are statistics
+    5. $\mu$ and $\sigma$ are parameters
+    6. $\bar{x}$ and $s$ are parameters
+    
+**Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
+    
