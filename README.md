@@ -1,6 +1,6 @@
 # RforStat2
 
-R tutorials and demos for a second course in Statistics 
+R tutorials and demos as well as notes for a second course in Statistics 
 developed by Jinko Graham and Brad McNeney, 
 Department of Statistics and Actuarial Science, 
 Simon Fraser University.
