@@ -42,11 +42,11 @@ g. Choose all that apply:
 
 **Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
     
-h. Choose all that apply: The difference between $s$ and $\sigma$ in the class notes is that
-    1. $s$ is for a sample and $\sigma$ is for a population, 
-    2. $s$ is for a population and $\sigma$ is for a sample.
-    3. $s$ is a parameter and $\sigma$ is not
-    4. $s$ is a statistic and $\sigma$ is a parameter
+* h. Choose all that apply: The difference between $s$ and $\sigma$ in the class notes is that
+    + 1. $s$ is for a sample and $\sigma$ is for a population, 
+    + 2. $s$ is for a population and $\sigma$ is for a sample.
+    + 3. $s$ is a parameter and $\sigma$ is not
+    + 4. $s$ is a statistic and $\sigma$ is a parameter
 
 **Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
     
