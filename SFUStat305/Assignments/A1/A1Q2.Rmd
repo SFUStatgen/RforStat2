@@ -9,20 +9,22 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Chapter 9, problem 12. 
+Chapter 9, problem 12. Questions about serum zinc levels for 
+a sample of 462 males between the ages of 15 and 17 years. The units of measurement for serum zinc level are micrograms per deciliter.
+
 Before you do parts (a) - (d), draw a histogram of the data. The histogram should be handed in with your assignment. 
 
-**Answer to histogram question**
+**Answer to histogram question:**
 
 ```{r}
 uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/serzinc.txt")
 serzinc <- read.table(uu,header=TRUE)
-head(serzinc)
-# Put your histogram commands here
+head(serzinc) 
+# Put your histogram commands here; they will show the histogram output.
 ```
 
-(a) 
-**Answer** 
+(a) Find a 2-sided 95\% CI for $\mu$, the true mean 
+serum zinc level for this population of males aged 15-17 years.
 
 Note: If you look at the `ch8-10.Rmd` demo, you will
 see that confidence intervals 
@@ -33,12 +35,28 @@ from the output of the
 get extra marks for do-it-yourself, so you might
 as well use `t.test()`.
 
-(b) 
-**Answer**
+**Answer:** 
 
+```{r}
+# Put your R commands here for t.test() to get the 95% CI
+```
 
-(c) 
-**Answer**
+(b) Interpret this confidence interval 
 
-(d) 
-**Answer**
+**Answer:**
+
+*Insert your written comments here about the interpretation of the CI. Use the units of measurement for serum zinc level in your interpretation and phrase it as though you were explaining it to a public health professional at work.* 
+
+(c) Calculate a 90\% CI for $\mu$.
+
+**Answer:**
+
+```{r}
+# Put your R commands here for t.test() to get the 90% CI
+```
+
+(d) How does the 90\% CI compare to the 95\% CI?
+
+**Answer:**
+
+*Insert your written comments here about how the two CI's differ.*

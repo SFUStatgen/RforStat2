@@ -31,12 +31,12 @@ will find lots of useful R code in the demos to draw from, with little or no mod
 library(ggplot2)
 # Add your R commands to draw a histogram here -- the R demos in 
 # the lecture notes should be helpful. Note that the Workshop is
-# there to help you with working things out and getting comfortable 
-# with R; please make use of this excellent resource. Go early to 
-# avoid the last-minute rush and crashing the servers. Watch out 
-# especially for crashing Crowdmark if you are trying to upload 
-# your assignment at the last minute. The Workshop is not 
-# responsible for late assignments due to Crowdmark crashing.  
+# there to help you through assignments, including getting 
+# comfortable with R and statistical thinking; please make use 
+# of this excellent resource. Go early to avoid the last-minute 
+# rush and crashing the servers. Watch out especially for Crowdmark # crashing if you are trying to upload your assignment at the 
+# last minute when there is high volume. The Workshop is not
+# responsible for late assignments due to server crashes.  
 ```
 
 *Insert your written comments here about the outliers that you see

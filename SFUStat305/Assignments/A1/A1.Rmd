@@ -9,7 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This assignment consists of 4 questions. Templates
+This assignment consists of 5 questions. Templates
 for each question are given in the numbered
 list below:
 
@@ -17,6 +17,7 @@ list below:
 2. Question 2 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q2.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 3. Question 3 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q3.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 4. Question 4 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q4.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
+5. Question 5 [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q5.Rmd) or [Jupyter notebook](LINK TO BE ADDED)
 
 **For each question** do the following:
 
