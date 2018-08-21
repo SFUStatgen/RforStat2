@@ -49,5 +49,5 @@ document and save the output as a PDF file.
     + Jupyter users should follow the Stat Workshop 
     tutorials on printing assignments.
 * Now follow the Stat Workshop's instructions for
-uploading a question to Crowdmark (typically, a separate PDF is to be uploaded for each question). Please be aware that the Crowdmark server can crash if everyone tries to upload their assignment at the last minute. The Workshop is not responsible for late assignments owing to server crashes. To ensure that your assignment is counted, please leave plenty of lead time to submit it before the deadline.
+uploading a question to Crowdmark (typically, a separate PDF is to be uploaded for each question). Please be warned that the Crowdmark server can crash if everyone in a large class (or several large classes) tries to upload their assignment at the last minute. The Workshop is not responsible for late assignments due to server crashes. To ensure that your assignment is counted, please leave plenty of lead time to submit it properly to Crowdmark before the deadline.
 
