@@ -49,5 +49,5 @@ document and save the output as a PDF file.
     + Jupyter users should follow the Stat Workshop 
     tutorials on printing assignments.
 * Now follow the Stat Workshop's instructions for
-uploading a question to Crowdmark.
+uploading a question to Crowdmark (typically, a separate PDF is to be uploaded for each question).
 
