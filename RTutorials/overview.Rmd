@@ -35,7 +35,7 @@ These interfaces are all supported by the Stat Workshop. A partial list of the p
 
 | Interface      | pros/cons | Comments                                           |
 | -------------- | --------- | -------------------------------------------------- |
-RStudio Desktop | pros | You install your own (free) copy on your personal computer that you may then use in perpetuity for any future data-analysis projects. Has well-developed tools for authoring documents such as homework assignments. Supported by an extensive online community of users. Used in class demos. |
+RStudio Desktop | pros | You install your own (free) copy on your personal computer that you may then use in perpetuity for any future data-analysis projects. Has well-developed tools for authoring documents such as homework assignments. Supported by an extensive online community of users. Used in class demos. As the system of choice for most graduate TAs, there is a good chance of finding someone who can help with installation in the Workshop.
 |   | cons  | Can be difficult to install for some with non-standard setups on their computers such as Chinese characters. |
 | RStudio Cloud | pros | No installation required; instead access is through the internet. A CloudFront (Amazon) server with the same interface as RStudio Desktop. |
 |    | cons  | As an internet server on the Amazon Cloud, it may have slowdowns or outages from time to time.|
