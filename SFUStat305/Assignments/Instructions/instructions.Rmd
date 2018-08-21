@@ -45,7 +45,7 @@ document and save the output as a PDF file.
     make the following change to the header of the template 
     (lines 1-6): replace the line
     `output: html_document` with `output: pdf_document`. Then
-    knitting will produce a PDF file.
+    knitting will produce a PDF file that you can hand in.
     + Jupyter users should follow the Stat Workshop 
     tutorials on printing assignments.
 * Now follow the Stat Workshop's instructions for
