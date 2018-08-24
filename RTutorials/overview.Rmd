@@ -35,11 +35,11 @@ These interfaces are all supported by the Stat Workshop. A partial list of the p
 
 | Interface      | pros/cons | Comments                                           |
 | -------------- | --------- | -------------------------------------------------- |
-RStudio Desktop | pros | You install your own (free) copy on your personal computer that you may then use in perpetuity for any future data-analysis projects. Has well-developed tools for authoring documents such as homework assignments. Supported by an extensive online community of users. Used in class demos. As the system of choice for most graduate TAs, there is a good chance of finding someone who can help with installation in the Workshop. Installation tutorial documents are available on the Workshop Canvas site.
-|   | cons  | Can be difficult to install for computers with non-standard characters on some Macs (e.g. Chinese characters). |
+RStudio Desktop | pros | You install your own (free) copy on your personal computer that you may then use in perpetuity for any future data-analysis projects. Has well-developed tools for authoring documents such as homework assignments. Supported by an extensive online community of users. Used in class demos. As the system of choice for upper-division undergraduates and graduate students in Statistics, there is a good chance of finding someone to help with installation in the Workshop. 
+|   | cons  | Computers with non-standard characters on Macs (e.g. Chinese characters) can be trickier to install on. |
 | RStudio Cloud | pros | No installation required; instead access is through the internet. A CloudFront (Amazon) server with the same interface as RStudio Desktop. |
 |    | cons  | As an internet server on the Amazon Cloud, it may have slowdowns or outages from time to time.|
-| Jupyter | pros | No installation required; instead access is through the internet. A UBC server with the Jupyter interface to an array of computing languages, as well as to R. Jupyter tutorial documents for base R are available on the Workshop Canvas site.|
+| Jupyter | pros | No installation required; instead access is through the internet. A UBC server with the Jupyter interface to an array of computing languages, as well as to R. Some Jupyter tutorial documents are available on the Workshop Canvas site; unfortunately these are limited to base R only.|
 |   | cons | As an internet server for BC university students, it may have slowdowns or outages before assignments are due or during other high-volume periods of the semester. |
 
 
