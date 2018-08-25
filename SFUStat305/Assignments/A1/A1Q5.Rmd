@@ -27,7 +27,7 @@ BC residents aged 65 years or more on the waiting list for heart surgery. What i
 
 **Answer:** *Insert your answer here. Your response can be one word.*
 
-* e. Choose one: An SD is a parameter if it is computed from the (1) statistic, (2) population, (3) sample.
+* e. Choose one: An SD is a parameter if it is computed from a (1) statistic, (2) population, (3) sample.
 
 **Answer:** *Insert your answer here. Your response can be one word.*
 
