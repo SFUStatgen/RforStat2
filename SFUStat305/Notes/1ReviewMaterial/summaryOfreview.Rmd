@@ -71,9 +71,7 @@ from our sample of data and use it to get the $p$-value.
     + The $p$-value is the chance of seeing a value of the test statistic as or more extreme 
 than the value that was observed, under $H_0$.
     + Compare the $p$-value to a significance level $\alpha$ to obtain a test of $H_0$ against $H_a$.
-* Inference is considered reliable when:
-    + the population is at least 10$\times$ larger than the size of the sample 
-    + there are sufficient numbers of successes and failures
+* Inference is considered reliable when there are sufficient numbers of successes and failures
 in each sample.
 
 ## Ch6: Probability
