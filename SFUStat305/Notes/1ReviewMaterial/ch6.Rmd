@@ -633,6 +633,7 @@ $$OR = \frac{p_1/(1-p_1)}{p_0/(1-p_0)}$$
 implies that both $RR=1$ and $OR=1$.
 * When the disease is rare, both $p_0$ and $p_1$ will be close to zero, so that $1-p_0$ and $1-p_1$ will be close to one. Then the
  $OR$ is approximately equal to the $RR$. 
+* When can the $OR$ be used to approximate the $RR$? How rare does the disease have to be? No consensus. In this class we will use a disease prevalence of less than 5\%.
 
 ## More on the Odds Ratio 
 
