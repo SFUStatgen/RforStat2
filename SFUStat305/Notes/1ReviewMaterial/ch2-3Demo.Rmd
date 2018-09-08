@@ -169,8 +169,8 @@ for a short backgrounder on R packages.
 will need to install packages before they can load them. 
     + RStudio-Desktop users should consult the 
     **R Packages** section 
-    of the [R/Rstudio getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd)
-    + RStudio-Cloud users should consult step 5 of the [RStudio-Cloud getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd)
+    of the [R/Rstudio getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) (hover over preceding for link).
+    + RStudio-Cloud users should consult step 5 of the [RStudio-Cloud getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) (hover over preceding for link).
 
 * Jupyter users don't need to install
     packages but do need to load them before they can be used.
