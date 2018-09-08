@@ -22,14 +22,13 @@ interested in learning R should consider taking Stat 341.
 R may be downloaded from the 
 [Comprehensive R Archive Network](http://cran.r-project.org) 
 and comes with its own user interface called the R console.
-However, I recommend using one of the following 3 
-user interfaces for R, because they all have facilities for
-integrating text, R code and R output that will simplify 
-the process of doing assignments:
+However, to simplify the process of doing assignments, I recommend installing and using RStudio Desktop 
+because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop. 
+Alternatively, if you can't install R/RStudio on your personal computer, you can use RStudio Cloud or Jupyter.
 
 1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
 2. RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
-3. R via Jupyter -- To get started, see the Stat Workshop's R/Jupyter page  [**ADD LINK to the Stat Workshop's R/Jupyter page for Fall 2018 once it is created**]
+3. R via Jupyter -- The Stat Workshop has an R/Jupyter page on their Canvas site that you can consult but I'd recommend option 1. 
 
 These interfaces are all supported by the Stat Workshop. A partial list of the pros and cons of each interface are given in the table below:
 
