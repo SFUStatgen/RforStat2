@@ -163,8 +163,8 @@ Error: could not find function "ggplot"
 ## Software Notes: Installing Add-on Packages
 
 
-* See the Youtube [video](https://www.youtube.com/watch?v=CtOSryChcGg)
-for more on R packages. 
+* See this 2-minute Youtube [video](https://www.youtube.com/watch?v=CtOSryChcGg)
+for a short backgrounder on R packages. 
 * RStudio users (RStudio Desktop or RStudio Cloud)
 will need to install packages before they can load them. 
     + RStudio-Desktop users should consult the 
