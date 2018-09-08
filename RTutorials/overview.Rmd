@@ -28,7 +28,7 @@ Alternatively, if you can't install R/RStudio on your personal computer, you can
 
 1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
 2. RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
-3. R via Jupyter -- The Stat Workshop has an R/Jupyter page on their Canvas site that you can consult but I'd recommend option 1. 
+3. R via Jupyter -- The Stat Workshop has a Jupyter page on their Canvas site that you can consult. 
 
 These interfaces are all supported by the Stat Workshop. A partial list of the pros and cons of each interface are given in the table below:
 
