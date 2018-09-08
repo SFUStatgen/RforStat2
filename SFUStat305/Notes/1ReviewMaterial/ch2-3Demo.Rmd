@@ -163,24 +163,18 @@ Error: could not find function "ggplot"
 ## Software Notes: Installing Add-on Packages
 
 
-* See the video https://www.youtube.com/watch?v=CtOSryChcGg
-for more on R packages. 
+* See this 2-minute Youtube [video](https://www.youtube.com/watch?v=CtOSryChcGg)
+for a short backgrounder on R packages. 
 * RStudio users (RStudio Desktop or RStudio Cloud)
-will need to install the packages they need before they can load them. 
-    + RStudio Desktop users should consult the 
+will need to install packages before they can load them. 
+    + RStudio-Desktop users should consult the 
     **R Packages** section 
-    of the getting started document at
-    \url{https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/GettingStarted/startR-RStudio.Rmd}
-    + RStudio Cloud users should consult step 5 of the getting
-    started document at
-    \url{https://github.com/SFUStatgen/RforStat2/blob/master/Tutorials/GettingStarted/startRStudioCloud.Rmd}
+    of the [R/Rstudio getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) (hover over preceding for link).
+    + RStudio-Cloud users should consult step 5 of the [RStudio-Cloud getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) (hover over preceding for link).
 
-* Jupyter should have all the packages we will need for this
-course installed.
-    + Thus, Jupyter
-    users don't need to install
-    packages (but **do** need to load them before
-    using).
+* Jupyter users don't need to install
+    packages but do need to load them before they can be used.
+    
 
 
 ## Software Notes: `ggplot()`
