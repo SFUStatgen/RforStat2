@@ -38,7 +38,7 @@ and graphical display of data. It includes the
 
 ## Known issues with installation
 
-1. Character set mixup
+1. Character set mixup.
 Some Macs display errors like the following when you start R:
 ```
 During startup - Warning messages:
@@ -62,5 +62,5 @@ Do you want to install from sources the package which needs compilation? y/n:
 ```
 Answer No. You likely don't have the necessary tools on your computer to build a package from its source code. You need the pre-compiled binary versions of packages.
 
-3. Missing fonts
+3. Missing fonts.
 You may see an error about "missing polygons" or other shapes when trying to do graphics due to missing or disabled fonts on your system. See a recent [stackexchange](http://stackoverflow.com/questions/10581440/error-in-grid-calll-textbounds-as-graphicsannotxlabel-xx-xy-polygon) conversation for some tips on how to resolve the issue.
