@@ -23,7 +23,7 @@ R may be downloaded from the
 [Comprehensive R Archive Network](http://cran.r-project.org) 
 and comes with its own user interface called the R console.
 However, to simplify the process of doing assignments, I recommend installing and using RStudio Desktop 
-because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop. 
+on your personal computer because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop. 
 Alternatively, if you can't install R/RStudio on your personal computer, you can use RStudio Cloud or Jupyter.
 
 1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
