@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 BC residents aged 65 years or more on the waiting list for heart surgery. What is the population? What is the sample?
 
 **Answer:**
-*Insert your answer here. Your response should be short; e.g. a couple of sentences at most. *
+*Insert your answer here. Your response should be short; e.g. a couple of sentences at most.*
 
 * b. Fifty batches of vaccine for diphtheria, tetanus, and pertussis were randomly selected from the set of all batches produced by a large national pharmaceutical company in 2017. What are the fifty batches called; how about the set of all batches? 
 
