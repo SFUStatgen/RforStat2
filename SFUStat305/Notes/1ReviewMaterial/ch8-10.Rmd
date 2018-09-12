@@ -1,8 +1,8 @@
 ---
-title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapters 8-10: Review of Statistical Inference'
 author: "Jinko Graham"
-date: '2018-09-01'
+date: '2018-09-12'
 output: 
   beamer_presentation:
     includes:
@@ -19,10 +19,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 * The overarching goal is to get some idea of how to think statistically. 
     + Specific techniques are less important than the general way of thinking. 
-    + Doing t tests, or chi-squared tests, etc. is all well and good. However there are bigger ideas to pursue.
+    + Mechanically calculating t tests, or chi-squared tests, etc. is all well and good. However there are bigger ideas to pursue.
 
 * I'll try to bring in the bigger ideas: quantifying uncertainty and avoiding bias to make inference from data. 
-    + The syllabus is tilted towards quantifying uncertainty rather than bias, but I'll try to work in both throughout the course.
+    + The syllabus is tilted towards quantifying uncertainty rather than avoiding bias, but I'll try to work in both throughout the course.
 
 # Sampling Distributions (Chapter 8).
 
@@ -245,6 +245,7 @@ $T$, is $\bar{X}-\mu_0$, this is equivalent to $T$ having an observed value $t$ 
     +  i.e. $|t|$ much greater than zero, where
     $| t |$ is the absolute value of t.
 
+<!--
 ## Extreme values of $T$ when $H_a: \mu> \mu_0$
 * $H_a: \mu > \mu_0$ vs. $H_0: \mu \leq \mu_0$.
 * $\bar{x}$'s that 
@@ -264,7 +265,7 @@ evidence in favour of $H_a$.
     +  i.e., $t$ much less than zero.
 * Note that $\bar{x}$'s much _greater_ than 
 $\mu_0$ ($t$'s much _greater_ than 0) are consistent with $H_0$, and so not a basis for rejecting it.
-
+-->
 
 ## $p$-values
 
@@ -275,20 +276,20 @@ given that $H_0: \mu = \mu_0$ is true.
     + For the $t$-test, the statistic is $T$,
     a random variable having a $t$-distribution on $n-1$ df,
     and the observed value is $t$
-* From our discussion of what "extreme" means 
-under various alternative hypotheses, we
-can argue that:
-    + For $H_a: \mu \not= \mu_0$,
-$p=2P(T\geq|t|)$, where
+* From the above discussion of what "extreme" means, 
+we can argue that, for $$H_a: \mu \not= \mu_0,$$
+the pvalue is $p=2P(T\geq|t|)$, where
 
-         + $P(A)$ is the probability of event $A$, 
+    + $P(A)$ is the probability of event $A$, 
         
-         + $t$ is the observed $t$-statistic, and 
+    + $t$ is the observed $t$-statistic, and 
         
-         + $| t |$ is the absolute value of t.
-        
+    + $| t |$ is the absolute value of t.
+ 
+ <!--       
     + For $H_a: \mu > \mu_0$, $p = P(T \geq t)$.
     + For $H_a: \mu < \mu_0$, $p = P(T \leq t)$.
+-->
 
 ## Example
 
@@ -323,13 +324,12 @@ which computer software reports to be `1.36833e-07`.
 
 ## Hypothesis Tests
 
-* Small $p$-values are evidence against the null hypothesis, in favour
-of the alternative hypothesis.
+* Small $p$-values are evidence against $H_0$, in favour of $H_a$. 
 * We may set a level $\alpha$ in advance that marks the point at which
-evidence against the null hypothesis is considered strong enough to "reject" it.
-    + If we don't reject the null hypothesis we **retain** it. 
-    + **Caution**: Some people are really bothered by `accept $H_0$'. Best say 'retain $H_0$' to avoid offending them (and losing marks).
-* If the $p$-value is less than $\alpha$, we say that we "reject $H_0$ at level $\alpha$".
+evidence against $H_0$ is considered strong enough to "reject" it.
+    + If we don't reject the $H_0$ we **retain** it. 
+    + **Caution**: Some people are bothered by `accept $H_0$'. Best say 'retain $H_0$' to avoid offending them (and losing marks).
+* If the $p$-value is less than $\alpha$, we "reject $H_0$ at level $\alpha$".
 * Historically, such a test result was described as 
 "statistically significant", but this terminology is going out of style.
     + In part because statistical significance says nothing about
@@ -344,7 +344,7 @@ significance.
 * The "confusion matrix" for the true state of nature (rows) and 
 the action of a hypothesis test (columns) is
 
-$\;$ | Reject null    | Retain null
+$\;$ | Reject $H_0$    | Retain $H_a$
 ---- |  ------------- | -----------
 null ($H_0$) | false positive | true negative
 alternative ($H_a$)  | true positive  | false negative
