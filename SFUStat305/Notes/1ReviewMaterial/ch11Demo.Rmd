@@ -121,7 +121,9 @@ The `dplyr` package
 is for manipulating dataframes. Note its "5 verbs": `select`, `filter`, `arrange`, `mutate` and `summarize`.
 --> 
     
-## `t.test()` for Gestational Age by Toxemia
+## Gestational Age Differences by Toxemia
+
+Can use a 2-sample t-test:
 
 \scriptsize
 
@@ -131,14 +133,15 @@ t.test(gestage ~ toxCateg,data=lbwt,conf.level=0.90)
 
 \normalsize
 
-* In R, a "formula" such as `gestage ~ toxCateg` says
-to think of `gestage` as a function of `toxCateg`.
-    + We will make extensive use of R formulas, later, 
-    when we study regression.
-* The argument `conf.level` sets the level, or 
++ In the call to `t.test()`, the "formula" 
+`gestage ~ toxCateg` tells
+R to think of `gestage` as a function of `toxCateg`.
+    + We'll use R formulas again when we study regression.
+
++ The argument `conf.level` sets the level, or 
 coverage probability, $C$, of the CI.
 
-## Getting the $p$-value
+## Reading the output 
 
 \scriptsize
 
@@ -148,7 +151,9 @@ t.test(gestage ~ toxCateg,data=lbwt,conf.level=0.90)
 
 \normalsize
 
-* The output tells us that, under $H_0$, the test statistic $T$'s distribution is approximated by a t distribution on $\nu=31.465$ degrees of freedom.
+* Under $H_0$, the test statistic $T$'s distribution is approximately a t distribution on $\nu=31.465$ degrees of freedom.
 * The software compares the observed value -4.4745
 of the test statistic
 to this reference distribution, to get a $p$-value of .00009366115.
+* It gives the requested 90\% CI for the difference in group means.
+* It also gives us the sample means in the 2 groups.
