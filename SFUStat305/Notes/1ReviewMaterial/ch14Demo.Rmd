@@ -67,11 +67,11 @@ prop.test(c(166,122),c(8506,8102),conf.level=0.95,correct=FALSE)
 + Mostly like the output of `t.test()`
 
 + `X-squared` is the square of the test statistic
-    $Z$ that we have discussed. This has a chi-squared
+    $Z$ that we discussed in the non-demo part of these notes. 
++ `X-squared`$=Z^2$ has a chi-squared
     ($\chi^2$)
-    distribution with one df. 
+    distribution with 1 df. Leads to a $\chi^2$ test.
 
-+ When the alternative hypothesis is two-sided, the p-value from the 
-    $\chi^2$ test is equivalent
-    to the p-value from the $Z$-test. 
++ When $H_a$ is 2-sided, the p-values for the 
+    $\chi^2$- and $Z$-tests are the same; i.e. $p=0.02783$.
 
