@@ -1,8 +1,8 @@
 ---
-title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 14 : Inference for Proportions'
 author: "Jinko Graham"
-date: '2018-08-23'
+date: '2018-09-13'
 output: 
   beamer_presentation:
     includes:
@@ -32,9 +32,9 @@ the Women's Health Initiative, randomized 16,608 post-menopausal women aged
 ($n_2=8102$). 
 * After five years, 166 of those in the EP group had developed 
 invasive breast cancer, compared to 122 in the placebo group.
-* The populations to compare are postmenopausal women aged 50-79 years at the start of the trial, who are 
+* The populations to compare are postmenopausal women aged 50-79 years, who are 
 taking EP (population 1) or placebo (population 2).
-* The estimated populaton proportions are
+* The sample proportions are
 $\hat{p}_1 = 166/8506=0.0195$ and $\hat{p}_2=122/8102=0.0151$
 * It looks like the EP group has a higher risk of 
 breast cancer, but could this difference be due to chance?
@@ -42,16 +42,16 @@ breast cancer, but could this difference be due to chance?
 
 ## Outline of Approach
 
-* Similar approach to inference as inference of population means 
-(quantitative data), with some minor differences.
+* Similar approach to inference of population means 
+(quantitative outcomes), with some minor differences.
 * Inference is based on the sampling distribution of $\hat{p}_1 - \hat{p}_2$
 * Two-stage reasoning:
-    + 1. Transform $\hat{p}_1 - \hat{p}_2$ into an initial pivotal quantity, $Z_1$, whose denominator depends on the unknown $p_i$'s
-    + 2. Get a final pivotal quantity, $Z$, by replacing 
+     1. Transform the statistic $\hat{p}_1 - \hat{p}_2$ into an initial pivotal quantity, $Z_1$, whose denominator depends on the unknown parameters $p_1$ and $p_2$.
+     2. Get a final pivotal quantity, $Z$, by replacing 
 the unknown $p_i$'s in the denominator of $Z_1$ with estimates.
-* Confidence intervals and hypothesis tests follow from 
+* CIs and hypothesis tests follow from 
 the approximate sampling distribution of the final pivotal quantity, $Z$.
-* Note: We will not cover _Inference for a single proportion_ in the text (Sections 14.2 -- 14.5).
+* Note: Not covering _Inference for a single proportion_ (text, sections 14.2 -- 14.5).
 
 ## Sampling Distribution of $\hat{p}_1 - \hat{p}_2$
 
@@ -210,10 +210,8 @@ $$
 than what we did observe in our data, when the null hypothesis is true.
 * Same logic as we saw earlier for inference of population means (Chapter 11).
 * Let $Z$ be a standard normal random variable and 
-$z$ be the observed value of the test statistic. Then:
-    + For $H_a: p_1 -p_2 \not= 0$, $p$-value $= 2 P( Z\geq |z|)$.
-    + For $H_a: p_1-p_2 > 0$, $p$-value $=P(Z \geq z)$.
-    + For $H_a: p_1 - p_2 < 0$, $p$-value $=P(Z \leq z)$.
+$z$ be the observed value of the test statistic. 
+* For $H_a: p_1 -p_2 \not= 0$, the $p$-value is $p= 2 P( Z\geq |z|)$.
 
 ## Example (WHI, continued)
 
