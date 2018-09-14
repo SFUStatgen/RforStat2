@@ -1,8 +1,8 @@
 ---
-title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 11 : Inference for Two Means'
 author: "Jinko Graham"
-date: '2018-09-01'
+date: '2018-09-13'
 output: 
   beamer_presentation:
     includes:
@@ -18,8 +18,8 @@ knitr::opts_chunk$set(echo = FALSE)
 Context
 
 * We have measurements sampled from two populations. 
-* Want to make inference about the difference between distributions.
-* In particular, we're interested in the difference
+* Want to make inference about the difference between the populations.
+* In particular, interested in the difference
 between the two population means, denoted $\mu_1$ and $\mu_2$.
 
 Notation
@@ -109,7 +109,7 @@ be due to chance?
     a _pivotal quantity_ $T$.
 * Confidence intervals and hypothesis tests follow from the sampling 
 distribution of $T$.
-* Note: The following topics from the text are omitted:
+* Note: We omit the following topics in this course:
     + Paired-samples $t$-test (Section 11.1 of text) 
     + Two-sample $t$-test assuming equal SDs (Section 11.2.1)
 
@@ -124,7 +124,7 @@ $\bar{X}_1-\bar{X}_2$ has
     + mean $\mu_1-\mu_2$ and
     + SD $\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}$, 
     where $\sigma_1$ and $\sigma_2$ are the population SDs for group 1 and group 2, respectively.
-* If the sample sizes are large (will give a rule-of-thumb later),
+* If the sample sizes are large enough,
 the CLT tells us that the shape of this distribution 
 is approximately normal.
 
@@ -153,7 +153,7 @@ $$
 T = \frac{(\bar{X}_1-\bar{X}_2)-(\mu_1-\mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}
 $$
 * What is the distribution of $T$? 
-    + Unfortunately not  a $t$-distribution, but we can 
+    + Turns out we can 
     approximate it by a $t$-distribution with $\nu$ df. 
     + We won't ever use the formula for $\nu$ but if you're curious it is given on page 270 of the text.
 * Instead, computer software such as R automatically calculates $\nu$ for us,
@@ -242,8 +242,7 @@ $$
 in the sense of being more compatible with $H_a$ are taken as evidence 
 against $H_0: \mu_1-\mu_2=0$.
 * The $p$-value is the chance of a value that is as 
-or more extreme than what we observed, under the null
-hypothesis.
+or more extreme than what we observed, under $H_0$.
 * Using the same logic as in the one-sample problem (Ch 10), and taking $T$ to be a
 random variable with a $t$ distribution on $\nu$ df, we have:
     + for $H_a: \mu_1 -\mu_2 \not= 0$,
@@ -262,14 +261,10 @@ $$
 t = \frac{(\bar{x}_1-\bar{x}_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}} = \frac{-2.55}{0.570} = -4.474.
 $$
 
-* We use computer software (R demo) to calculate that the
-$p$-value for a 2-sided
-alternative hypothesis is equal to $9.4\times 10^{-5}$, 
-or 0.000094.
-    + This $p$-value is twice the probability that a 
-    random variable, $T$, with a t distribution 
-    on 31.465 degrees of freedom, is greater than or 
-    equal to the absolute value of the observed t statistic, $|t|$.
+* Computer software (R demo) returns 
+a $p$-value of $9.4\times 10^{-5}$, or 0.000094,
+for a 2-sided
+alternative hypothesis.
 
 ## Interpretation
 
@@ -369,5 +364,4 @@ $T$ (SDs unknown).
 * To test the null hypothesis $H_0:\mu_1 - \mu_2 = 0$  against an alternative
 $H_a$ we compute a test statistic $t$ (or $z$ if SDs known) and $p$-value
     + can compare $p$-value to a significance level $\alpha$ to obtain a test
-* Inference is considered reliable when the parent populations are normal, or when rules of thumb for  
-sample sizes are satisfied.
+* Inference is considered reliable when the parent populations are normal, or when rules of thumb for sample sizes are satisfied.

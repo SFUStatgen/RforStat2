@@ -1,8 +1,8 @@
 ---
-title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 11 : Inference for Two Means'
 author: "Jinko Graham"
-date: '2018-09-01'
+date: '2018-09-13'
 output: 
   beamer_presentation:
     includes:
@@ -28,36 +28,7 @@ lbwt <- read.csv(uu)
 head(lbwt) 
 ```
 
-## Software Notes
-
-* Recall that `read.csv()` reads comma-separated-values (CSV) files into R.
-<!--    + By default, reads files from the "working" directory
-    in which R is running (e.g., the project directory 
-    of your RStudio project, or the folder of
-    your Jupyter notebook), but
-    it can read files from URLs too.
-    + The `url()` function takes a quoted URL as input and
-    returns an object that `read.csv()` can use to fetch
-    the file.
--->
-* A more general data-reading function is `read.table()`,
-which can read many different plain-text formats; e.g., 
-
-\scriptsize
-
-```{r}
-uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/lbwt.csv")
-lbwt2 <- read.table(uu,header=TRUE,sep=",")
-head(lbwt2,n=3) 
-```
-
-\normalsize
-
-* The `header=TRUE` argument tells `read.table` that
-the first row of the data file contains the variable
-names.
-* The `sep` argument specifies the delimiter that separates values in the data file; in this case it is a comma.
-    
+ 
 ## Gestational Age by Toxemia: Boxplots
 
 * Explore differences graphically with boxplots:
@@ -87,10 +58,9 @@ the `lbwt` dataset.
     + For a boxplot, the call to aesthetic argument, `aes`, must specify an x-variable that is a factor.
     + `labs()` specifies the x- and y-axis labels.
     + `geom_boxplot()` adds the boxplots.
-* Note: **Don't panic!** "Data wrangling" and 
-statistical graphics in R can be
-difficult (that's why data scientists get paid
-big bucks), but we will have templates to work from in this class.
+* Note: Data "wrangling", processing and 
+graphics take up 90\% of an analyst's time (that's why data scientists get paid
+big bucks). Not to worry though because we will have templates to work from in this class.
 
 ## Gestational Age by Toxemia: Histograms
 
@@ -144,6 +114,13 @@ lbwt %>%
     + The "forward pipe" `%>%` is the "glue" that connects
     these steps together.
     
+* This short [video](https://www.youtube.com/watch?v=qxF_W0R4tfs) (time 5:22) gives a nice explainer on the forward pipe. 
+
+<!--
+The `dplyr` package
+is for manipulating dataframes. Note its "5 verbs": `select`, `filter`, `arrange`, `mutate` and `summarize`.
+--> 
+    
 ## `t.test()` for Gestational Age by Toxemia
 
 \scriptsize
@@ -155,32 +132,23 @@ t.test(gestage ~ toxCateg,data=lbwt,conf.level=0.90)
 \normalsize
 
 * In R, a "formula" such as `gestage ~ toxCateg` says
-to model `gestage` as a function of `toxCateg`.
+to think of `gestage` as a function of `toxCateg`.
     + We will make extensive use of R formulas, later, 
     when we study regression.
 * The argument `conf.level` sets the level, or 
-coverage probability, of the CI.
+coverage probability, $C$, of the CI.
 
-## Using R to Calculate $p$-values
-
-* In the lecture notes we calculated the t-statistic,
-$t$, from sample means and SDs and found
-the corresponding $p$-value, $2 P( T\geq |t|)$, for a 2-sided alternative hypothesis.
-    + Here $T$ is a random variable having
-    a t distribution on $\nu=31.465$ degrees of freedom.
-* Used to look up p-values in 
-statistical tables; now we use computer software:
+## Getting the $p$-value
 
 \scriptsize
 
-```{r}
-tstat <- -4.4745; nu <- 31.465
-2*pt(abs(tstat),df=nu,lower.tail=FALSE)
+```{r, echo=FALSE}
+t.test(gestage ~ toxCateg,data=lbwt,conf.level=0.90)
 ```
+
 \normalsize
 
-* the pvalue is .00009366115
-
-* `pt()` with the `lower.tail=FALSE` argument calculates upper-tail probabilities for the t distribution.
-* `abs(tstat)` is the absolute value of `tstat`.
-* The `df` argument specifies the number of degrees of freedom.
+* The output tells us that, under $H_0$, the test statistic $T$'s distribution is approximated by a t distribution on $\nu=31.465$ degrees of freedom.
+* The software compares the observed value -4.4745
+of the test statistic
+to this reference distribution, to get a $p$-value of .00009366115.
