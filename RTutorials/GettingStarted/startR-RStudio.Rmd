@@ -29,18 +29,18 @@ Tools -> Install Packages ...
 ```
 menu item or by clicking "Install" from  the "Packages" tab on the bottom-right pane of the RStudio. Enter a comma-separated list of package names on the pop-up menu. Make sure the "Install Dependencies" check box is checked and then click "Install".
 
-## Install the `tidyverse` package
+## The `tidyverse` package
 
-As part of getting started, **please be sure to install
-`tidyverse`**. 
+As part of getting started, **please be sure to install the
+`tidyverse`** package (see above instructions). 
 
 Tidyverse is a collection of packages for 
 common data science tasks such as reading, manipulating
 and graphical display of data. It includes the 
 `dplyr` and `ggplot2` packages that we will use frequently.
+It contains a lot of smaller packages and therefore takes a bit more time to download and install; be prepared to wait a bit.
 
-If you don't install it (in Stat305 or Stat341), you will find that you are getting a lot of cryptic error messages from the R Markdown templates for assignments.
-
+Note: Unless you install `tidyverse` (in Stat305 or Stat341), you will get a lot of cryptic error messages if you try to run the R Markdown templates for the assignments. To get the templates to work, you need to install `tidyverse`.
 
 ## Known issues with installation
 
