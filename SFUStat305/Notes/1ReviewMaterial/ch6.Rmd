@@ -1,8 +1,8 @@
 ---
-title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 6: Probability'
 author: "Jinko Graham"
-date: '2018-09-08'
+date: '2018-09-13'
 output: 
   beamer_presentation:
     includes:

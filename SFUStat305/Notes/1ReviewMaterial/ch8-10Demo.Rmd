@@ -62,8 +62,17 @@ summarize(plasmaAlu,sd(alu))
 tools for manipulating datasets in R.
     + To use `dplyr` functions we must first load the 
     package with `library(dplyr)`.
-    + The `summarize()` function from `dplyr`
-    takes the dataset as its first
+
+* The package consists of 5 main "verbs" for manipulating 
+a data-frame: 
+1. `select()`: 	select columns
+2. `filter()`: 	filter rows
+3. `arrange()`: 	re-order or arrange rows
+4. `mutate()`: 	create new columns
+5. `summarise()`: 	summarise values
+
+* The `summarize()` function from `dplyr`
+    takes the dataframe as its first
     argument, and the summaries to compute as additional
     arguments.
 
