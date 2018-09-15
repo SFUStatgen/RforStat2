@@ -17,12 +17,13 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Goals for course
 
 
-* The overarching goal is to get some idea of how to think statistically. 
+* The overarching goal is to get an idea of how to "think statistically". 
     + Specific techniques are less important than the general way of thinking. 
-    + Mechanically calculating t tests, or chi-squared tests, etc. is all well and good. However there are bigger ideas to pursue.
+    + Mechanically calculating t tests, or chi-squared tests, etc., as a human extension to the computer is not the point. 
+    + There are bigger ideas to pursue.
 
-* I'll try to bring in the bigger ideas: quantifying uncertainty and avoiding bias to make inference from data. 
-    + The syllabus is tilted towards quantifying uncertainty rather than avoiding bias, but I'll try to work in both throughout the course.
+* Try to bring in the bigger ideas: quantifying uncertainty and avoiding bias to make inference from data. 
+    + Syllabus tilted towards quantifying uncertainty rather than avoiding bias, but will try to work in both throughout course.
 
 # Sampling Distributions (Chapter 8).
 
@@ -39,10 +40,10 @@ and recalculating the statistic
 * A _parameter_ is a population quantity, such as the population mean.
 \medskip
 
-* Statistical inference: Using data from random samples to drawing conclusions about  _parameters_.
+* "Statistical inference" is using data from random samples to drawing conclusions about  _parameters_.
 \medskip
 
-* To make inference about a parameter, we need a statistic to estimate the parameter and the sampling distribution of the statistic.
+* To make inference about a parameter, we need a _statistic_ to estimate the parameter and the _sampling distribution_ of the statistic.
 
 ## Sampling Distribution of the Sample Mean
 
@@ -101,11 +102,11 @@ regardless of the shape of the population distribution
 
 ## Confidence Intervals
 
-* Estimates of a parameter without some indication of their precision are useless.
-* Confidence intervals (CIs), sometimes called interval estimates,
+* Estimates of a parameter without some indication of their variability or precision are not much use.
+* Confidence intervals (CIs)
 attach a measure of precision to an estimate.
 * Intervals are often of the form estimate $\pm$ margin of error.
-    + These are called "2-sided"and will be the only type of CI that we consider in this course.
+    + These are called "2-sided" and will be the only type of CI that we consider in this course.
 * The confidence level states how often the interval covers 
 the true parameter value
     + Note: The coverage is a statement about the
@@ -119,19 +120,24 @@ http://wise.cgu.edu/portfolio/demo-confidence-interval-creation/
 ## CI for a Mean -- Known SD
 
 * If the SD $\sigma$ is known, a
-level-$C$ CI for
-$\mu$ is 
+level-$C$ CI for $\mu$ is 
 $$\bar{x} \pm z^* \times \sigma/\sqrt{n},$$
 where $z^*$ is the upper $(1-C)/2$ critical value 
 of the standard-normal distribution.
     + Note: The text calls this a 2-sided CI, 
       and also discusses 1-sided intervals. 
     We will restrict attention to 2-sided only. 
-* E.G. 95\% CI: If $\bar{X}$ is normally distributed, it will
+* E.G. Since $z^*=1.96$, the interval $\bar{X} \pm 1.96 \times \sigma/\sqrt{n}$ 
+should cover
+the population mean $\mu$ about 95\% of the time.
+
+<!-- 
+it will
 be within $z^*=1.96$ of its SDs (i.e. within $1.96 \times \sigma/\sqrt{n}$) of
 $\mu$ 95\% of the time.
-    + So $\bar{X} \pm 1.96 \times \sigma/\sqrt{n}$ will cover $\mu$ 95\% of the
-time.
+    + So 
+-->
+
 * The margin of error gets smaller as:
     + the confidence level or coverage probability $C$ gets smaller (e.g.$C=99$ decreases to $C=95$),
     + the population standard deviation $\sigma$ gets smaller,
@@ -139,14 +145,12 @@ time.
 
 ## CI for a Mean -- Unknown SD
 
-* If the SD $\sigma$ is unknown, we estimate it by the sample SD, $s$. 
+* If SD $\sigma$ unknown, estimate it by sample SD, $s$. 
 * A level-$C$ CI for
 $\mu$ is then $$\bar{x} \pm t^* \times s/\sqrt{n},$$
 where $t^*$ is the upper $(1-C)/2$ critical value of the appropriate $t$ distribution
-* $t$ distributions are similar in shape to a standard-normal distribution, but with
-slightly heavier tails.
-* $t$ distributions are indexed by a parameter called the degrees of 
-freedom (df). 
+* Use a $t$ rather than a normal distribution to account for not knowing $\sigma$. 
+* Shape is similar to standard-normal distribution, but with heavier tails quantified by the degrees of freedom (df).
     + Small df, heavy tails; large df, light tails (and approaching a normal distribution).
 * Heavier tails mean extreme observations are more probable; they account
 for the extra uncertainty of not knowing $\sigma$.
@@ -171,13 +175,13 @@ $$
 
 ## Example
 
-* Example from the text, page 223, summarizes data on plasma aluminum levels,
+* Example from the text, page 223, summarizes data on plasma-aluminum levels,
 in $\mu g/l$, for $n=10$ infants receiving antacids that contain aluminum.
-    + The sample mean of the plasma aluminum levels is $\bar{x} = 37.20 \mu g/l$, and the sample SD is $s=7.13$
+    + The sample mean of the plasma-aluminum levels is $\bar{x} = 37.20 \mu g/l$, and the sample SD is $s=7.13$
 * To calculate a 95% CI we need the upper  $(1-C)/2 = (1-0.95)/2=0.025$
 critical value for the $t$-distribution with $n-1=9$ df.
     + Statistical software tells us
-    that the critical value is $t^*= 2.262$.
+    that the critical value is $t^*= 2.262$ (see R demo).
 * The 95% CI is therefore $\bar{x}\pm t^* \times s/\sqrt{n}$, or
 \footnotesize
 $$
@@ -223,7 +227,12 @@ T = \frac{\bar{X} - \mu_0}{s/\sqrt{n}}.
 $$ 
     + Under $H_0$, $T$ has a $t$ distribution with $n-1$ df, written as $T \sim t_{n-1}$. 
   
-
+* For both statistics, numerator is difference between
+sample mean and hypothesized value;
+denominator is SD of this difference. 
+    + Looking at the difference in the context of its variability. 
+    + Measures of "signal to noise". Values of 1000 are more impressive than values of 1.
+    
 ## Extreme Values of the Test Statistic
 
 * Observed values of $Z$ or of $T$ that are 
@@ -293,21 +302,18 @@ the pvalue is $p=2P(T\geq|t|)$, where
 
 ## Example
 
-* Go back to the example on plasma aluminum levels in infants.
-* Suppose that in the population of infants **not** taking antacids,
-the mean plasma aluminum levels are known to be $4.13 \mu g/l$.
-
-* Recall that in the sample of 10 infants taking antacids, the plasma aluminum levels had sample mean and sample SD of $\bar{x} = 37.20 \mu g/l$ and $s=7.13$, respectively.
-    
-* Let the null hypothesis be $H_0: \mu=4.13$, that the mean plasma aluminum for infants taking 
-antacids is the same as for the population of
-infants not taking antacids.
-* Let the alternative hypothesis be $H_a:\mu \not= 4.13$, that  
-the mean plasma levels of aluminum for infants taking
-antacid is different from the population of infants not taking antacids.
+* Return to example on plasma-aluminum levels in infants.
+* In the **population** of infants **not taking antacids**,
+the mean plasma-aluminum levels are known to be $\mu_0 = 4.13$  $\mu$g/l.
+* Want to assess whether the mean level $\mu$ in infants taking
+antacids is the same as $\mu_0$; i.e. whether 
+$$H_0: \mu=4.13.$$
+* Our alternative hypothesis is $H_a:\mu \not= 4.13$; i.e.,the mean plasma-aluminum levels of infants taking
+antacids is different from infants not taking antacids.
 
 
 ## Details
+* In the sample of 10 infants taking antacids, the plasma-aluminum levels had sample mean and sample SD of $\bar{x} = 37.20$  $\mu g/l$ and $s=7.13$, respectively.
 
 * The $t$-statistic is
 $$

@@ -64,14 +64,14 @@ tools for manipulating datasets in R.
     package with `library(dplyr)`.
 
 * The package consists of 5 main "verbs" for manipulating 
-a data-frame: 
+a dataframe: 
 1. `select()`: 	select columns
 2. `filter()`: 	filter rows
 3. `arrange()`: 	re-order or arrange rows
 4. `mutate()`: 	create new columns
-5. `summarise()`: 	summarise values
+5. `summarize()`: 	summarise columns
 
-* The `summarize()` function from `dplyr`
+* The `summarize()` function
     takes the dataframe as its first
     argument, and the summaries to compute as additional
     arguments.
@@ -79,14 +79,15 @@ a data-frame:
 ## Do-It-Yourself CIs in R
 
 * In R, the quantile function `qt()` for the t distribution can be used to find 
-the quantile or critical value for the CI when $\sigma$ is unknown.
+the quantile or critical value ($t^*$) for the CI when $\sigma$ is unknown.
 
-    + When the argument `lower.tail=FALSE', the first argument, `p`, is the upper-tail area to the right of the desired quantile, under the t distribution.  
+    + When the argument `lower.tail=FALSE`, the first argument, `p`, is the upper-tail area to the right of the desired quantile, under the t distribution.  
 
 \scriptsize
 
 ```{r}
-qt(p=(1-0.95)/2,df=9,lower.tail=FALSE)
+tstar<-qt(p=(1-0.95)/2,df=9,lower.tail=FALSE)
+tstar
 ```
 
 \normalsize
@@ -95,12 +96,11 @@ qt(p=(1-0.95)/2,df=9,lower.tail=FALSE)
 
 ## 
 
-* First, use the assignment operator `<-` to put the quantile into an R object `tstar`.
+* Use assignment operator `<-` to put the critical value into an R object called `tstar`.
 
-* Next, use the `summarize()` function in the `dplyr` package to get the sample mean, sample sd and the number of observations, $n$, 
-and assign these to an R object `mysummary`. 
+* Then use `summarize()` function in `dplyr` package to get sample mean, sample sd and the number of observations, $n$. Assign these to an R object `mysummary`. 
 
-* Use the saved objects to calculate the lower and upper bounds of the confidence interval and put them into an R object `CI`.
+* Use the saved objects to calculate lower and upper bounds of CI and put them into the R object `CI`.
    
 \scriptsize
 
@@ -137,14 +137,13 @@ with(plasmaAlu,t.test(alu,conf.level=0.95))
 
 ## Example
 
-* Suppose that in the population of infants **not** taking antacids,
-the mean plasma aluminum levels are known to be $4.13 \mu g/l$.
-* Let the null hypothesis be $H_0: \mu=4.13$, that the mean plasma aluminum for infants taking 
-antacids is the same as for the population of
-infants not taking antacids.
-* Let the alternative hypothesis be $H_a:\mu \not= 4.13$, that  
-the mean plasma levels of aluminum for infants taking
-antacid is different from the population of infants not taking antacids.
+* In the **population** of infants **not taking antacids**,
+the mean plasma-aluminum levels are known to be $\mu_0 = 4.13$  $\mu$g/l.
+* Want to assess whether the mean level $\mu$ in infants taking
+antacids is the same as $\mu_0$; i.e. whether 
+$$H_0: \mu=4.13.$$
+* Our alternative hypothesis is $H_a:\mu \not= 4.13$; i.e.,the mean plasma-aluminum levels of infants taking
+antacids is different from infants not taking antacids.
 
 
 ## Do-It-Yourself Hypothesis Test

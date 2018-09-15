@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 6: Probability'
 author: "Jinko Graham"
-date: '2018-09-13'
+date: '2018-09-15'
 output: 
   beamer_presentation:
     includes:
@@ -51,7 +51,7 @@ $${\cal S} = \{ HH, HT, TH, TT \}$$
 $${\cal S} = \{ 11, 12, 13, \ldots, 56, 66 \} $$
 
 * *Example:* 
-Estrogen $+$ progestin (EP) or not ($\overline{\rm EP}$)
+Estrogen $+$ progestin (EP) or placebo ($\overline{\rm EP}$)
 and breast cancer (BC) or not ($\overline{\rm BC}$). 
 $${\cal S} = \{ \mbox{EP\&BC}, \;\; 
 \mbox{EP\&$\overline{\rm BC}$}, \;\;
@@ -462,11 +462,9 @@ the population prevalence of disease, $P(D^+)$.
 
 * When the disease we're testing for is rare, we expect to have very few diseased individuals in our random sample.
 
-* This is a problem for the
-positive and negative predictive values.
-    +  Samples with few diseased persons yield unreliable estimates of
-        +  $P(D^+\mid T^+)$, the positive predictive value, or
-        +  $P(D^- \mid T^-)$, the negative predictive value ($=1-P(D^+ \mid T^-)$).
+* Unfortunately, samples with few diseased persons yield unreliable estimates of
+    +  $P(D^+\mid T^+)$, the positive predictive value, and
+    +  $P(D^- \mid T^-)$, the negative predictive value ($=1-P(D^+ \mid T^-)$).
 
 * Fortunately, we can use Bayes' Theorem to express the
 positive- and negative-predictive values
@@ -480,7 +478,7 @@ be reliably estimated if a population registry of cases (diseased persons) and c
     + E.G. BC Cancer Agency's Registry and the Canadian Census
     
 
-##  Public Health Professionals Need Population Registries and the Census to Make Informed Policy Decisions
+##  Population Registries and the Census are Crucial for Informed Policy Decisions
 
 * A decent-sized 
 sample of diseased individuals can be obtained from a population disease registry, which allows us to estimate
@@ -650,7 +648,8 @@ implies that both $RR=1$ and $OR=1$.
 
 ## More on the Odds Ratio, cont. 
 
-* In other words, 
+* In other words,
+\footnotesize
 \begin{eqnarray*}
  OR & = & \frac{\mbox{odds of disease in exposed}}{\mbox{odds of disease in
 unexposed}} \\
@@ -658,8 +657,9 @@ unexposed}} \\
 \frac{\mbox{odds of exposure in diseased}}{\mbox{odds of exposure in
 not diseased}} 
 \end{eqnarray*}
+\normalsize
 
-* Importantly, the odds of exposure in either cases or controls _can_
+* Importantly, the odds of exposure in either cases or controls ***can***
 be estimated from case-control data.
 * For example, with Doll and Hill's data,
     + $P(\mbox{exposed} \mid \mbox{not diseased})$ is
