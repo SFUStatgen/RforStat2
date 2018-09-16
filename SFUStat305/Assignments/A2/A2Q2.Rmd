@@ -116,7 +116,7 @@ Please describe briefly.
 *Insert your written comments here.*
 
 (c) If you didn't know there was anything wrong with the
-presentation in part b, how would you analyze it? For instance, what would be the null hypothesis that you'd be testing and what type of test would you apply? (Note: You don't actually have to do the test; just say what you would do.)
+presentation in part b, how would you analyze the data? For instance, what type of test would you apply and what would be the null hypothesis that you'd be testing? (Note: You don't actually have to do the test; just say what you would do.)
 
 **Answer:**
 
