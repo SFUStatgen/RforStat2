@@ -1,0 +1,99 @@
+---
+title: "Assignment 2, Question 3"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Chapter 15, #18. Alcohol and miscarriages. A study investigating the association between spontaneous abortion (miscarriage) and alcohol consumption obtained the following
+data:
+
+<table cellpadding="10">
+<tr> 
+ <td> <b>drinks/week</b> &nbsp; </td>
+ <td> <b>pregnancies</b> &nbsp; </td>
+ <td> <b>miscarriages</b> &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 0 &nbsp; </td>
+ <td> &nbsp; 33164 &nbsp; </td>
+ <td> &nbsp; 6793 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 1-2 &nbsp; </td>
+ <td> &nbsp; 9099 &nbsp; </td>
+ <td> &nbsp; 2068 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 3-6 &nbsp; </td>
+ <td> &nbsp; 3069 &nbsp; </td>
+ <td>  &nbsp; 776 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 7-20 &nbsp; </td>
+ <td> &nbsp; 1527 &nbsp; </td>
+ <td>  &nbsp; 456 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 21+ &nbsp; </td>
+ <td> &nbsp; 287 &nbsp; </td>
+ <td> &nbsp; 98 &nbsp; </td>
+</tr>
+</table>
+<p>
+
+For parts a-d below, you may **modify** this R code chunk as necessary (and then run it) if you find it helpful.
+```{r, message=FALSE, warning=FALSE}
+mydf <- data.frame(group=c("0", "1-2", "3-6", "7-20", "21+"),
+                   preg=c(33164,9099,3069,1527,287),
+                   mis=c(6793,2068,776,456,98))
+
+library(dplyr)
+mydf <- mutate(mydf,ok=preg-mis, prmis = mis/preg, odds = (prmis/(1-prmis)))
+odds0 <- unlist(select(filter(mydf, group=="0"), odds))
+a <- unlist(select(filter(mydf, group=="0"), ok))
+b <- unlist(select(filter(mydf, group=="0"), mis))
+mydf <- mutate(mydf, OR=odds/odds0, se.logOR = sqrt(1/a + 1/b + 1/ok + 1/mis))
+C <- 0.80 #confidence level or coverage probability
+critval <- qnorm( (1-C)/2, lower.tail=FALSE)
+mydf <- mutate(mydf, lowerCI = round(exp(log(OR) - critval*se.logOR),3), upperCI =  
+round(exp(log(OR) + critval*se.logOR),3))
+mydf <- mutate(mydf, prmis=round(prmis,3), odds=round(odds,3), OR=round(OR,3), se.logOR=round(se.logOR,3))
+mydf[mydf$group=="0",c("se.logOR", "lowerCI", "upperCI")] <- c(NA, NA, NA)
+mydf
+```
+
+(a) For each level of alcohol consumption, estimate
+the probability that a woman who becomes pregnant
+will have a miscarriage.
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(b) For each category of alcohol use, estimate the
+relative odds of miscarriage 
+for women who consume some amount of alcohol versus
+those who do not consume any.
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(c) In each case, calculate a 95\% confidence 
+interval for the odds ratio
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(d) What do you conclude?
+
+**Answer:**
+
+*Insert your written comments here.*
+
