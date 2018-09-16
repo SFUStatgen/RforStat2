@@ -1,0 +1,65 @@
+---
+title: "Assignment 2, Question 1"
+author: "Your Name Here; Your Student ID number Here"
+date: 'Put date here in YYYY-MM-DD format'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Chapter 15, #10 but with modification. Survey of Italian physicians on breast cancer. Physicians in different specialties were asked about
+their recommendations for radical (mastectomy) vs.
+conservative (lumpectomy) surgery. In particular, 
+would they recommend radical surgery regardless
+of a patient's age (RR), conservative surgery for 
+younger patients only (CY), or conservative surgery regardless of age (CR)?
+
+
+To answer this question we need a data-frame 
+that contains the results of the survey.  
+Create one called `survey` with 3 
+variables `RR`, `CY` and `CR` as follows:
+```{r}
+survey <- data.frame(
+  RR=c(6,23,2,1,1), 
+  CY=c(22,61,3,12,12), 
+  CR=c(42,127,54,43,31))
+row.names(survey)<-c("Internal", "Surgery", "Radiotherapy",
+              "Oncology", "Gynecology")
+survey
+```
+
+(a) At the 0.05 level, test the null hypothesis
+that there is no association between physician
+specialty and recommended treatment. (Note: Ignore
+the warning message from R about the chi-squared approximation.)
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(b) Report the expected cell
+counts in the table under the null hypothesis. Comment on whether the chi-square
+approximation is reliable for these data.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+
+(c) What do you conclude?
+
+**Answer:**
+
+*Insert your written comments here.*
+
