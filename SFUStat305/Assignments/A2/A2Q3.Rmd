@@ -78,7 +78,7 @@ will have a miscarriage.
 (b) For each category of alcohol use, estimate the
 relative odds of miscarriage 
 for women who consume some amount of alcohol versus
-those who do not consume any.
+those who do not consume any. 
 
 **Answer:**
 
@@ -91,7 +91,8 @@ interval for the odds ratio
 
 *Insert your written comments here.*
 
-(d) What do you conclude?
+(d) What do you conclude? Do the data suggest a dose-response 
+relationship between alcohol use and the odds of miscarriage?
 
 **Answer:**
 
