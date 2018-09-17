@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 To answer this question we need a data frame 
 that contains the numbers of hysterectomies for the
-15 Swiss doctors.
+15 Swiss doctors in the class notes.
 We can create a data frame called `hyst` with one 
 variable `numHyster`, as follows:
 ```{r}
@@ -42,8 +42,8 @@ library(ggplot2)
 *Insert your written comments here about the outliers that you see
 in the histogram.*
 
-(b) Compute the mean, standard deviation, median, 25th
-percentile and 75th percentile. Comment on the difference
+(b) Compute the sample mean, standard deviation, median, 25th
+percentile and 75th percentile from these data. Comment on the difference
 between the mean and the median, and the difference 
 between the SD and the IQR.
 
