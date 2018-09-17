@@ -163,6 +163,7 @@ mysummary
 with(mysummary,(xbar - 4.13)/(s/sqrt(n)))
 ```
 \normalsize
+
 * The $p$-value is 
 $2P(T \geq |15.63|)$ for $T$ with $10-1=9$ df:
 \scriptsize
