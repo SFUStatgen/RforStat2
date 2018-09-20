@@ -243,13 +243,15 @@ in the sense of being more compatible with $H_a$ are taken as evidence
 against $H_0: \mu_1-\mu_2=0$.
 * The $p$-value is the chance of a value that is as 
 or more extreme than what we observed, under $H_0$.
-* Using the same logic as in the one-sample problem (Ch 10), and taking $T$ to be a
-random variable with a $t$ distribution on $\nu$ df, we have:
-    + for $H_a: \mu_1 -\mu_2 \not= 0$,
-    the $p$-value is $p = 2 P( T\geq |t|)$,
+* Taking $T$ to have a $t$ distribution on $\nu$ df, 
+we get a $p$-value of $p = 2 P( T\geq |t|)$.
+for $H_a: \mu_1 -\mu_2 \not= 0$.
+
+<!--
     + for $H_a: \mu_1-\mu_2 > 0$, 
     the $p$-value is $p=P(T \geq t)$ and
     + for $H_a: \mu_1-\mu_2 < 0$, the $p$-value is $p=P(T \leq t)$.
+-->
 
 ## Application to Gestational Age and Toxemia
 
@@ -326,17 +328,18 @@ test of $H_0: \theta = \theta_0$
 
 ## Assumptions
 
-* The assumptions for inference are that:
-    + The data are two SRSs from the two parent 
-    populations (e.g. mothers with toxemia and mothers without toxemia).
-    + Either 
+* We assume that:
+    + The data are two SRSs from the 2 parent 
+    populations (e.g. moms with toxemia and moms without toxemia).
+    + Also, either 
         1. the data measurements in 
     the parent populations are normally distributed 
     with mean $\mu_i$ and sd $\sigma_i$, written
     $N(\mu_i,\sigma_i)$, or
         2. the sample size
-    $n=n_1+n_2$ is "large" enough to rely on the CLT for the sample means $\bar{X}_1$ and $\bar{X}_2$.
-* Guidelines for $n$ (from the text _Basic Practice of Statistics_
+    $n=n_1+n_2$ is large enough to rely on the CLT for the sample means $\bar{X}_1$ and $\bar{X}_2$ being approximately
+normally distributed.
+* Guidelines for $n$ (_Basic Practice of Statistics_
 by D. Moore):
     + For $n < 15$, use the $t$-based CI and hypothesis test
     if the data look to be approximately normally distributed.

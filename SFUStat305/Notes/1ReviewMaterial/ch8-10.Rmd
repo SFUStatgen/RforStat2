@@ -350,7 +350,7 @@ significance.
 * The "confusion matrix" for the true state of nature (rows) and 
 the action of a hypothesis test (columns) is
 
-$\;$ | Reject $H_0$    | Retain $H_a$
+$\;$ | Reject $H_0$    | Retain $H_0$
 ---- |  ------------- | -----------
 null ($H_0$) | false positive | true negative
 alternative ($H_a$)  | true positive  | false negative
