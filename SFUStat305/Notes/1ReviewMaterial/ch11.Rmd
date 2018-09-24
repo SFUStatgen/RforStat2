@@ -244,8 +244,8 @@ against $H_0: \mu_1-\mu_2=0$.
 * The $p$-value is the chance of a value that is as 
 or more extreme than what we observed, under $H_0$.
 * Taking $T$ to have a $t$ distribution on $\nu$ df, 
-we get a $p$-value of $p = 2 P( T\geq |t|)$.
-for $H_a: \mu_1 -\mu_2 \not= 0$.
+we get a $p$-value of $p = 2 P( T\geq |t|)$
+when $H_a: \mu_1 -\mu_2 \not= 0$.
 
 <!--
     + for $H_a: \mu_1-\mu_2 > 0$, 
@@ -329,7 +329,7 @@ test of $H_0: \theta = \theta_0$
 ## Assumptions
 
 * We assume that:
-    + The data are two SRSs from the 2 parent 
+    + The data are two random samples from the 2 parent 
     populations (e.g. moms with toxemia and moms without toxemia).
     + Also, either 
         1. the data measurements in 
@@ -340,13 +340,13 @@ test of $H_0: \theta = \theta_0$
     $n=n_1+n_2$ is large enough to rely on the CLT for the sample means $\bar{X}_1$ and $\bar{X}_2$ being approximately
 normally distributed.
 * Guidelines for $n$ (_Basic Practice of Statistics_
-by D. Moore):
+by D. Moore) when population sd's unknown:
     + For $n < 15$, use the $t$-based CI and hypothesis test
-    if the data look to be approximately normally distributed.
+    if the data look approximately normally distributed.
     + For $15 \leq n < 40$, use the $t$-based CI and hypothesis test,
     _except_ in the presence 
     of outliers or strong skewness in the data distribution.
-    + For large samples ($n\geq 40$), you can use the $t$-based CI and hypothesis test, 
+    + For large samples ($n\geq 40$), can use the $t$-based CI and hypothesis test, 
     even for clearly skewed distributions (because of the CLT).
 
 ## Checking the assumptions for the low-birth-weight example
