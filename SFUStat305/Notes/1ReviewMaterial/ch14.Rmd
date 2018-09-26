@@ -234,8 +234,8 @@ pval<-2*pnorm(abs(z),lower.tail=FALSE) #get the pvalue
 * We therefore reject $H_0$ at the 5\% level:
 There is statistical evidence that women taking EP have a higher 
 risk of invasive breast cancer than those taking the placebo.
-    + Note: We say that the EP group has higher risk than the placebo
-    group because $\hat{p}_1$ (for EP) is greater than $\hat{p}_2$ (for placebo), as evidenced by $z=2.2$ being greater than zero.
+    + Note: The EP group appears to have a higher risk of breast cancer than the placebo
+    group because $\hat{p}_1$ (for EP) is greater than $\hat{p}_2$ (for placebo), as reflected by $z=2.2$ being greater than zero.
 
 
 ## Summary
