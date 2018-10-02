@@ -31,7 +31,7 @@ variation.
 and the population SD, $\sigma$, are unknown, 
 we know the (approximate) distribution of the pivotal
 quantity 
-$$\frac{\bar{X} - \mu}{s/\sqrt{n}},$$
+$$T= \frac{\bar{X} - \mu}{s/\sqrt{n}},$$
 regardless of
 the shape of the population distribution for $X$.
 * This result relies on the CLT, which tells us 
@@ -51,12 +51,14 @@ means is based on either the pivotal quantity $Z$ (SDs known) or
 $T$ (SDs unknown).
 * CIs are of the form estimate $\pm$ margin of error
     + the margin of error is a critical value ($z^*$ for $Z$, $t^*$ for $T$) times the SE for the estimate.
-* To test the null hypothesis $H_0:\mu_1 - \mu_2 = 0$  against an alternative
-$H_a$ we compute a test statistic $t$ (or $z$ if SDs known) 
-from our sample of data and use it to get the $p$-value.
-    + can compare $p$-value to a significance level $\alpha$ to obtain a test of $H_0$ against $H_a$.
+* To test $H_0:\mu_1 - \mu_2 = 0$  against $H_a: \mu_1 - \mu_2 \not= 0$ 
+    + We use our sample of data to compute the observed value $t$ (or $z$ if SDs known) of a test statistic. 
+    + We compare this observed value to a reference distribution for the test statistic obtained under $H_0$.
+    + The $p$-value is the chance of seeing a value of the test statistic as or more extreme 
+than the value that was observed, under $H_0$.
+    + Compare the $p$-value to a significance level $\alpha$ to obtain a test of $H_0$ against $H_a$.
 * Inference is considered reliable when the parent populations are normal, or 
-when rules-of-thumb about sample sizes are satisfied.
+when rules-of-thumb about sample sizes for the CLT are satisfied.
 
 ## Ch14: Inference for Proportions
 * Inference for the difference $p_1-p_2$ between two population
@@ -64,15 +66,15 @@ proportions is based on a pivotal quantity, also called $Z$.
 * CIs are estimate $\pm$ margin of error, where
     + estimate is the difference between sample means, and
     + margin of error is a critical value ($z^*$) times the 
-    SE of the difference in sample proportions.
-* To test the null hypothesis $H_0:p_1 - p_2 = 0$  
-against an alternative $H_a$ we calculate a test statistic,$z$,
-from our sample of data and use it to get the $p$-value.
+    SE (estimated SD) of the difference in sample proportions.
+* To test $H_0:p_1 - p_2 = 0$  against $H_a:p_1 - p_2 \not= 0$
+    + We use our sample of data to compute the observed value $z$ of a test statistic. 
+     + We compare this observed value to a reference distribution for the test statistic obtained under $H_0$.
     + The $p$-value is the chance of seeing a value of the test statistic as or more extreme 
 than the value that was observed, under $H_0$.
     + Compare the $p$-value to a significance level $\alpha$ to obtain a test of $H_0$ against $H_a$.
 * Inference is considered reliable when there are sufficient numbers of successes and failures
-in each sample.
+in each sample for the CLT to hold.
 
 ## Ch6: Probability
 
@@ -89,8 +91,8 @@ practitioners work with many conditional probabilities every day; e.g.,
     cannot be estimated, owing to oversampling of the cases
     in the study design.
     + However, exposure probabilities in the disease groups
-    can be estimated, allowing us to estimate odds-ratios.
-    + For a rare disease, the odds-ratio approximates
+    can be estimated, allowing us to estimate odds ratios.
+    + For a rare disease, the odds ratio approximates
     the relative risk.
   
 
