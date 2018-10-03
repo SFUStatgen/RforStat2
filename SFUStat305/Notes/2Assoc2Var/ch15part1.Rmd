@@ -1,0 +1,205 @@
+---
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'Chapter 15, part 1: Contingency Tables'
+author: "Jinko Graham"
+date: '2018-10-03'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning=FALSE,message=FALSE)
+```
+
+
+## Contingency Tables 
+
+* Contingency tables display
+the joint frequency distribution of two categorical variables.
+* E.G.: Let's consider the data of [Mungan et al. 2000](https://www.ncbi.nlm.nih.gov/pubmed/10699612) \tiny click
+\normalsize on 21,737 bladder cancer patients
+    + Two categorical variables: **gender**, which has 2 levels,
+    and **cancer stage**, which has 4 levels.
+    + The first few lines of the data file are as follows:
+
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/mung.csv")
+Mungan <- read.csv(uu)
+head(Mungan,n=8)
+```
+
+## 
+
+* The contingency table made by cross-tabulating
+the gender and cancer stage variables of the Mungan data is as follows:
+
+```{r}
+table(Mungan)
+```
+
+
+## Terminology: Cells of a Table
+
+* The cells of the table are its entries.
+    + In the table cross-tabulating the gender and cancer 
+    stage variables of the Mungan data, the first cell of the table is 3926
+    
+    
+\scriptsize
+
+```{r}
+table(Mungan)
+```
+
+## Terminology: Row and Column Variables
+
+* The row variable in a table defines the rows, the 
+column variable the columns. 
+    + In the table below, the row variable is `Gender` 
+    and the column variable is `Cancer.Stage`.
+    
+\scriptsize
+
+```{r}
+table(Mungan)
+```
+
+## Terminology: Row and Column Margins
+
+* The **row margin** is the tabulation of the row variable and 
+the **column margin** is the tabulation of the column variable. 
+* For the Mungan data, 
+    + the row margin (tabulation of Gender) is 5536 and 
+    16201 Females and Males, respectively
+    + The column margin (tabulation of Cancer Stage) is
+    16344, 1397, 1239, 2757 for cancer stages I through IV,
+    respectively.
+* Exercise: verify these table margins yourself.
+
+## Adding Margins to a Table
+
+* It is common practice to add margins to a contingency table.
+* In the following, the row margins (first table) and 
+column margins (second table) have been added:
+
+```{r}
+mtab <- table(Mungan)
+cbind(mtab, Total = margin.table(mtab,1)) # Add row margin to the table
+mtab <- table(Mungan)
+rbind(mtab, Total = margin.table(mtab,2)) # Add col margin to the table
+```
+
+<!-- NTS: Row margin is marginal distn of the row variable
+and col margin is marginal distn of the column variable.
+-->
+
+## Cancer stage distribution given gender
+
+\scriptsize
+
+```{r}
+mtab <- table(Mungan)
+mtab
+```
+\normalsize
+
+* For each gender category, we can divide the 
+counts in each row by
+    the row total to get proportions.
+    
+\scriptsize
+
+```{r}
+prop.table(mtab,margin=1) # margin=1 refers to dividing by row totals
+```
+
+\normalsize
+
+* This gives an estimate of the conditional distributions of cancer stage in each gender.
+    
+## Gender distribution given cancer stage 
+
+* Likewise, for each cancer stage category we can divide
+the counts in each column by the column total 
+to get proportions.
+
+\scriptsize
+
+```{r}
+prop.table(mtab,margin=2)
+```
+
+
+\normalsize
+
+* This gives an estimate of the conditional distributions of gender in each cancer stage.
+
+<!--
+## Software Notes
+
+* `prop.table()` requires a data type known as a `matrix` as input. 
+* Sometimes we are given the cross-tabulated data and want
+to enter the table into R ourselves as a `data.frame`.
+* Then need to "coerce" the `data.frame` to a `matrix`:
+
+\scriptsize
+
+```{r}
+mydf <- data.frame(Stage1=c(3926,12418), Stage2=c(402,995),
+                    Stage3=c(356,883), Stage4=c(852,1905)) 
+row.names(mydf) <- c("Female","Male")
+mymat <- as.matrix(mydf) # coerce data.frame to matrix
+mymat 
+prop.table(mymat,margin=2)
+```
+
+## Software Notes, cont.
+
+* DIY proportions: It is easy to compute with columns of a data frame; e.g.,
+
+\scriptsize
+
+```{r}
+library(dplyr)
+mydf <- 
+  mutate(mydf,
+    rTot=Stage1+Stage2+Stage3+Stage4, # row totals
+    p1=Stage1/rTot,p2=Stage2/rTot,p3=Stage3/rTot,p4=Stage4/rTot) # row propns
+select(mydf,p1,p2,p3,p4) # select() selects named columns of a data frame
+```
+-->
+
+## Independence of Row and Column Variables.
+
+
+* If the conditional distributions of the row variable 
+given the column variable are all the same,
+they will also be the same as
+the overall distribution of the row variable.
+    + E.G., if the conditional gender distribution is 
+    25% female and 75% male in each cancer stage, we will
+    have 25% females and 75% males overall too.
+* When this happens we say that the column and row variables are
+_independent_ because:
+    + Knowing the value of the column variable 
+    tell us nothing about the row
+    variable; 
+    + E.G. Knowing cancer stage tells us nothing about
+    gender; so 
+    $P({\rm Gender=Female}\mid {\rm Stage=I}) = P({\rm Gender=Female})$
+
+## 
+
+* One can use the definition of conditional probability to show that independence of row and column variables is 
+equivalent to the following two statements:
+    1. The conditional distributions given the different levels of the row variable are all equal
+    2. The conditional distributions given the different levels of the column variable are all equal.
+* The opposite of independence is dependence, or an
+_association_.
+* We next discuss how to test for association.
+    
