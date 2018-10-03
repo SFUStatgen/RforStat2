@@ -64,7 +64,7 @@ when rules-of-thumb about sample sizes for the CLT are satisfied.
 * Inference for the difference $p_1-p_2$ between two population
 proportions is based on a pivotal quantity, also called $Z$.
 * CIs are estimate $\pm$ margin of error, where
-    + estimate is the difference between sample means, and
+    + estimate is the difference between sample proportions, and
     + margin of error is a critical value ($z^*$) times the 
     SE (estimated SD) of the difference in sample proportions.
 * To test $H_0:p_1 - p_2 = 0$  against $H_a:p_1 - p_2 \not= 0$
