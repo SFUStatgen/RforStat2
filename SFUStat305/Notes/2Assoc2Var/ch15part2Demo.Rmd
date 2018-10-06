@@ -1,0 +1,119 @@
+---
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'R Demo for Chapter 15, part 2: Chi-Square Tests'
+author: "Jinko Graham"
+date: '2018-10-06'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+## Association and the WHI data
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/whi.csv")
+WHI <- read.csv(uu)
+wtab <- table(WHI)
+```
+
+* The table of proportions below gives the conditional distributions of BC status given EP status.
+
+\scriptsize
+
+```{r}
+prop.table(wtab,margin=1)
+```
+
+## Categorical Variables in R
+
+* R calls a categorical variable a ```factor``` 
+and refers to its categories as ```levels```.
+
+* For example, the categorical variables EP and BC, for hormone replacement therapy and breast cancer status, respectively, are called ```factors``` by R.
+
+* When we cross-tabulate factors,
+R chooses the order of the columns and rows in our table.
+    + The order is set by the order of the categories in the 
+    EP and BC factors.
+    + Generally the categories, or levels, of a factor
+    are ordered alphabetically
+
+\scriptsize
+
+```{r}
+wtab
+```
+
+\normalsize
+
+  
+## Chi-square test for WHI example
+
+\scriptsize
+
+```{r}
+cc <- chisq.test(wtab,correct=FALSE)
+cc
+```
+
+\normalsize
+
+* The argument `correct=FALSE` specifies that we 
+do **not** want to do a continuity correction.
+
+## Another way: use a dataframe rather than a table. 
+
+* Say that we are not given the data; all we have to work with are the counts:
+\begin{center}
+\scriptsize
+\begin{tabular}{ll}
+EP+, BC+ 166 & EP+, BC$-$ 8340 \\
+EP$-$, BC+ 122 &  EP$-$, BC$-$ 7980
+\end{tabular}
+\end{center}
+\normalsize
+
+* Then we can do the chi-square test as follows:
+
+\scriptsize
+
+```{r}
+mydf <- data.frame(BCpos=c(166,122),BCneg=c(8340,7980)) #WHI data
+rownames(mydf)=c("EP+", "EP-") 
+mydf
+chisq.test(mydf, correct=FALSE)
+```
+
+
+## Chi-square test with continuity correction for WHI example
+
+\scriptsize
+
+```{r}
+cc <- chisq.test(wtab) #apply the default continuity correction
+cc
+```
+
+
+## Expected Cell Counts
+
+* The expected cell counts under the null hypothesis
+of no association can be extracted from 
+the output of `chisq.test()`.
+* In general, you can find the names of an R object 
+with `names()` and extract components with `with()`.
+
+\scriptsize
+
+
+```{r}
+names(cc)
+with(cc,expected)
+```
