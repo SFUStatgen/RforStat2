@@ -1,0 +1,73 @@
+---
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'R Demo for Chapter 15, part 3: McNemar''s Test'
+author: "Jinko Graham"
+date: '2018-10-06'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+
+## McNemar's Test for the Smoking Data
+
+* We have $r=97$ and $s=76$. The test statistic with 
+continuity correction is 
+$$ \frac{(|97-76|-1)^2}{97+76} = 2.31$$
+and the corresponding p-value 
+is 0.128:
+
+\scriptsize
+
+```{r}
+X2 <- (abs(97-76)-1)^2/(97+76)
+X2
+pval<-pchisq(X2,df=1,lower.tail=FALSE)
+pval
+```
+
+\normalsize
+
+
+## McNemar's test on T1D Data
+
+* Read in the data and cross tabulate:
+
+\scriptsize
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/tdt.csv")
+tdtex <- read.csv(uu)
+head(tdtex,n=8)
+tt <- table(tdtex)
+tt
+```
+
+\normalsize
+
+##
+
+*  Now apply McNemar's test *without* the continuity correction to the cross-tabulated data:
+
+\scriptsize
+
+```{r}
+mcnemar.test(tt,correct=FALSE)
+```
+
+\normalsize
+
+* Apply McNemar's test *with* the (default) continuity correction:
+
+\scriptsize
+
+```{r}
+mcnemar.test(tt)
+```
+
+
