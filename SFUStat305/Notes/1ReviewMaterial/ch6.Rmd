@@ -407,7 +407,7 @@ Result & & Positive (TP) & Positive (FP) & \\ \cline{3-4}
 
 * Let's focus on the diseased ($D+$): they can either test positive or negative.
     + Those who are diseased and test positive are truly positive (TP)
-    + Those who are diseased and test negative are falsely positive (FN)
+    + Those who are diseased and test negative are falsely negative (FN)
 * The observed true-positive rate
 is the proportion of diseased who are truly positive,
 or TP/(TP+FN). 
