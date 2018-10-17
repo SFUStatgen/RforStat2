@@ -145,7 +145,7 @@ X^2 = \sum_{\mbox{cells}} \frac{ \left( |\mbox{observed} - \mbox{expected}| - 0.
 $$
 
 * Please note that this correction applies only to $2\times 2$ tables and
-does not generalize toe $r \times c$ tables.
+does not generalize to $r \times c$ tables.
 
 ## Chi-square test with continuity correction for WHI example
 
