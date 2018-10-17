@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 15, part 2: Chi-Square Tests'
 author: "Jinko Graham"
-date: '2018-10-16'
+date: '2018-10-17'
 output: 
   beamer_presentation:
     includes:
@@ -133,7 +133,7 @@ cc
 
 * At the 5\% level, there is statistical evidence of an association between hormone-replacement therapy and invasive breast cancer. 
 
-## Continuity correction
+## Continuity correction for $2 \times 2$ tables
 
 * The continuity correction to the $X^2$ test improves
 the $\chi^2$ approximation for
@@ -143,6 +143,9 @@ $$
 X^2 = \sum_{\mbox{cells}} \frac{ \left( |\mbox{observed} - \mbox{expected}| - 0.5
 \right)^2}{\mbox{expected}}
 $$
+
+* Please note that this correction applies only to $2\times 2$ tables and
+does not generalize toe $r \times c$ tables.
 
 ## Chi-square test with continuity correction for WHI example
 
