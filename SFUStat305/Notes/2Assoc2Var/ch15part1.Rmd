@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 15, part 1: Contingency Tables'
 author: "Jinko Graham"
-date: '2018-10-03'
+date: '2018-10-16'
 output: 
   beamer_presentation:
     includes:
