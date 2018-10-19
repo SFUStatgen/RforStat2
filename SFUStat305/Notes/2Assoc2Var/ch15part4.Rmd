@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 15, part 4: Inference for Odds Ratios'
 author: "Jinko Graham"
-date: '2018-10-06'
+date: '2018-10-18'
 output: 
   beamer_presentation:
     includes:
@@ -170,20 +170,20 @@ $$
 
 ## Interpretation of Point Estimates of OR
 
-* Smoking is associated with a 9.1-fold increase in the odds of lung cancer.
+* Smoking is associated with an estimated 9.1-fold increase in the odds of lung cancer.
 * Or, if lung cancer is **rare**, we can interpret the OR as an RR and say:
-    + smoking is associated with a 9.1-fold increase in the ***risk*** of lung cancer. 
+    + smoking is associated with an estimated 9.1-fold increase in the ***risk*** of lung cancer. 
 
 ## Interpretation of Interval Estimates of OR
 
-* "With 95% confidence, we estimate that
-smoking is associated with a 4.1 to 20-fold
+* "With 95% confidence, 
+smoking is associated with an estimated 4.1 to 20-fold
 increase in the odds of lung cancer"
     +  You can use the statement above, but keep in mind that it really means that: In 95 out of 100 datasets, we expect the CI, such as 4.1-20 for this dataset, to cover the true OR.
     
 * Assuming that lung cancer is rare, we can interpret the OR as an RR and say: 
-    + "With 95% confidence, we estimate that
-smoking is associated with a 4.1 to 20-fold
+    + "With 95% confidence, 
+smoking is associated with an estimated 4.1 to 20-fold
 increase in the _risk_ of lung cancer"
     + i.e, in 95 out of 100 datasets, we expect the CI,  such as 4.1-20 for this dataset, to cover the true RR.
     
@@ -263,7 +263,7 @@ per day     & 1-14    & 565 & 706 & 6.97 & ( 3.17,15.37) \\
 published in 1954
     + Turned the tide of public-health opinion on smoking.
 
-* Famously, the iconic geneticist and statistician RA Fisher was violently opposed to it. 
+* Famously, the iconic geneticist and statistician RA Fisher was strongly opposed (to the point of campaigning against it for the tobacco industry). 
 <!--
     + Statistics comes out of genetics, through Fisher
     + He is credited with inventing experimental design in agricultural field experiments
