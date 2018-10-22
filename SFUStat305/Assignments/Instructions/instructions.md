@@ -1,0 +1,21 @@
+Instructions for Homework Assignments
+================
+Jinko Graham
+August 20, 2018
+
+Templates for the homework assignment questions are to be downloaded from the class website and modified to include your answers.
+
+**For each question** do the following:
+
+-   Download the question template to your computer. To do so, click on the link to the RMarkdown (`.Rmd`) file if you use RStudio (Desktop or Cloud) or the Jupyter notebook (`.ipynb`) if you use Jupyter. Look for and click the "Raw" button near the top of the web page to see the file in its raw form. Use your browser's `File -> Save As` feature to save the file to the appropriate folder on your computer (e.g. the folder where you do you Stat305 homework assignments).
+    -   Note: Some computers will add or ask to add a ".txt" extension to the file. Say "no" or, if it has been added, remove the ".txt" extension manually yourself. Otherwise, RStudio won't recognize the .Rmd file and Jupyter won't recognize the .ipynb file.
+-   If your R interface is a server (RStudio Cloud or Jupyter), upload the template to the server. For example, RStudio Cloud users can use the upload button found in the files pane in the lower right corner of their RStudio.
+    -   Jupyter users will find that the templates require a few minor modifications before you start. See the instructions [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/Instructions/TemplateMods.pdf)
+-   Start your R interface and open the template.
+-   Change the name, student ID and date in the header of the template to your own.
+-   Add your answers to the template.
+-   When you are finished adding your answers, knit (RStudio) or run (Jupyter) the document and save the output as a PDF file.
+    -   RStudio Desktop users should knit their RMarkdown file to HTML, and then use their browser to print the HTML file to PDF.
+    -   RStudio Cloud users should make the following change to the header of the template (lines 1-6): replace the line `output: html_document` with `output: pdf_document`. Then knitting will produce a PDF file that you can hand in.
+    -   Jupyter users should follow the Stat Workshop tutorials on printing assignments.
+-   Now follow the Stat Workshop's instructions for uploading a question to Crowdmark (typically, a separate PDF is to be uploaded for each question). Please be warned that the Crowdmark server, like all public resources, has its limits and can crash if everyone in a large class tries to upload their assignment at the last minute. The Workshop is not responsible for late assignments and they will not be accepted. Therefore, please leave ample time before the deadline to submit your assignment properly to Crowdmark. ***Especially the first time, getting the submission process right can be time-consuming and you are urged to go to the Workshop at least a day in advance to get expert help with this.***
