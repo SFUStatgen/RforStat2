@@ -139,7 +139,7 @@ $H_a':p_{quit} \not= p_{start}$.
 
 ## McNemar's Test
 
-* As always, base the hypothesis test on the difference in observed proportions
+* Base the hypothesis test on the difference in observed proportions
 $\hat{p}_{start} - \hat{p}_{quit}=(r-s)/n$
 and its standard error.
 * We'll skip the derivation but the test statistic ends up being:
@@ -193,12 +193,12 @@ from a parent (experimental unit) to its offspring
 * [Spielman _et al._, 1993](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682161/) \tiny click \normalsize
 developed a test for genetic linkage that is an application
 of McNemar's test
-* Genetic linkage DNA segments that are
-physically close together on a chromosome tend
+* DNA segments that are
+physically close together on a chromosome, or "genetically linked", tend
 to be co-transmitted from parent to offspring.
-    + A genetic marker that is close to, or linked, to a 
-    disease-causing mutation should tend to be co-transmitted with the disease.
-* Application to type 1 (autoimmune) diabetes (T1D):
+    + A DNA marker that is genetically linked to a 
+    disease-causing mutation (i.e. they are physically close on the chromosome) should tend to be co-transmitted with the disease.
+* Application to type 1 autoimmune diabetes (T1D):
     + A genetic marker called 5'FP located 
     near the insulin gene was associated with
     T1D in the population. Is 5'FP linked to a
@@ -209,8 +209,9 @@ to be co-transmitted from parent to offspring.
     
 ## Diabetes Data from [Spielman _et al._](http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/tdt.csv)
 
-* The marker had two variants denoted 1 and X.
-* Study of 124 heterozygous parents of children with T1D; _heterozygous_ means that they carry a 1 and an X. 
+* The DNA marker had two variants denoted 1 and X.
+* Study of 124 parents of children with T1D
+    + All parents selected to carry a 1 and an X at the DNA marker. 
 
 * The dataset has
     + one row for each parent, and
