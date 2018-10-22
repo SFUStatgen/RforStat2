@@ -1,7 +1,7 @@
 Instructions for Homework Assignments
 ================
 Jinko Graham
-August 20, 2018
+Sept 01, 2018
 
 Templates for the homework assignment questions are to be downloaded from the class website and modified to include your answers.
 

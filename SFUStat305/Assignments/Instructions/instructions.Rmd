@@ -1,7 +1,7 @@
 ---
 title: "Instructions for Homework Assignments"
 author: "Jinko Graham"
-date: "August 20, 2018"
+date: "Sept 01, 2018"
 output: rmarkdown::github_document
 ---
 
