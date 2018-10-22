@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 14 : Inference for Proportions'
 author: "Jinko Graham"
-date: '2018-09-13'
+date: '2018-09-26'
 output: 
   beamer_presentation:
     includes:
@@ -234,8 +234,8 @@ pval<-2*pnorm(abs(z),lower.tail=FALSE) #get the pvalue
 * We therefore reject $H_0$ at the 5\% level:
 There is statistical evidence that women taking EP have a higher 
 risk of invasive breast cancer than those taking the placebo.
-    + Note: We say that the EP group has higher risk than the placebo
-    group because $\hat{p}_1$ (for EP) is greater than $\hat{p}_2$ (for placebo), as evidenced by $z=2.2$ being greater than zero.
+    + Note: The EP group appears to have a higher risk of breast cancer than the placebo
+    group because $\hat{p}_1$ (for EP) is greater than $\hat{p}_2$ (for placebo), as reflected by $z=2.2$ being greater than zero.
 
 
 ## Summary
@@ -243,7 +243,7 @@ risk of invasive breast cancer than those taking the placebo.
 * Inference for the difference $p_1-p_2$ between two population
 proportions is based on a pivotal quantity.
 * Confidence intervals are of the form **estimate $\pm$ margin of error**, where
-    + estimate is difference between sample means, and
+    + estimate is difference between sample proportions, and
     + margin of error is a critical value times the 
     standard error of the difference in sample proportions
 * To test the null hypothesis $H_0:p_1 - p_2 = 0$ against 

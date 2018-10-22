@@ -1,0 +1,134 @@
+---
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'R Demo for Chapter 15, part 1: Contingency Tables'
+author: "Jinko Graham"
+date: '2018-10-16'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+
+## Contingency Tables 
+
+* Example: Data of [Mungan et al. 2000](https://www.ncbi.nlm.nih.gov/pubmed/10699612) \tiny click
+\normalsize on 21,737 bladder cancer patients
+    + Two categorical variables: **gender**, which has 2 levels,
+    and **cancer stage**, which has 4 levels.
+
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/mung.csv")
+Mungan <- read.csv(uu)
+head(Mungan,n=8)
+```
+
+
+
+## Tabulating Data in R
+
+* Two useful functions in R for cross tabulating:
+    + `table()` - easiest to use and
+    + `xtabs()` - more flexible, but flexibility only needed when we
+    have more than two variables -- see Chapter 16
+
+\scriptsize
+
+```{r}
+table(Mungan)
+```
+
+
+## Row and Column Margins
+
+* In R, the **row margin** is the tabulation of the row variable and 
+the **column margin** is the tabulation of the column variable. 
+    + The row margin is indexed by the number 1 and the
+    column margin by the number 2.
+
+\scriptsize
+
+```{r}
+mtab <- table(Mungan)
+margin.table(mtab,1) # R's row margin
+margin.table(mtab,2) # R's column margin
+```
+
+<!-- NTS: Row margin is marginal distn of the row variable
+and col margin is marginal distn of the column variable.
+-->
+
+## Cancer stage distribution given gender
+
+\scriptsize
+
+```{r}
+mtab <- table(Mungan)
+mtab
+```
+\normalsize
+
+* For each gender category, we can divide the 
+counts in each row by
+    the row total to get proportions.
+    
+\scriptsize
+
+```{r}
+prop.table(mtab,margin=1) # margin=1 refers to dividing by row totals
+```
+
+## Gender distribution given cancer stage 
+
+* Likewise, for each cancer stage category we can divide
+the counts in each column by the column total 
+to get proportions.
+
+\scriptsize
+
+```{r}
+prop.table(mtab,margin=2)
+```
+
+
+<!--
+## Software Notes
+
+* `prop.table()` requires a data type known as a `matrix` as input. 
+* Sometimes we are given the cross-tabulated data and want
+to enter the table into R ourselves as a `data.frame`.
+* Then need to "coerce" the `data.frame` to a `matrix`:
+
+\scriptsize
+
+```{r}
+mydf <- data.frame(Stage1=c(3926,12418), Stage2=c(402,995),
+                    Stage3=c(356,883), Stage4=c(852,1905)) 
+row.names(mydf) <- c("Female","Male")
+mymat <- as.matrix(mydf) # coerce data.frame to matrix
+mymat 
+prop.table(mymat,margin=2)
+```
+
+## Software Notes, cont.
+
+* DIY proportions: It is easy to compute with columns of a data frame; e.g.,
+
+\scriptsize
+
+```{r}
+library(dplyr)
+mydf <- 
+  mutate(mydf,
+    rTot=Stage1+Stage2+Stage3+Stage4, # row totals
+    p1=Stage1/rTot,p2=Stage2/rTot,p3=Stage3/rTot,p4=Stage4/rTot) # row propns
+select(mydf,p1,p2,p3,p4) # select() selects named columns of a data frame
+```
+-->

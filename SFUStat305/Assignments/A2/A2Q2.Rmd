@@ -58,9 +58,8 @@ screening and diagnosis?
 Obtain the value of the test statistic 
 with continuity correction on your hand calculator but below,
 when you are asked to insert your written comments, be sure to provide the formula you used in R Markdown's math notation. E.G. Say the numbers were 102 and 137. Then in Markdown the test statistic would be written as
-`$(|102 - 137|-1)^2/(102+137)=4.84$`. In your rendered 
-document to be turned in, this would show 
- as $(|102 - 137|-1)^2/(102+137)=4.84$. 
+`$(|102 - 137|-1)^2/(102+137)=4.84$`. In your rendered RMarkdown
+document to be turned in, this would show up nicely formatted.
  Note that you will still need an R code chunk to find the
  $p$-value.
  

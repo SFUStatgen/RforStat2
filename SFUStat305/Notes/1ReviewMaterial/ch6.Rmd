@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 6: Probability'
 author: "Jinko Graham"
-date: '2018-09-15'
+date: '2018-10-01'
 output: 
   beamer_presentation:
     includes:
@@ -217,29 +217,35 @@ General addition rule: $P(A \cup B) = P(A) + P(B) - P(A\cap B)$:
 \end{center}
 * Adjusts for double-counting the intersection.
 
-## Multiplication rule for independent events
+## Independent events
 
 * Events $A$ and $B$ are _independent_ if 
 knowing that one has occurred provides no information 
 about whether the other will.
 
-* E.G. Random experiment of 2 tosses of a fair coin
-has sample space ${\cal S}=\{HH, HT, TH, TT \}$,
-with all 4 outcomes having chance $1/4$.
+* E.G. Consider a random experiment involving 2 tosses of a fair coin
+    + Sample space is ${\cal S}=\{HH, HT, TH, TT \}$
+    + All 4 outcomes in ${\cal S}$ have chance $1/4$.
 
 * Knowing $H$ occurs on the 1st toss provides no info about whether $H$ will occur in the 2nd toss. 
 
-    +  Let $A = \{ HH, HT \}$ be the event of an $H$ on 
-    the 1st toss and $B=\{ HH, TH \}$ be the event of an $H$ on the 2nd toss. 
+* Let $A = \{ HH, HT \}$ be the event of a head on 
+    the 1st toss and $B=\{ HH, TH \}$ be the event of an head on the 2nd toss. 
     + The events $A$ and $B$ are independent.
+
+
+## Multiplication rule for independent events
 
 * Multiplication rule for independent events:
     + If $A$ and $B$ are independent, then 
 $P(A\cap B)=P(A)\times P(B)$.
 
-* In the coin-toss experiment, $A \cap B = \{ HH \}$.
-    + $P(A)=P(\{HH, HT\})=P(HH)+P(HT)=1/4+1/4=1/2$,  $P(B)=P(\{HH, TH\})=P(HH)+P(TH)=1/4+1/4=1/2$.
-    + So, $P(HH) = P(A \cap B) = P(A)\times P(B) = \frac{1}{2} \times \frac{1}{2}=1/4$.
+* In the coin-toss experiment, $A = \{ HH, HT \}$ 
+  and $B=\{ HH, TH \}$. 
+So $A \cap B = \{ HH \}$.
+
+* We have that $P(A)=P(\{HH, HT\})=P(HH)+P(HT)=1/4+1/4=1/2$ and  $P(B)=P(\{HH, TH\})=P(HH)+P(TH)=1/4+1/4=1/2$.
+* So, $P(A \cap B) = P(A)\times P(B) = \frac{1}{2} \times \frac{1}{2}=1/4=P(HH)$.
     
 # Conditional Probability (Section 6.2)
 
@@ -255,14 +261,15 @@ P(A \cap B) & = & P(B \mid A) \times P(A)
 * When $A$ and $B$ are independent, 
     + $P(A \mid B) =P(A)$ and $P(B \mid A) = P(B)$, so that 
     $$P(A \cap B) = P(A) \times P(B).$$ 
-* In general, though, knowing
-$B$ has happened may modify the probability of $A$; 
-    + i.e., the _conditional probability_ of $A$ given $B$ 
-    may not be the probability of $A$; or $P(A \mid B) \not= P(A)$.
-* The general multiplication holds regardless.
+* The multiplication rule for independent events is thus a special
+case of the general multiplication rule.
 
 
 ## Conditional Probability
+
+* Knowing $B$ has happened may modify the probability of $A$; 
+    + i.e., the _conditional probability_ of $A$ given $B$ 
+    may not be the probability of $A$; or $P(A \mid B) \not= P(A)$.
 
 * The general multiplication rule 
 follows from the definition of conditional probabilities:
@@ -400,7 +407,7 @@ Result & & Positive (TP) & Positive (FP) & \\ \cline{3-4}
 
 * Let's focus on the diseased ($D+$): they can either test positive or negative.
     + Those who are diseased and test positive are truly positive (TP)
-    + Those who are diseased and test negative are falsely positive (FN)
+    + Those who are diseased and test negative are falsely negative (FN)
 * The observed true-positive rate
 is the proportion of diseased who are truly positive,
 or TP/(TP+FN). 

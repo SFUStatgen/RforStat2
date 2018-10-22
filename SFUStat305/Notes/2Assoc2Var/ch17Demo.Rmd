@@ -1,0 +1,137 @@
+---
+title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'R Demo for Chapter 17: Correlation'
+author: "Jinko Graham"
+date: '2018-10-09'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+
+## Example Data: Child Mortality by Country
+
+* Data on child mortality (number of deaths before
+age 5 years, per 1000 live births)
+and percentage of children who are immunized for 
+diptheria, pertussis and tetanus (DPT) from a random sample of 20 countries (see Table 17.2 of text).
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/mort.txt")
+childmort <- read.table(uu,header=TRUE)
+head(childmort)
+```
+
+
+## Scatterplots
+
+* `ggplot()` used before to draw histograms
+and boxplots.
+    + When given quantitative variables it will draw 
+    a scatterplot.
+* The `aes()` specifies which variable to go on the 
+`x` (horizontal) and `y` (vertical) axes.
+* `geom_point()` adds the points to the scatterplot.
+
+\scriptsize
+
+```{r,fig.height=1.6,fig.width=3}
+library(ggplot2)
+ggplot(childmort,aes(x=PercentImmunized,y=Mortality)) +
+  geom_point()
+```
+
+## Pearson Correlation in R
+
+\scriptsize
+
+```{r}
+with(childmort,cor(PercentImmunized,Mortality))
+```
+\normalsize
+
+* Sample Pearson correlation between `PercentImmunized` and `Mortality` is negative: $r=-0.791$.
+
+## 
+
+\bigskip
+
+* Test if the Pearson population correlation differs from zero  
+    +  i.e. Test $H_0: \rho=0$ vs. $H_a: \rho \not= 0$.
+
+\scriptsize
+
+```{r}
+with(childmort,cor.test(PercentImmunized,Mortality))
+```
+
+\normalsize
+
+\vspace*{-.1in}
+
+* Reject $H_0$ at level 0.05; there is statistical evidence 
+of correlation between a country's immunization rate and mortality.     
+    + In particular, `Mortality` and `PercentImmunized` appear to be negatively correlated.
+
+## Spearman Correlation in R
+
+\scriptsize
+
+```{r}
+with(childmort,cor(PercentImmunized,Mortality,method="spearman"))
+```
+
+\normalsize
+
+*  Note: Spearman's $r_s=-0.54$ is closer to zero
+than Pearson's $r=-0.79$.
+
+\bigskip
+
+* Next, test whether the
+population Spearman correlation coefficient differs
+from zero;
+i.e., test $H_0: \rho_s=0$
+vs. $H_a:\rho_s \not= 0$.
+
+## 
+
+* Test Spearman's correlation coefficient:
+
+\scriptsize
+
+```{r}
+with(childmort,cor.test(PercentImmunized,Mortality,
+                    method="spearman",exact=FALSE))
+```
+
+\normalsize
+
+\vspace*{-.2in}
+
+* By default, ```cor.test()``` uses another null distribution than the $t$-distribution suggested by the text. 
+    + To disable the default and use the $t$- distribution to get the $p$-value as in the text,  set ```exact=FALSE.```
+
+
+## 
+
+\scriptsize
+
+```{r, echo=FALSE}
+with(childmort,cor.test(PercentImmunized,Mortality,
+                    method="spearman",exact=FALSE))
+```
+
+\normalsize
+
+* There is statistical evidence that the population 
+Spearman correlation is not 0 (at level $\alpha=0.05$).
+
+* `Mortality` and `PercentImmunized` appear to be negatively correlated, even when we take into account outlying countries through the Spearman's rank-correlation test.

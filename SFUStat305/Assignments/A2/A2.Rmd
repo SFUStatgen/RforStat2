@@ -1,7 +1,7 @@
 ---
 title: "Assignment 2"
 author: "Jinko Graham"
-date: '2018-08-18'
+date: '2018-10-17'
 output: pdf_document
 ---
 
@@ -14,8 +14,8 @@ for each question are given in the numbered
 list below. Detailed instructions on how to fill in the templates
 are given [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/Instructions/instructions.Rmd).
 
-1. Question 1. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q1.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q1.ipynb)
-2. Question 2. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q2.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q2.ipynb)
-3. Question 3. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q3.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q3.ipynb)
-4. Question 4. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q4.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A1/A1Q4.ipynb)
+1. Question 1. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q1.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q1.ipynb)
+2. Question 2. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q2.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q2.ipynb)
+3. Question 3. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q3.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q3.ipynb)
+4. Question 4. [RMarkdown](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q4.Rmd) or [Jupyter notebook](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Assignments/A2/A2Q4.ipynb)
 

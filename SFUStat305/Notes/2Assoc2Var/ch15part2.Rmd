@@ -1,0 +1,289 @@
+---
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'Chapter 15, part 2: Chi-Square Tests'
+author: "Jinko Graham"
+date: '2018-10-17'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning=FALSE,message=FALSE)
+```
+
+## Chi-square tests of association
+
+* In chapter 14, we tested for association between two categorical variables by testing for
+differences between proportions
+    + Call the test from Chapter 14 the $Z$ test.
+
+
+* Applied the $Z$ test to data from the WHI.
+    + Recall that the WHI randomized 16,608 post-menopausal women aged 50-79 years to receive either hormone replacement therapy (estrogen plus 
+    progestin EP$+$;$n_1=8506$), or a placebo (EP$-$; $n_2=8102$).
+    
+* We tested for a difference in the proportions of women with invasive breast cancer (BC$+$) in the hormone replacement therapy (EP+) and placebo (EP$-$) groups.
+    
+
+## The [WHI Data](https://en.wikipedia.org/wiki/Women%27s_Health_Initiative) \tiny click \normalsize
+
+<!--
+
+```{r}
+WHI <- data.frame(EP = factor(c(rep("EP+",8506),rep("EP-",8102))),
+                  BC = factor(c(rep("BC+",166),
+                                rep("BC-",8340),
+                                rep("BC+",122),
+                                rep("BC-",7980))))
+head(WHI)
+table(WHI)
+write.csv(WHI,file="whi.csv",row.names=FALSE)
+# Now from a terminal, upload whi.csv to JG website:
+#  scp whi.csv jgraham@rcg-linux-ts1.rcg.sfu.ca:WWW_HOME/Teaching/S305_18/Data/.
+```
+
+-->
+
+* The first few rows of the dataset are as follows: 
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/whi.csv")
+WHI <- read.csv(uu)
+head(WHI,n=8)
+```
+
+\normalsize
+
+* A cross-tabulation of the BC and EP variables in the dataset is:
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/whi.csv")
+WHI <- read.csv(uu)
+wtab <- table(WHI)
+wtab
+```
+
+
+## Association between HRT and breast cancer
+
+* The table of proportions below gives the conditional distributions of BC status given EP status.
+    + The proportions in each row add to 1.
+
+* BC and EP are associated if their conditional distributions
+    are different.
+
+\scriptsize
+
+```{r}
+prop.table(wtab,margin=1)
+```
+
+\normalsize
+
+* Previously, we used the Z test for different conditional distributions 
+   + Looks for differences in the proportion of BC$+$ in the 
+EP$-$ and EP$+$ groups.
+   + Can be applied to data in $2 \times 2$ tables
+
+
+## Chi-square test of association
+
+* When applied to $2\times 2$ tables, 
+the $Z$ test for a difference in proportions is
+equivalent to the chi-square ($\chi^2$) test.
+* But the chi-square test has the advantage of 
+generalizing from $2\times 2$ tables to $r\times c$ 
+tables, for $r\geq2$ rows and $c\geq 2$ columns. 
+* Compares _observed_ cell counts to _expected_ counts
+    + The expected count is the count we would expect if the null hypothesis of no 
+    association were true (details deferred).
+* The form of the statistic is
+$$
+X^2 = \sum_{\mbox{cells}} \frac{ \left( \mbox{observed} - \mbox{expected}
+\right)^2}{\mbox{expected}}
+$$
+
+## Sampling distribution of $X^2$
+
+* Under the null hypothesis of no association between 
+row and column variables, the test statistic $X^2$ is approximately
+distributed as a chi-square distribution with 
+$(r-1)\times (c-1)$ degrees of freedom (df).
+* Computer software gives upper tail probabilities 
+of different chi-square distributions.
+
+## Chi-square test for WHI example
+
+* We can perform the chi-square test in R (see demo).
+
+\scriptsize
+
+```{r}
+cc <- chisq.test(wtab,correct=FALSE)
+cc
+```
+
+\normalsize
+
+* At the 5\% level, there is statistical evidence of an association between hormone-replacement therapy and invasive breast cancer. 
+
+## Continuity correction for $2 \times 2$ tables
+
+* The continuity correction to the $X^2$ test improves
+the $\chi^2$ approximation for
+$2\times 2$ tables.
+* The corrected version of the statistic is:
+$$
+X^2 = \sum_{\mbox{cells}} \frac{ \left( |\mbox{observed} - \mbox{expected}| - 0.5
+\right)^2}{\mbox{expected}}
+$$
+
+* Please note that this correction applies only to $2\times 2$ tables and
+does not generalize to $r \times c$ tables.
+
+## Chi-square test with continuity correction for WHI example
+
+\scriptsize
+
+```{r}
+cc <- chisq.test(wtab) #apply the default continuity correction
+cc
+```
+
+\normalsize
+
+* At the 5\% level, there is still evidence of an
+association between hormone replacement therapy and invasive breast cancer.
+
+## Expected counts
+
+
+* As mentioned earlier, these are calculated under 
+the null hypothesis of no association between the 2
+variables in the table.
+
+* Let's first discuss expected counts for the WHI 
+example. Later, we'll generalize to arbitrary $r\times c$ tables.
+
+\scriptsize
+
+```{r,echo=FALSE}
+wtab
+```
+
+\normalsize
+
+
+* If $H_0$ holds and HRT has no effect on breast cancer,
+the proportion of BC$+$ in each EP group should be the same and can be estimated
+by pooling: $$\hat{p} = \frac{122+166}{7980+122+8340+166} = \frac{288}{16608}=0.01734.$$
+
+## 
+
+* Here is the table of counts with column and row margins added:
+
+\scriptsize
+
+```{r,echo=FALSE}
+mytab=cbind(wtab, apply(wtab,1,sum))
+colnames(mytab)<-c(colnames(wtab),"rowTot")
+mytab2=rbind(mytab,apply(mytab,2,sum))
+rownames(mytab2)<-c(rownames(mytab),"colTot")
+mytab2
+```
+
+\normalsize
+
+
+* Focusing on the 1st row of the table, under $H_0$ of no association, we expect that, of the 8102 women who are EP$-$,
+    + $8102 \times  \hat{p} = 140.5$ would be BC$+$, and 
+    + $8102 \times (1-\hat{p})=7961.5$ would be BC$-$.
+
+* Similarly, focusing on the 2nd row, we expect that, under $H_0$ of no association, of the 8506 women who are EP$+$,
+    + $8506 \times \hat{p} = 8506 \times \frac{288}{16608} = 147.5$ would be BC$+$, and 
+    + $8506 \times (1-\hat{p})=8506 \times \frac{16320}{16608}=
+    8358.5$ would be BC$-$.
+
+
+## Expected counts, notation
+
+* Notation from the text: 
+\begin{center}
+\begin{tabular}{ll|c|c|r}
+& \multicolumn{1}{c}{}& \multicolumn{2}{c}{BC} & \\
+&\multicolumn{1}{c}{} & \multicolumn{1}{c}{BC$+$} & \multicolumn{1}{c}{BC$-$} & \\ \cline{3-4}
+EP & EP$+$ & $a$ & $b$ & $a+b$ \\ \cline{3-4}
+& EP$-$ &  $c$ & $d$ & $c+d$ \\ \cline{3-4}
+&\multicolumn{1}{c}{} & \multicolumn{1}{c}{$a+c$} & \multicolumn{1}{c}{$b+d$} & $n$ \\
+\end{tabular}
+\end{center}
+where $n=a+b+c+d$
+
+* The pooled estimate of the proportion of BC+ women is $\hat{p} = (a+c)/n$.
+* Expected count for the EP$+$ and BC$+$ cell: 
+    +  Of the $(a+b)$ women who are EP$+$, we expect that $(a+b)\times \hat{p} =
+(a+b)(a+c)/n$ would be BC$+$
+
+* Notice that the expected count is of the form
+    row total ($a+b$) times column total ($a+c$) 
+    divided by table total ($n$). This is a generalizable pattern $\ldots$
+
+
+## Expected counts: general formula
+
+* For 
+$r\times c$ tables, the expected count for the cell
+in the $i$th row and $j$th column is the $i$th row total
+times the $j$th column total divided by table total.
+
+## Accuracy of the $\chi^2$ approximation ($r \times c$ tables)
+
+* The $\chi^2$ approximation for the null distribution of the test statistic is considered
+accurate when 
+    1. No more than 20\% of cells have expected counts $<5$, and
+    2. All expected cell counts are $\geq 1$.
+* Note: These rules-of-thumb are intended regardless
+of whether or not we use the continuity 
+correction for $2\times 2$ tables.
+
+## Accuracy of the $\chi^2$ approximation in WHI example
+
+* The expected cell counts are as follows:
+
+\scriptsize
+
+```{r}
+cc <- chisq.test(wtab)
+with(cc,expected)
+```
+
+\normalsize
+
+* _All_ expected cell counts are greater than 5, 
+and so the $\chi^2$ approximation
+is considered accurate.
+
+## Sampling
+
+* The chi-square test is appropriate under different sampling schemes
+such as:
+    1. Take simple-random samples (SRSs) from each of $c$ populations and classify
+individuals in each SRS according to one categorical variable with $r$ levels
+    2. Take one SRS from a single population and classify individuals according to two 
+categorical variables, one with $c$ levels and the other with $r$ levels
+
+* The first scheme includes 
+case-control sampling ($c=2$)
+    + e.g. an SRS of size $n_1=500$ from the case population for non-Hodgkin lymphoma and an SRS of size $n_2=500$ from the control population and then classify them according to whether
+or not they are exposed to some pesticide ingredient.
+
+* The second scheme pertains to the WHI study 
+    + A sample of size $n=16608$ was drawn from the population of post-menopausal women and then cross-classified according to whether or not they were 
+randomized to receive HRT and whether or not they developed invasive breast cancer.
+
