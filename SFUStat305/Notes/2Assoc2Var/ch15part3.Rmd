@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 15, part 3: McNemar''s Test'
 author: "Jinko Graham"
-date: '2018-10-06'
+date: '2018-10-22'
 output: 
   beamer_presentation:
     includes:
@@ -93,8 +93,8 @@ but rather paired observations from just 2110 people.
 
 \normalsize
 
-* The observations that are counted in this table are independent
-(and correspond to a person).
+* The observations that are counted in the cells of this table 
+are people and are independent.
 * The cells with the same before- and after-status
 of the subject are called _concordant_.
 * The cells with different before- and after-status 
