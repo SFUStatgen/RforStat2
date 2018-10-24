@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 15, part 3: McNemar''s Test'
 author: "Jinko Graham"
-date: '2018-10-22'
+date: '2018-10-24'
 output: 
   beamer_presentation:
     includes:
@@ -53,7 +53,9 @@ $\vdots$ & $\vdots$ & $\vdots$ \\
 
 ##         
 
-* The data could be arranged in a table as:
+* The research question is about the
+association between smoking status and year.
+So we might arrange the data in a table as:
 
 \footnotesize
 
@@ -95,16 +97,31 @@ but rather paired observations from just 2110 people.
 
 * The observations that are counted in the cells of this table 
 are people and are independent.
-* The cells with the same before- and after-status
-of the subject are called _concordant_.
-* The cells with different before- and after-status 
-are called _discordant_.
-* McNemar's test is a contrast between the discordant cells, and ignores
-the concordant cells.
 
-
+* If we were to apply a chi-square test to this table, we'd be testing
+whether a person's smoking statuses in 1982 and 1980 are associated.
 
 ## 
+
+* The chi-square test addresses the question: "Is a person's 1982 smoking status independent of their 1980 smoking status?", or
+\footnotesize
+$$H_0: P(1982  \mbox{ smoker} | 1980 \mbox{ smoker}) = 
+    P(1982 \mbox{ smoker} | 1980 \mbox{ non-smoker})$$    
+     \hspace{ 1in} vs.
+    $$H_a: P(1982 \mbox{ smoker} | 1980 \mbox{ smoker}) 
+    \not = P(1982 \mbox{ smoker} | 1980 \mbox{ non-smoker})$$
+
+\normalsize
+
+* **Not** the research question we're interested in. 
+
+* Want to test whether or not the population proportion of smokers in 1980,
+$p_{1980}$, is the same as the population proportion of smokers 
+in 1982, $p_{1982}$; i.e., test
+$$ H_0: p_{1982} = p_{1980} \mbox{ vs. } H_a: p_{1982} \not= p_{1980}.$$
+
+## How to use the table to test our hypotheses? 
+
 \footnotesize
 
 \begin{center}
@@ -139,10 +156,13 @@ $H_a':p_{quit} \not= p_{start}$.
 
 ## McNemar's Test
 
-* Base the hypothesis test on the difference in observed proportions
-$\hat{p}_{start} - \hat{p}_{quit}=(r-s)/n$
+* Base the hypothesis test of
+$$H_0': p_{quit} = p_{start} \mbox{ vs. }
+H_a':p_{quit} \not= p_{start}$$
+on the difference in observed proportions
+$$\hat{p}_{start} - \hat{p}_{quit}=(r-s)/n$$
 and its standard error.
-* We'll skip the derivation but the test statistic ends up being:
+* Skip the derivation but the test statistic ends up being:
 $$
 X^2 = \frac{(r-s)^2}{r+s} \sim \chi^2_1 .
 $$
@@ -179,45 +199,79 @@ pval
 
 *  Taking $\alpha=.05$, there is insufficient statistical evidence to conclude that smoking status is associated with year (the pvalue 0.128 is $>0.05$).
 
+## Notes
+
+\footnotesize
+
+\begin{center}
+\begin{tabular}{ll|c|c|r}
+& \multicolumn{1}{c}{}& \multicolumn{2}{c}{1982 (after)} & \\
+&\multicolumn{1}{c}{} & \multicolumn{1}{c}{Smoker} & \multicolumn{1}{c}{Nonsmoker} & \\ \cline{3-4}
+1980 (before) & Smoker & 620 &  $r=97$ & 717 \\ \cline{3-4}
+& Nonsmoker &  $s=76$ & 1317 & 1393 \\ \cline{3-4}
+&\multicolumn{1}{c}{} & \multicolumn{1}{c}{696} & \multicolumn{1}{c}{1414} & $n=2110$ \\
+\end{tabular}
+\end{center}
+
+\normalsize
+
+* In the smoking-example table,
+    + Cells with the same before- and after-status
+of the subject are called _concordant_.
+    + Cells with different before- and after-status 
+are called _discordant_.
+
+* In general, cells that are diagonal entries 
+are _concordant_ and cells that are off-diagonal entries are _discordant_. 
+
+* Note that McNemar's test is a contrast between the discordant cells only, and ignores
+the concordant cells.
+
 ## Other Examples of Paired Data
 
 * Scoring individuals from the same matched pair.
     + e.g. case-control pairs in which the control has been matched to the case on a number of characteristics. 
 * Scoring the same experimental unit with two different techniques
 * Ratings of the same experimental unit by two different raters
-* Genetic variants that were transmitted/not transmitted 
-from a parent (experimental unit) to its offspring
+* Scoring genetic variants from the same parent for transmission 
+and non-transmission to an offspring. 
 
 ## Example: Transmission/Disequilibrium Test (TDT)
 
 * [Spielman _et al._, 1993](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682161/) \tiny click \normalsize
-developed a test for genetic linkage that is an application
-of McNemar's test
+applied McNemar's test to a problem in medical genetics.
 * DNA segments that are
 physically close together on a chromosome, or "genetically linked", tend
 to be co-transmitted from parent to offspring.
-    + A DNA marker that is genetically linked to a 
-    disease-causing mutation (i.e. they are physically close on the chromosome) should tend to be co-transmitted with the disease.
-* Application to type 1 autoimmune diabetes (T1D):
-    + A genetic marker called 5'FP located 
-    near the insulin gene was associated with
-    T1D in the population. Is 5'FP linked to a
+    + A DNA marker that is physically close to a 
+    disease-causing mutation tends to be co-transmitted with the disease.
+* Application to autoimmune or type 1 diabetes (T1D):
+    + Is the DNA marker 5'FP
+    near the insulin gene genetically linked 
+    to a
     disease-causing mutation?
-    + If so, we should see certain variants of 5'FP
+    + If so, certain variants of 5'FP will be
     over-represented in transmissions from parents to 
     children affected by T1D.
+
     
 ## Diabetes Data from [Spielman _et al._](http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/tdt.csv)
 
-* The DNA marker had two variants denoted 1 and X.
+* The DNA marker had two variants, "1" and "X". 
+
 * Study of 124 parents of children with T1D
-    + All parents selected to carry a 1 and an X at the DNA marker. 
+    + All parents selected to carry a 1 and an X at the DNA marker.
+
+* Is the "1" variant of the DNA marker associated with being
+transmitted?
 
 * The dataset has
-    + one row for each parent, and
+    + a row for each parent, and
     + two columns, one for the variant that was transmitted 
     from the parent to the affected child, and one for the 
     variant that was not transmitted.
+    
+    
 
 <!--
 ```{r}
@@ -234,14 +288,13 @@ write.csv(tdtex,file="tdt.csv",row.names=FALSE)
 ```{r}
 uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/tdt.csv")
 tdtex <- read.csv(uu)
-head(tdtex,n=8)
+head(tdtex,n=6)
 ```
 
 ## McNemar's test on T1D Data
 
-* Cross tabulating `transmitted` and `untransmitted` 
-variables for the 
-heterozygous parents yields the following table. 
+* Cross-tabulating `transmitted` and `untransmitted` 
+variables:
 
 \scriptsize
 
@@ -252,7 +305,10 @@ tt
 
 \normalsize
 
-* McNemar's test applied to the T1D data (see R demo):
+* Use McNemar's test (see R Demo) to assess whether the 
+proportion of "1" variants in the population of transmitted 
+variants is the same as the proportion of "1" variants in the 
+population of untransmitted variants: 
 
 \scriptsize
 
@@ -261,12 +317,13 @@ mcnemar.test(tt,correct=FALSE)
 ```
 
 \normalsize
+\vspace*{-.06in}
 
-* There is strong evidence that the 1 variant is
-preferentially transmitted over the X variant 
-to the affected child.
-    + The marker near the insulin gene is
-    genetically linked to T1D.
+* Strong evidence that the "1" variant is
+preferentially transmitted over the "X" variant 
+to the affected child.   
+ $\rightarrow$ The DNA marker 5'FP is
+    linked to T1D.
     
 <!--
 * Recent work [e.g., Pugliese (2005)](https://www.ncbi.nlm.nih.gov/pubmed/16081366)
