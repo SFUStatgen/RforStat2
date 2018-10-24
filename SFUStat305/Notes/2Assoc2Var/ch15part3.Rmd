@@ -241,13 +241,13 @@ and non-transmission to an offspring.
 * [Spielman _et al._, 1993](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682161/) \tiny click \normalsize
 applied McNemar's test to a problem in medical genetics.
 * DNA segments that are
-physically close together on a chromosome, or "genetically linked", tend
+physically close together on a chromosome, or genetically _linked_ tend
 to be co-transmitted from parent to offspring.
     + A DNA marker that is physically close to a 
     disease-causing mutation tends to be co-transmitted with the disease.
 * Application to autoimmune or type 1 diabetes (T1D):
     + Is the DNA marker 5'FP
-    near the insulin gene genetically linked 
+    (near the insulin gene) _linked_ 
     to a
     disease-causing mutation?
     + If so, certain variants of 5'FP will be
@@ -260,14 +260,15 @@ to be co-transmitted from parent to offspring.
 * The DNA marker had two variants, "1" and "X". 
 
 * Study of 124 parents of children with T1D
-    + All parents selected to carry a 1 and an X at the DNA marker.
+    + Parents chosen to carry both a 1 and an X at the DNA marker.
 
-* Is the "1" variant of the DNA marker associated with being
-transmitted?
+* Is variant type associated with transmission status?
+    + e.g., test $H_0: P(1| \mbox{transmitted}) = P( 1 | \mbox{untransmitted})$    
+     vs. $H_a: P(1| \mbox{transmitted}) \not= P( 1 | \mbox{untransmitted})$
 
 * The dataset has
-    + a row for each parent, and
-    + two columns, one for the variant that was transmitted 
+     a row for each parent, and
+    two columns, one for the variant that was transmitted 
     from the parent to the affected child, and one for the 
     variant that was not transmitted.
     
@@ -290,25 +291,64 @@ uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/tdt.csv")
 tdtex <- read.csv(uu)
 head(tdtex,n=6)
 ```
+##
 
-## McNemar's test on T1D Data
+* The research question is about whether variant type is associated with transmission status and so we might arrange the data in a table as: 
 
-* Cross-tabulating `transmitted` and `untransmitted` 
-variables:
+\footnotesize
 
+\begin{center}
+\begin{tabular}{ll|c|c|r}
+& \multicolumn{1}{c}{}& \multicolumn{2}{c}{Transmitted} & \\
+&\multicolumn{1}{c}{} & \multicolumn{1}{c}{yes} & \multicolumn{1}{c}{no} & \\ \cline{3-4}
+Variant & 1 & 78 & 46 & 124 \\ \cline{3-4}
+& X &  46 & 78 & 124 \\ \cline{3-4}
+&\multicolumn{1}{c}{} & \multicolumn{1}{c}{124} & \multicolumn{1}{c}{124} & 248 \\
+\end{tabular}
+\end{center}
+
+\normalsize 
+
+* But this table is misleading: the 248 observations that it 
+reports are the outcomes of transmission events from 124 double-counted parents.
+
+* The 248 observations counted in the table are not independent, 
+but rather paired observations from just 124 parents.
+
+## 
+
+* To clarify the paired nature of the data, cross-tabulate the `transmitted` and `untransmitted` variables in the original dataset.
+
+\vspace*{-.15in}
 \scriptsize
-
 ```{r}
 tt <- table(tdtex)
 tt
 ```
-
 \normalsize
 
-* Use McNemar's test (see R Demo) to assess whether the 
-proportion of "1" variants in the population of transmitted 
-variants is the same as the proportion of "1" variants in the 
-population of untransmitted variants: 
+\vspace*{-.15in}
+
+* The observations that are counted in the cells of this table 
+are parents and are independent.
+
+* If we were to apply a chi-square test to this table, we'd be testing
+whether a (1,X) parent's transmitted variant is associated with his/her
+untransmitted variant. 
+    + We don't need a test to see immediately that they are perfectly
+    negatively dependent, _by definition_.
+    + If one variant gets transmitted then the other one does not
+    
+* A chi-square test is not relevant to the research question.
+
+
+## McNemar's test on T1D Data
+
+* Research question: Is variant type associated with transmission status?
+    + i.e., $H_0: P(1 | \mbox{transmitted}) = P(1 | \mbox{untransmitted})$     
+    vs. $H_a: P(1 | \mbox{transmitted}) \not= P(1 | \mbox{untransmitted}).$
+
+* Use McNemar's test (see R Demo): 
 
 \scriptsize
 
@@ -319,11 +359,31 @@ mcnemar.test(tt,correct=FALSE)
 \normalsize
 \vspace*{-.06in}
 
-* Strong evidence that the "1" variant is
+* Strong evidence that variant type is associated with 
+transmission status. 
+
+## 
+
+\scriptsize
+```{r}
+tt <- table(tdtex)
+tt
+```
+\normalsize
+
+* In particular, the "1" variant appears to be
 preferentially transmitted over the "X" variant 
-to the affected child.   
- $\rightarrow$ The DNA marker 5'FP is
+to the affected child.
+
+* Can conclude that the DNA marker 5'FP is genetically
     linked to T1D.
+
+* 5'FP is a DNA marker on chromosome 11, very close to the 
+insulin gene. 
+    + Makes biological sense that DNA variation around the insulin gene
+    would affect the risk of type 1 diabetes.
+    + Body attacks and kills all the insulin-producing
+    cells in the pancreas.
     
 <!--
 * Recent work [e.g., Pugliese (2005)](https://www.ncbi.nlm.nih.gov/pubmed/16081366)
