@@ -1,0 +1,61 @@
+Overview of R for assignments
+================
+Jinko Graham
+2018-08-14
+
+[R](http://www.r-project.org) is a powerful environment for statistical computing and graphics. We will be using R for homework assignments as it is supported by the Stats Workshop. I would not say that you will "learn R" in this course. Instead you'll get example code in class notes or templates that you can modify to do your analyses. Your focus should be on getting practice with data wrangling, analysis, and **interpretation** of the results. In the course of doing the homework assignments you will probably pick up a bit of R and you will have a set of templates for doing future analyses (e.g., as a lab assistant at SFU), but you will not be a serious R user. Students interested in learning R should consider taking Stat 341.
+
+R may be downloaded from the [Comprehensive R Archive Network](http://cran.r-project.org) and comes with its own user interface called the R console. However, to simplify the process of doing assignments, I recommend installing and using RStudio Desktop on your personal computer because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop through their Crowdmark online system. Alternatively, if you can't install R/RStudio on your personal computer, you can use RStudio Cloud or Jupyter.
+
+1.  RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
+2.  RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
+3.  R via Jupyter -- The Stat Workshop has a Jupyter page on their Canvas site that you can consult.
+
+These interfaces are all supported by the Stat Workshop. A partial list of the pros and cons of each interface are given in the table below:
+
+<table>
+<colgroup>
+<col width="19%" />
+<col width="13%" />
+<col width="67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Interface</th>
+<th>pros/cons</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RStudio Desktop</td>
+<td>pros</td>
+<td>You install your own (free) copy on your personal computer that is yours to use for future data-analysis projects. Has well-developed tools for authoring documents such as homework assignments and written reports. Supported by an extensive online community of users. Used in all class demos. The Stats grads/undergrads who staff the Workshop install it on their own computers for research and assignments and so someone in the Workshop should be able to help you with installation if you bring in your computer.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>cons</td>
+<td>Macs with non-standard characters (e.g. Chinese) can be trickier to install on but troubleshooting instructions can be found <a href="https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd">here</a> or through the Workshop Canvas site.</td>
+</tr>
+<tr class="odd">
+<td>RStudio Cloud</td>
+<td>pros</td>
+<td>No installation required; instead access is through the internet. A CloudFront (Amazon) server with the same interface as RStudio Desktop. Extensive learning materials (e.g. tutorial documents and online videos) are made available.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>cons</td>
+<td>As an internet server on the Amazon Cloud, it may have slowdowns or outages from time to time.</td>
+</tr>
+<tr class="odd">
+<td>Jupyter</td>
+<td>pros</td>
+<td>No installation required; instead access is through the internet. A UBC server with the Jupyter interface to an array of computing languages, as well as to R.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>cons</td>
+<td>As an internet server for BC university students, it may have slowdowns or outages before assignments are due or during other high-volume periods of the semester. Unfortunately, the Jupyter tutorials on the Workshop Canvas site use a different approach to learning R than the Tidyverse approach adopted in Stat 305/605 and so may not be particularly helpful.</td>
+</tr>
+</tbody>
+</table>

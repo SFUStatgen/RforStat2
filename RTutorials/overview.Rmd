@@ -2,7 +2,7 @@
 title: "Overview of R for assignments"
 author: "Jinko Graham"
 date: '2018-08-14'
-output: pdf_document
+output: rmarkdown::github_document
 ---
 
 
