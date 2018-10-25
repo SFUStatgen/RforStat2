@@ -7,8 +7,8 @@ Jinko Graham
 
 R may be downloaded from the [Comprehensive R Archive Network](http://cran.r-project.org) and comes with its own user interface called the R console. However, to simplify the process of doing assignments, I recommend installing and using RStudio Desktop on your personal computer because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop through their Crowdmark online system. Alternatively, if you can't install R/RStudio on your personal computer, you can use RStudio Cloud or Jupyter.
 
-1.  RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
-2.  RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
+1.  RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.md) for instructions.
+2.  RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.md) for instructions.
 3.  R via Jupyter -- The Stat Workshop has a Jupyter page on their Canvas site that you can consult.
 
 These interfaces are all supported by the Stat Workshop. A partial list of the pros and cons of each interface are given in the table below:
@@ -35,7 +35,7 @@ These interfaces are all supported by the Stat Workshop. A partial list of the p
 <tr class="even">
 <td></td>
 <td>cons</td>
-<td>Macs with non-standard characters (e.g. Chinese) can be trickier to install on but troubleshooting instructions can be found <a href="https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd">here</a> or through the Workshop Canvas site.</td>
+<td>Macs with non-standard characters (e.g. Chinese) can be trickier to install on but troubleshooting instructions can be found <a href="https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.md">here</a> or through the Workshop Canvas site.</td>
 </tr>
 <tr class="odd">
 <td>RStudio Cloud</td>

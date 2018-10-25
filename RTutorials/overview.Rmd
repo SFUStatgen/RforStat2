@@ -26,8 +26,8 @@ However, to simplify the process of doing assignments, I recommend installing an
 on your personal computer because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop through their Crowdmark online system. 
 Alternatively, if you can't install R/RStudio on your personal computer, you can use RStudio Cloud or Jupyter.
 
-1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) for instructions.
-2. RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) for instructions.
+1. RStudio Desktop -- To get started, see [Getting started with R and RStudio](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.md) for instructions.
+2. RStudio Cloud -- To get started, see [Getting started with RStudio Cloud](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.md) for instructions.
 3. R via Jupyter -- The Stat Workshop has a Jupyter page on their Canvas site that you can consult. 
 
 These interfaces are all supported by the Stat Workshop. A partial list of the pros and cons of each interface are given in the table below:
@@ -35,7 +35,7 @@ These interfaces are all supported by the Stat Workshop. A partial list of the p
 | Interface      | pros/cons | Comments                                           |
 | -------------- | --------- | -------------------------------------------------- |
 RStudio Desktop | pros | You install your own (free) copy on your personal computer that is yours to use for future data-analysis projects. Has well-developed tools for authoring documents such as homework assignments and written reports. Supported by an extensive online community of users. Used in all class demos. The Stats grads/undergrads who staff the Workshop install it on their own computers for research and assignments and so someone in the Workshop should be able to help you with installation if you bring in your computer. 
-|   | cons  | Macs with non-standard characters (e.g. Chinese) can be trickier to install on but troubleshooting instructions can be found [here](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) or through the Workshop Canvas site. |
+|   | cons  | Macs with non-standard characters (e.g. Chinese) can be trickier to install on but troubleshooting instructions can be found [here](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.md) or through the Workshop Canvas site. |
 | RStudio Cloud | pros | No installation required; instead access is through the internet. A CloudFront (Amazon) server with the same interface as RStudio Desktop. Extensive learning materials (e.g. tutorial documents and online videos) are made available.|
 |    | cons  | As an internet server on the Amazon Cloud, it may have slowdowns or outages from time to time.|
 | Jupyter | pros | No installation required; instead access is through the internet. A UBC server with the Jupyter interface to an array of computing languages, as well as to R.|
