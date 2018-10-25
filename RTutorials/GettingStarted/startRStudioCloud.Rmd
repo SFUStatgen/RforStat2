@@ -1,8 +1,8 @@
 ---
 title: "Getting started with RStudio Cloud"
 author: "Jinko Graham"
-date: '2018-08-13'
-output: pdf_document
+date: '2018-10-25'
+output: rmarkdown::github_document
 ---
 
 RStudio Cloud is a cloud-based interface to R. The interface looks like the usual desktop version of RStudio. To get started, follow the steps below.
