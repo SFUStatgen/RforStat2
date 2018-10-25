@@ -1,7 +1,7 @@
 Overview of R for assignments
 ================
 Jinko Graham
-2018-08-14
+2018-10-25
 
 [R](http://www.r-project.org) is a powerful environment for statistical computing and graphics. We will be using R for homework assignments as it is supported by the Stats Workshop. I would not say that you will "learn R" in this course. Instead you'll get example code in class notes or templates that you can modify to do your analyses. Your focus should be on getting practice with data wrangling, analysis, and **interpretation** of the results. In the course of doing the homework assignments you will probably pick up a bit of R and you will have a set of templates for doing future analyses (e.g., as a lab assistant at SFU), but you will not be a serious R user. Students interested in learning R should consider taking Stat 341.
 
