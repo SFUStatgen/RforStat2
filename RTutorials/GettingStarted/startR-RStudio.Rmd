@@ -2,7 +2,7 @@
 title: "Getting started with R and RStudio"
 author: "Brad McNeney"
 date: '2018-08-03'
-output: pdf_document
+output: rmarkdown::github_document
 ---
 
 
