@@ -1,0 +1,117 @@
+---
+title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
+subtitle: 'R Demo for Chapter 18, part 3: Prediction intervals, $r^2$ and Residual Plots'
+author: "Jinko Graham"
+date: '2018-10-26'
+output: 
+  beamer_presentation:
+    includes:
+      in_header: ../header_pagenum.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+## Load the data, fit the regression model, get CIs
+
+* We'll continue working with the data on low-birthweight babies.
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/lbwt.csv")
+lbwt <- read.csv(uu) #load the data
+lfit <- lm(headcirc ~ gestage,data=lbwt) #fit the regression model
+lCI <- predict(lfit,interval="confidence") #get the 95% CI
+#Now make a dataframe of the results
+lbwtCIs<-data.frame(gestage=with(lbwt,gestage), lCI )
+head(lbwtCIs)
+```
+
+\normalsize
+
+* Next, we'll compare these CIs to _prediction intervals_ $\ldots$.
+
+
+## 95% PIs for example data
+
+\scriptsize
+
+```{r}
+lPI <- predict(lfit,interval="prediction")
+lbwtPIs <- data.frame(gestage=with(lbwt,gestage), lPI) 
+head(lbwtPIs,n=3)
+```
+
+\normalsize
+
+* Predicted values $\hat{y}$ and
+lower and upper limits of PI are in
+the columns `fit`, `lwr` and `upper`, respectively.
+
+## 
+
+* PIs are wider than CIs; e.g. compare 
+for gestational age 29 weeks:
+
+\scriptsize
+```{r}
+lbwtCIs[1,] #95% CI for gestational age 29 weeks
+lbwtPIs[1,] #95% PI for gestational age 29 weeks
+```
+
+
+## $r^2$ in simple linear regression
+
+* For the regression of head circumference on 
+gestational age, we can
+get $r^2$, the coefficient of determination as follows:
+
+
+\scriptsize
+```{r}
+with(summary(lfit), r.squared)
+```
+
+
+
+
+## Plots of residuals vs. fitted values
+
+* In the low-birthweight babies data, the regression of
+head circumference on gestational age gives:
+
+\scriptsize
+
+```{r, fig.height=2.9,fig.width=3.5}
+plot(lfit,which=1, add.smooth=FALSE)
+```
+
+\normalsize
+
+## 
+
+* R's `plot()` function will plot the regression-modelling 
+output in `lfit`. 
+   + Recall that we got `lfit` by applying the `lm()`
+   function to the dataframe `lbwt` in
+   \footnotesize 
+   `lfit <- lm(headcirc ~ gestage,data=lbwt)`
+   \normalsize
+   
+* For regression-model objects such as `lfit`
+the `plot()` function has 6
+different diagnostic plots, specified by the
+`which` argument.
+    + The first (`which=1`) is the plot of the residuals _vs_ fitted values.
+* The resulting plot labels the three most extreme 
+residuals (i.e. residuals farthest from zero) by their case number in the `lbwt` dataframe: 29, 31 and 33.
+
+* These cases can be viewed in the context of the dataframe:
+
+\scriptsize
+```{r}
+lbwt[c(29,31,33),]
+```
+
