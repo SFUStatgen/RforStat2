@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 16: Multiple $2\times 2$ Contingency Tables'
 author: "Jinko Graham"
-date: '2018-10-07'
+date: '2018-10-28'
 output: 
   beamer_presentation:
     includes:
@@ -94,7 +94,7 @@ stratumStats <- function(a,b,c,d) {
 \normalsize
 
 * Apply ```stratumStats()``` to the first stratum defined by the 
-extraneous variable ```sex```.
+extraneous variable ```sex``` (for females).
 
 \scriptsize
 ```{r}
@@ -105,19 +105,20 @@ s1
 
 ## 
 
-* Then apply ```stratumStats()``` to the 2nd stratum defined by the  ```sex```.
+* Then apply ```stratumStats()``` to the 2nd stratum defined by the  ```sex``` (for males).
 
 \scriptsize
 ```{r}
 s2 <- stratumStats(20,24,25,37)
+s2
 ```
+
 
 \normalsize
 
 *  The R objects ```s1``` and ```s2```
 contain the $(y_i, w_i)$ pairs
 for the 1st (females) and 2nd (males) stratum of ```sex```, respectively.
-
 
 
 ## ```homogTest()```
@@ -233,30 +234,4 @@ with(stenosis,mantelhaen.test(x=smoke,y=AS,z=sex,correct=FALSE,
 
 * Referring to the p-value reported in the output, we see that, at the 5% level, there is no statistical evidence that smoking affects the odds
 of AS, once we adjust for sex.
-
-
-## Confidence Interval for the Common OR
-
-
-* `mantelhaen.test()` returns a 95% CI of about $(0.69,2.1)$.
-
-* Though not discussed, can extend the 
-MH test to arbitrary values of the common OR.
-    + We only covered the special case where the 
-    value hypothesized is 1; i.e. $H_0: OR=1$ (unassociated) vs. $H_a: OR \not= 1$ (associated).
-* The 95% CI is obtained by finding the set of all OR values 
-that would be retained in a test at the 5% level.
-    + E.G., With the AS data, if we were to test  
-    $H_0:OR=0.69$ vs. $H_a:OR \not= 0.69$, we'd 
-    retain $H_0$ at 5% level.
-    + Similarly, if we were to test  
-    $H_0:OR=2.1$ vs. $H_a:OR \not= 2.1$, we'd 
-    retain $H_0$ at 5% level.
-    + And the same for all values in between.
-    + Any values smaller than 0.69 or larger than 2.1 for $H_0$ would lead to rejection with these data.
-    
-* Thus the 95% CI obtained from the AS data is
-(0.69, 2.1). 
-    + This is called "inverting the test" 
-and is how R gets the CI (but not the text, which we'll skip). 
 
