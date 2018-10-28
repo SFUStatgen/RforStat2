@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 16: Multiple $2\times 2$ Contingency Tables'
 author: "Jinko Graham"
-date: '2018-10-06'
+date: '2018-10-29'
 output: 
   beamer_presentation:
     includes:
@@ -171,11 +171,53 @@ that is associated with both the disease outcome and the exposure of interest.
 * Ignoring a confounder leads to biased inference of the effect of the exposure on the disease outcome (i.e., incorrect estimate, test and CI) and potentially **wrong conclusions**. 
 
 * Confounding is thus a **big concern** in any observational study. 
-    + E.G. Confounding by health-care coverage
-    confused researchers in the observational
-    studies leading up to the WHI.
-    + Women with better health-care coverage tended to have better disease outcomes and also to have better access to HRT. Hence HRT seemed to be associated with better disease outcomes.
-    
+
+## WHI Example
+
+* Observational studies leading up to the WHI 
+(a clinical trial) suggested that postmenopausal 
+women on hormone-replacement therapy (HRT) had better disease outcomes.
+
+*  Drug companies were actively promoting synthetic hormones in 
+their marketing targetted to the large demographic group of
+postmenopausal women.
+
+    + Doctors were prescribing HRT for their postmenopausal patients.
+
+* What everyone missed was the potential confounding by health-care coverage (in the US). 
+
+* Women with better health-care coverage tend to have better disease outcomes and also to have better access to HRT. Hence HRT seemed to be associated with better disease outcomes.
+
+##
+
+\bigskip \bigskip \bigskip 
+
+* In the diagram below, let $D$ be disease outcome, $HRT$ be hormone replace therapy (the exposure of interest) and $HCC$ be health-care coverage.
+
+    + Associations between variables are indicated by lines
+    + $HCC$ is associated with better disease outcomes (i.e. with $D$).
+    + $HCC$ is also associated with access to $HRT$.
+
+\vspace*{-0.3in}
+\begin{center}
+\includegraphics[height=3in]{confdiagCh16.png}
+\end{center}
+##
+\vspace*{-.2in}
+\begin{center}
+\includegraphics[height=3in]{confdiagCh16.png}
+\end{center}
+
+\vspace*{-1.3in}
+
+* To properly understand the effect of $HRT$ on $D$, it is important to control/adjust for the potential confounding effect of $HCC$.
+
+* The WHI was a randomized, controlled, clinical trial of $HRT$. 
+    + The WHI investigators used treatment randomization to control/adjust for the potential confounding effects of $HCC$.
+    + The randomization of $HRT$ to women regardless of their $HCC$ breaks the association between $HRT$ and $HCC$.
+
+* The trial established the harmful effects of $HRT$. Doctor's stopped prescribing and companies stopped marketing it.
+   
 ## Simpson's Paradox
 
 * Confounding explains "Simpson's paradox":
@@ -203,13 +245,15 @@ disease outcome and the exposure variable, the extraneous variable is:
 
 ## The Mantel-Haenszel (MH) estimator
 
-* Need to adjust the OR for the effects of a confounding variable. 
+* To understand the effect of the exposure on disease outcome, we need to adjust the OR for the effects of a confounding variable. 
 
-* The Mantel-Haenszel (MH) estimator of the OR adjusts for a confounding variable when the
-    disease outcome and exposure variable are dichotomous (i.e. have 2 categories)
-    and the confounding variable is categorical with 2 or more categories.
+* We can adjust the OR by using the Mantel-Haenszel (MH) estimator.
 
-## MH Summary OR (Section 16.2.2)
+* The MH estimator of the OR adjusts for a confounding variable when 
+    + the disease outcome and exposure variable are dichotomous (i.e. have 2 categories) and 
+    + the confounding variable is categorical with 2 or more categories.
+
+## MH Summary OR
 
 * The MH summary estimator is a weighted average of the stratum-specific OR estimators
     + The MH estimator was developed over 50 years ago, 
@@ -246,14 +290,40 @@ with(stenosis,mantelhaen.test(x=smoke,y=AS,z=sex,correct=FALSE,
 
 \normalsize
 
-* Referring to the p-value reported in the output, we see that, at the 5% level, there is no statistical evidence that smoking affects the odds
-of AS, once we adjust for sex.
+* Referring to the p-value of 0.5044 reported in the output, we see no statistical evidence that smoking affects the odds at the 5% level, once we adjust for sex.
+
+* The MH estimate of the OR adjusted for sex is 
+about 1.21. 
+\begin{quote}
+"We estimate that smoking is associated with a 1.21-fold
+    increase in the odds of developing AS, {\bf after adjusting 
+    for} the effects of sex."
+\end{quote}
+
+## CI for the Common OR
 
 
-## Confidence Interval for the Common OR
+* The MH output from R returns a 95% CI of about $(0.69,2.1)$.
+\footnotesize
+\begin{quote}
+"With 95\% confidence, we estimate that smoking is associated 
+with between a 0.69- to 2.1-fold increase 
+in the odds of developing AS, {\bf after adjusting for} 
+    the effects of sex."
+\end{quote}
+\normalsize
 
-
-* R returns a 95% CI of about $(0.69,2.1)$.
+* Notes
+    1. The association between smoking and AS is not significant at level 5%. 
+    2. Therefore, the 95% CI covers 1
+    3. The lower limit of the CI corresponds to an 
+    estimated 0.69-fold "increase" in the odds of AS from smoking.
+        + Re-express as a 
+    $1/0.69=1.45$-fold **decrease** in the odds of AS.
+    4. Seems strange that smoking would decrease the odds of AS.
+        + But remember that the CI is an interval estimate of the population OR that is subject to sampling variability.
+    
+## Calculating CIs
 
 * Though not discussed, can extend the 
 MH test to arbitrary values of the common OR.
@@ -273,7 +343,7 @@ that would be retained in a test at the 5% level.
 * Thus the 95% CI obtained from the AS data is
 (0.69, 2.1). 
     + This is called "inverting the test" 
-and is how R gets the CI (but not the text, which we'll skip). 
+and is how R gets the CI (but not how the text gets it, which we'll skip). 
 
 ## Summary
 
