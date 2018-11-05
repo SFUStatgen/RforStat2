@@ -3,7 +3,7 @@ title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sc
 subtitle: 'Chapter 18, part 3: Prediction intervals, $r^2$,
 residual plots'
 author: "Jinko Graham"
-date: '2018-10-26'
+date: '2018-11-04'
 output: 
   beamer_presentation:
     includes:
@@ -248,7 +248,7 @@ plot(f,which=1, add.smooth=FALSE)
 * Plot below suggests non-constant SD. 
     + The funnel shape indicates that
 as $\hat{y}$ increases so does the spread of the residuals;
-    + Suggests that, as population mean response increases, so does the response sd.
+    + Suggests that, as population-mean response $\mu_{y|x}$ increases, so does the response sd, $\sigma_{y|x}$ (violating model assumptions; see ch18part1, slides 6-9).
 
 \vspace*{-.2in}
 \begin{center}
