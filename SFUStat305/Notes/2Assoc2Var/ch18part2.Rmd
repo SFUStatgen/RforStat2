@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 18, part 2: Inference in Simple Linear Regression'
 author: "Jinko Graham"
-date: '2018-10-19'
+date: '2018-11-04'
 output: 
   beamer_presentation:
     includes:
@@ -99,8 +99,8 @@ summary(lfit)$coefficients
 \normalsize 
 
 * The test statistic value is about 12.37 and the p-value is tiny.
-* There is strong statistical evidence of an association between gestational age and
-head circumference in the data.
+* There is statistical evidence that gestational age and
+head circumference are associated.
 
 
 ## Confidence Intervals
@@ -149,7 +149,7 @@ form estimate $\pm$ margin of error, where
     + the margin of error is $SE(\hat{y})$ times
     $t^*$,  the upper $(1-C)/2$-critical value of the $t$-distribution
 with $n-2$ df.
-* We will always use a computer to calculate CIs
+* We will use a computer to calculate CIs
 for the regression line.
 
 ## CIs at Observed Values of Explanatory Variable
