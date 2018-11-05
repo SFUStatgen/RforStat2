@@ -1,8 +1,8 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
-subtitle: 'Chapter 18, part 1: Simple Linear Regression Models'
+subtitle: 'Chapter 18, part 1 (including Demo): Simple Linear-Regression Models'
 author: "Jinko Graham"
-date: '2018-10-18'
+date: '2018-11-05'
 output: 
   beamer_presentation:
     includes:
@@ -72,10 +72,20 @@ the model we have fitted to our data.
 
 ## Model Overview
 
+\vspace*{-.05in}
+
 * The components of the statistical model are: 
     1. the linear predictor,
     2. normal error terms, 
     3. constant SD.
+
+\vspace*{-.1in}
+
+\begin{center}
+\includegraphics[height=2.1in]{linmodel.jpg}
+\end{center}
+\vspace*{-.15in}
+
 * Will discuss each component.
 * In addition, we assume that the observations are **independent**.
 
@@ -83,7 +93,7 @@ the model we have fitted to our data.
 
 * When there is a linear relationship between $Y$ and $X$,
 the conditional mean of $Y$ given $X=x$ in the population, 
-denoted $\mu_{y|x}$, is modelled by a line:
+denoted $\mu_{y|x}$, is modelled by a \underline{line}:
 $$\mu_{y|x} =\alpha + \beta x,$$
 * Think of $\mu_{y|x}$ as the population mean value of $Y$ for all data with $X=x$.
 * $\beta$ is the change in $\mu_{y|x}$ for a one-unit increase in $x$.
@@ -144,7 +154,7 @@ the scatterplot and the regression line.
 
 ## Vertical Distance
 
-* The question is: How should we summarize vertical distances between the points, $y$, and the regression line, $\hat{y}$?
+* Question: How should we summarize vertical distances between the points, $y$, and the regression line, $\hat{y}$?
 * We will discuss the method that minimizes the sum of squared distances,
 or least squares.
 *  There are many visual demonstrations of the least
@@ -225,7 +235,7 @@ coefficients(lfit)
 * The estimated intercept and slope are 
 $\hat{\alpha} = 3.9$ and $\hat{\beta} = 0.78$.
 
-    + A one week increase in gestational age is associated with a 0.78cm increase in head circumference.
+    + A one week increase in gestational age is associated with an estimated 0.78cm increase in head circumference.
 
 
 ## Software Notes
