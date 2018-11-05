@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 18, part 2: Inference in Simple Linear Regression'
 author: "Jinko Graham"
-date: '2018-10-19'
+date: '2018-11-04'
 output: 
   beamer_presentation:
     includes:
@@ -191,8 +191,7 @@ and the upper limits are in the column `upr`.
 
 ## Adding CIs to a Scatterplot
 
-* Pointwise 95% CIs around the fitted regression line are added by `ggplot() + geom_smooth(method="lm")`
-    + `geom_smooth(method="lm", level=.9)` will give 90% CIs.
+* By default, pointwise 95% CIs around the fitted regression line are added by `ggplot() + geom_smooth(method="lm")`
 
 \scriptsize
 
@@ -200,5 +199,22 @@ and the upper limits are in the column `upr`.
 library(ggplot2)
 ggplot(lbwt, aes(x=gestage,y=headcirc)) + 
    geom_point() + 
-   geom_smooth(method="lm", level=.9)
+   geom_smooth(method="lm")
+```
+
+\normalsize
+
+##
+
+* To change the default and add, e.g., pointwise 99% CIs around the fitted regression line, use the argument `level` in `geom_smooth()`: 
+
+    + `geom_smooth(method="lm", level=.99)` for 99% CIs.
+
+\scriptsize
+
+```{r,fig.height=2,fig.width=4}
+library(ggplot2)
+ggplot(lbwt, aes(x=gestage,y=headcirc)) + 
+   geom_point() + 
+   geom_smooth(method="lm", level=.99)
 ```
