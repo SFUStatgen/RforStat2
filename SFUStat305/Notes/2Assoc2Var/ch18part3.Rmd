@@ -3,7 +3,7 @@ title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sc
 subtitle: 'Chapter 18, part 3: Prediction intervals, $r^2$,
 residual plots'
 author: "Jinko Graham"
-date: '2018-11-04'
+date: '2018-11-06'
 output: 
   beamer_presentation:
     includes:
@@ -182,7 +182,7 @@ knitr::include_graphics('./residVert.png')
 * We'll study regression diagnostics later in the course. For now, we only consider
 the plot of residuals vs. fitted values.
 * This plot can show evidence of
-    1. departures from the assumption of a linear relationship:
+    1. departures from the assumption of a linear model:
         + look for nonlinear trends
     2. departures from the assumption of constant SD
     <!--
@@ -194,7 +194,7 @@ the plot of residuals vs. fitted values.
     3. departures from the assumption of no outlying/unusual data points:
         + look for unusually large residuals
 
-## Departures from linearity: EG.1
+## Departures from linear model: EG.1
 
 * Scatterplots of 
     + (left) $y$ vs. $x$ with fitted regression line superposed, and
@@ -215,7 +215,7 @@ abline(coef(f))
 plot(f,which=1, add.smooth=FALSE)
 ```
 
-## Departures from linearity: EG.2
+## Departures from linear model: EG.2
 
 \bigskip
 
