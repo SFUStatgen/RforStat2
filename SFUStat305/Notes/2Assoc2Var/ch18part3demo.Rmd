@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 18, part 3: Prediction intervals, $r^2$ and Residual Plots'
 author: "Jinko Graham"
-date: '2018-10-26'
+date: '2018-11-06'
 output: 
   beamer_presentation:
     includes:
@@ -50,9 +50,9 @@ head(lbwtPIs,n=3)
 lower and upper limits of PI are in
 the columns `fit`, `lwr` and `upper`, respectively.
 
-## 
+## PIs are wider than CIs
 
-* PIs are wider than CIs; e.g. compare 
+* E.G. Compare 
 for gestational age 29 weeks:
 
 \scriptsize
@@ -60,6 +60,14 @@ for gestational age 29 weeks:
 lbwtCIs[1,] #95% CI for gestational age 29 weeks
 lbwtPIs[1,] #95% PI for gestational age 29 weeks
 ```
+
+\normalsize
+
+* The CI **estimates a parameter**, namely the population-mean head circumference of a baby of gestational age 29 weeks. 
+    + The CI is an interval ***estimate*** of a ***parameter***.
+
+* The PI **predicts a future random value**, namely the head circumference of a new baby of gestational age 29 weeks. 
+    + The PI is an interval ***prediction*** of a future ***random value***.
 
 
 ## $r^2$ in simple linear regression
