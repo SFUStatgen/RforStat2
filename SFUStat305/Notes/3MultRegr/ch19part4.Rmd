@@ -163,7 +163,7 @@ retains $H_0$ at the 5% level ($p=0.78$).
 effect terms $X_1$ and $X_2$.  
 * Interaction means that the slopes for $X_1$ can
 depend on the value of the modifying variable $X_2$.
-* E.G. Say $X_2$ is a continuous variable taking
+* E.G. Say $X_2$ is a quantitative variable taking
 on values between 5 and 10. 
 * Focus on two values $X_2=5$ and $X_2=6$ one unit
 apart:  
