@@ -1,0 +1,63 @@
+---
+title: "Assignment 3, Question 4"
+author: "NOT TO BE HANDED IN (for practice only)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Use the dataset on babies with low birthweight from the
+first two questions:
+ 
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.csv")
+lowbwt <- read.csv(uu)
+head(lowbwt)
+```
+
+In this problem, use germinal-matrix hemorrhage (`grmhem`) as the response variable and five-minute apgar score (`apgar5`)
+as an explanatory variable. Note that apgar is a score without any real units. Where necessary you may refer to apgar score in terms of “points” (e.g., a one point increase). Report R output and perform your calculations using three significant digits.
+
+a)	Fit a logistic-regression model for the log odds of germinal-matrix hemorrhage that includes main effects for five-minute apgar score (`apgar5`) and toxemia (`tox`), and statistical interaction between these two variables. You’re asked whether or not toxemia modifies the effect of the apgar score on the odds of 
+germinal-matrix hemorrhage? Answer this question using a statistical test with significance level 5\% and explain your response.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+b)	Assess whether or not toxemia confounds the effect of five-minute apgar score on the odds of germinal-matrix hemorrhage using the rule-of-thumb based on the 10%-change discussed in the notes.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+c)	In light of parts (a) and (b), is it necessary to adjust for toxemia if we are interested in the effect of five-minute apgar score on germinal-matrix hemorrhage? Justify your answer. Based on your answer, fit an appropriate model and report the point estimate of the effect of the five-minute apgar score. (Note: Don’t bother to interpret this point estimate; instead, you will be asked to interpret the interval estimate in part (d) below.)
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+d)	Use R to construct a 95% CI for the slope coefficient describing the effect of the five-minute apgar score in the logistic-regression model fitted in part (c). Report this interval on the log-odds scale, and also transform the CI to the odds scale. Interpret the interval on the odds scale. 
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
