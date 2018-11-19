@@ -43,9 +43,7 @@ congenital syphilis?
 
 (b) Marital status is a dichotomous random variable,
 where the value 1 indicates that a woman is unmarried
-and 0 that she is married. What are the relative odds
-that a newborn will suffer from syphilis for unmarried *versus*
-married mothers? 
+and 0 that she is married. For unmarried mothers, what are the estimated odds that a newborn will suffer from syphilis relative to married mothers? 
 
 **Answer:**
 *Insert your written comments here.*
