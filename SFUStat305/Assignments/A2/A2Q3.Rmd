@@ -9,8 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Chapter 15, #18. Alcohol and miscarriages. A study investigating the association between spontaneous abortion (miscarriage) and alcohol consumption obtained the following
-data:
+Chapter 15, #18. Alcohol and miscarriages. A study investigating the association between spontaneous abortion (miscarriage) and alcohol consumption obtained the data below. Note that the second column labeled "pregnancies" counts the total number of women who got pregnant whereas the third column labeled "miscarriages" counts the number (out of the total in the second column) who subsequently lost their pregnancy due to spontaneous abortion. 
 
 <table cellpadding="10">
 <tr> 
