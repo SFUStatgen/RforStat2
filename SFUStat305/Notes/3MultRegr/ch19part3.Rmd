@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 19, part 3: Residual Diagnostics'
 author: "Jinko Graham"
-date: '2018-11-12'
+date: '2018-11-24'
 
 output: 
   beamer_presentation:
@@ -19,27 +19,25 @@ knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE,fig.height=3,fig.w
 
 ## Residual Diagnostics
 
-* Residuals are the main tool for checking model assumptions and 
-identifying outliers
 * Recall the model assumptions:
     1. The linear predictor is correctly specified.
     2. The random errors have constant SD.
     3. The random errors are normally distributed.
-* The residuals are observed minus fitted values: $y_i-\hat{y}_i$, 
-* In Chapter 18, we plotted residuals _vs._ 
-fitted values to check assumptions 1 and 2, and also to informally
-identify outliers.
-* To check the normal errors assumption and detect
-outliers more formally, we'll define
-the _Q-Q plot_ and _standardized residuals_.
-* But first let's check assumptions 1 and 2 
-for the MLR model that we fit to 
-low-birthweight-babies data, 
-by plotting the residuals _vs._ fitted 
-values.
+* The residuals are the observed minus the fitted values: $y_i-\hat{y}_i$, 
+* In Chapter 18 on SLR, we plotted residuals _vs._ 
+fitted values to check assumptions 1 \& 2, and to 
+identify potential outliers.
+
+* To check assumptions 1 \& 2 for the MLR model fitted to low-birthweight babies,
+we'll look next at the plot of residuals _vs._ fitted  values.  
+
+* After that, to check the assumption of normal errors and detect
+outliers more formally, we'll define:
+    + the _Q-Q plot_ and 
+    + the _standardized residuals_
 
 
-## Residuals versus Fitted Values
+## Residuals vs. Fitted Values
 
 * Load the data, fit the MLR model and do the plot $\ldots$
 
@@ -92,8 +90,8 @@ different diagnostic plots, specified by the
     - We will define quantiles on the next slide.
 - Our interest is in using Q-Q plots to 
 compare the distribution of
-residuals to the distribution they _should have_ under 
-the model assumption of _normal random errors_.
+residuals to the distribution they ***should have*** under 
+the model assumption of ***normal random errors***.
 
 
 ## Quantiles
@@ -126,8 +124,10 @@ axis(side=1, at=-1.2, labels=expression(q[p]))
 ## Distribution of Residuals
 
 - We may _standardize_ the 
-residuals to have a common distribution.
-We'll skip the details.
+residuals to have a common distribution; 
+    + Do this by dividing them by an estimate of their SD.
+    + Will skip the details.
+    
 <!--
 - For the $i$th case, define the _standardized residual_ as
 $$ r_i = \frac{y_i - \hat{y}_i}{\hat{\sigma}\sqrt{1-h_{i}}}, \quad \; {\rm where}$$
