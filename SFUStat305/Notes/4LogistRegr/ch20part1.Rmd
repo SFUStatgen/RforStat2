@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 20, part 1: Logistic Regression Models'
 author: "Jinko Graham"
-date: '2018-11-13'
+date: '2018-11-25'
 output: 
   beamer_presentation:
     includes:
@@ -20,7 +20,7 @@ on the odds of a binary outcome.
 * This is a generalization of the analyses of odds ratios we have
 studied before.
 * Think of the binary outcome $Y$ as disease status (0=non-disease; 1=disease).
-* The explanatory variables could be categorical (e.g., exposures), or
+* The explanatory variables $X_1, \ldots, X_q$ could be categorical (e.g., exposures), or
 quantitative variables.
 
 
@@ -28,18 +28,18 @@ quantitative variables.
 
 \small
 
-* In a sample of 223 low-birthweight infants from the 
-neonatal ICU of a large hospital, 76 
-were diagnosed with bronchopulmonary dysplasia (BPD; $Y=1$) and 
-147 were non-BPD ($Y=0$).
-* One factor that might affect the risk of BPD is birth weight (birthwt, in grams; $X_1$). Breaking birth weight into 3 categories, we have:
+* In 223 low-birthweight infants sampled from the 
+neonatal ICU of a large hospital, 76 were diagnosed with
+bronchopulmonary dysplasia (BPD; $Y=1$) and 
+147 were not ($Y=0$).
+* Birth weight ($X_1$) is believed to influence the risk of BPD. Grouping the birth weights into 3 categories, we obtain:
 \footnotesize
 \begin{center}
 \begin{tabular}{r|cccc} 
-birthwt &  BPD & no BPD & odds BPD & log-odds$^*$ BPD \\ \hline
-0-950g    & 49 & 19 & $49/19=2.58$ & $~~0.95$ \\
-951-1350g & 18 & 62 & $18/62=0.29$ &  $-1.24$ \\ 
-1351-1750g&  9 & 66 & $~9/66=0.14$ & $-1.99$ \\  \hline
+birthweight(in g) &  BPD & no BPD & odds BPD & log-odds$^*$ BPD \\ \hline
+0-950    & 49 & 19 & $49/19=2.58$ & $~~0.95$ \\
+951-1350 & 18 & 62 & $18/62=0.29$ &  $-1.24$ \\ 
+1351-1750&  9 & 66 & $~9/66=0.14$ & $-1.99$ \\  \hline
 \multicolumn{5}{l}{$^*$ Use the natural logarithm.}
 \end{tabular}
 \end{center}
@@ -47,12 +47,12 @@ birthwt &  BPD & no BPD & odds BPD & log-odds$^*$ BPD \\ \hline
 
 * Consider the ratio of the odds at two values of $X_1$.
 * To get the log of this odds ratio (the log-OR), we take the difference between the two log-odds.
-    + E.G. The log-OR of BPD in babies with birthweight $<950g$ relative to  babies with birthweight between $1351-1750g$ is $0.95-(-1.99)=0.95+1.99=2.94$.
+* E.G. Consider the odds of BPD in babies with birthweight $<950g$ relative to babies with birthweight between $1351$-$1750g$. The log-OR is $0.95-(-1.99)=0.95+1.99=2.94$.
 
 
 ## The Logistic Regression Model
 
-* We may model the log-odds of $Y=1$ (e.g. BPD) as a function of $X_1$ (e.g. birthwt):
+* We may model the log-odds of $Y=1$ (e.g. BPD) as a function of $X_1$ (e.g. birthweight):
 $$
 \log \left[ \frac{p}{1-p} \right] = \alpha + \beta_1 X_1, \quad {\rm where}
 $$
@@ -73,7 +73,7 @@ $$
 
 \small 
 
-* Below, the $y$-axis shows $p$ and $x$-axis shows $LO$; the curve is the function $$p = \frac{e^{LO}}{1+ e^{LO}}.$$
+* $y$-axis is $p$; $x$-axis is $LO$; curve is function $p = \frac{e^{LO}}{1+ e^{LO}}.$
 
 \scriptsize
 
@@ -103,10 +103,12 @@ a technique called the method of _maximum likelihood_.
     and obtaining parameter estimates are beyond the scope of this course.
     + Instead, see STAT 475 on Applied Discrete Data Analysis, for
     which STAT 305 is a pre-requisite.
+    
+* The slope parameter $\beta_1$ for $X_1$ summarizes the association
+between $Y$ and $X_1$ in the population.
 
-* For large sample sizes, we can make approximate inference about the 
-slope parameter $\beta_1$ for $X_1$ that describes the association
-between $Y$ and $X_1$.
+* For large sample sizes, the CLT kicks in and allows us to make approximate inference about the 
+slope parameter $\beta_1$ using our fitted model.
 
 
 ## Review of Natural Logarithms and Exponents
@@ -135,16 +137,14 @@ change in the odds of the outcome.
 * Need to take care with negative parameter values.
 
 * E.G. Let's say that $\beta_1=-2$ and $X_1$ is measured
-in grams. Then, literally:
+in grams. Then:
 \begin{quote}
 A one-gram increase in $X_1$ is associated with a change
 of $-2$ in the log-odds of the outcome, or a $e^{-2}=0.135$-fold
 change in the odds of the outcome. 
 \end{quote}
 
-* But don't say this as it is too long and confusing.
- Instead, if $X_1$ is birthweight and the outcome is BPD,
- say something like:
+* Rephrase to be shorter. E.G., if $X_1$ is birthweight and the outcome is BPD:
 \begin{quote}
 A one-gram increase in birthweight is associated with a $0.135$-fold
 change in the odds of BPD. 
@@ -211,8 +211,8 @@ head(bpd)
 
 ## Fit the Logistic Regression of BPD on Birth Weight
 
-* To fit a logistic regression model to the data, we use
-the `glm()` function.
+* To fit a logistic-regression model to the data, we use
+the `glm()` function in R.
 
 * Similar to the `lm()` function, `glm()` also requires 
 a model formula.
@@ -232,46 +232,46 @@ coefficients(bfit)
 \normalsize
 
 
-* To three significant digits, the estimated parameters in the logistic regression are
+* To three significant digits, the estimated parameters are
 $\hat{\alpha}=4.03$ and $\hat{\beta}_1 = -0.00423$
 
 ## Software Notes
 
 * When we fitted 
-least-squares regression models to data, we used the _linear model_ 
-or `lm()` function.
+linear-regression models to data using the method of least squares, we used the _linear model_ 
+or `lm()` function in R.
 
-* When we fit logistic-regression models to data,
-we use the _generalized linear model_ or `glm()` function.
+* When we fit logistic-regression models to data using the method
+of maximum-likelihood,
+we use the _generalized linear model_ or `glm()` function in R.
 
 * In fact, `glm()` fits several types of models,
-including least-squares and logistic regression. 
+including linear and logistic regression. 
 
-    + Specify the type of model with the `family` option. For example,
-        + Regular least-squares  is `family=gaussian`; same as using `lm()`.
-        + Logistic is `family=binomial`.
+* Specify the type of model in `glm()` with the `family` option. 
+    + Regular linear regression  is `family=gaussian` (default); same as using `lm()`.
+    + Logistic regression is `family=binomial`.
         
-+ **BEWARE:** If you omit the `family=binomial` argument,
-    `glm()` will use the default `gaussian`, and will fit a 
-    regular least-squares regression to your data.
-    + You will get no warnings and your fitted model will be nonsense. 
++ **BEWARE:** Omitting the `family=binomial` argument in
+    `glm()` will fit a linear regression to binary-outcome data.
+    + ***For binary-outcome data, the fitted model will be nonsense.*** 
     
 ## Interpretation of Birth-Weight Effect
 
 * To three significant digits, $\hat{\beta}_1 = -0.00423$
-* Model is for the log-odds, but interpret in terms of the odds.
+* Model the log-odds, but interpret in terms of the odds.
 * We estimate that a one-gram 
-increase in birth weight is associated with a $0.00423$ decrease in
+increase in birth weight is associated with a $-0.00423$ change in
 the log-odds of BPD.
-* Report: "We estimate that a one-gram increase in birth weight is associated with a
-    $e^{-0.00423}=0.996$-fold change in the odds of BPD."
+* Report: "A one-gram increase in birth weight is associated with an
+   estimated $e^{-0.00423}=0.996$-fold change in the odds of BPD."
 
-* As one-gram units are too fine-grained, can work with a 100-gram 
-increase in birth weight $\ldots$
-    + Then we estimate that a 100-gram increase in birth weight is associated with a
-$100\times 0.00423=0.423$ change in the log-odds of BPD.
-    + Report: "We estimate that a 100-gram increase in birth weight is 
-    associated with a $e^{-0.423}=0.655$-fold change in the
+* As one-gram units are too fine-grained, can instead work with a 100-gram 
+increase in birth weight.
+    + Then a 100-gram increase in birth weight is associated with an
+estimated $100\times -0.00423=-0.423$ change in the log-odds of BPD.
+    + Report: "A 100-gram increase in birth weight is 
+    associated with an estimated $e^{-0.423}=0.655$-fold change in the
     odds of BPD."
 
 ## Log-Odds of BPD _vs._ Birthweight
