@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 19, part 4: Statistical Interaction and Confounding'
 author: "Jinko Graham"
-date: '2018-11-12'
+date: '2018-11-24'
 output: 
   beamer_presentation:
     includes:
@@ -17,16 +17,20 @@ knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE,fig.height=3,fig.w
 
 \small
 
-- We often study the relationship between a response variable, $Y$, 
-and explanatory variable, $X_1$, adjusted for other variables.
-- Example: Study of low birthweight babies.
-    - Response $Y$ is head circumference    
-    - Explanatory variable $X_1$ is gestational age.
-- However, an extraneous variable $X_2$, such as birth weight, can ***modify*** the effect of $X_1$ on $Y$.
-    - We looked at ***effect modification*** previously, when studying association between a categorical outcome variable, $Y$, and 
-    a categorical exposure variable, $X_1$. 
-    - Also
-    referred to as ***statistical interaction***.
+- What is the relationship between a response variable, $Y$, 
+and explanatory variable, $X_1$, adjusted for other variables?
+- Example: Study of low-birthweight babies.
+    - $Y$ is head circumference and $X_1$ is gestational age.
+    - Interested in the effect of $X_1$ on $Y$ as summarized by the 
+    slope term in the linear model.
+    - However, an extraneous variable $X_2$, such as birth weight, can ***modify*** (change) the effect of $X_1$ on $Y$.
+- Earlier, we looked at ***effect modification***, when studying association between a categorical outcome variable, $Y$, with two levels and 
+    a categorical exposure variable, $X_1$, with two levels. 
+    - In this context, the effect of $X_1$ on $Y$ was summarized by
+    the odds ratio (rather than the slope term).
+    - When the effect of $X_1$ on $Y$ was different depending on the value of $X_2$, then $X_2$ was a modifier of the effect of $X_1$ on $Y$.
+    - If $X_2$ was not an effect modifier, we could go on to consider it as a potential confounder of the association between
+    $X_1$ and $Y$.
 
 
 ## Steps
@@ -93,8 +97,8 @@ where
     - Line for toxemia group ($X_2= 1$): $\alpha + \beta_1 X_1 + \beta_2 + \beta_3 X_1$
         - intercept $\alpha+\beta_2$ and slope $\beta_1+\beta_3$ for `gestage`.
 - Focusing on the slopes, we see that the difference between `gestage` slopes for the two toxemia groups is $\beta_3$. 
-    +  $\beta_3=0$ implies that the slopes are the same in the two groups; 
-    + i.e., toxemia doesn't modify the effect of gestational age on head circumference.
+    +  $\beta_3=0$ implies that the slopes are the ***same*** in the two groups; 
+    + i.e., toxemia does ***not*** modify the effect of gestational age on head circumference.
     
 ## 
 
@@ -145,8 +149,8 @@ retains $H_0$ at the 5% level ($p=0.78$).
 
 * In the model formula      
 `headcirc ~ gestage + toxemia + gestage:toxemia`
-    + The interaction term between `gestage` and `toxemia` is indicated by `gestage:toxemia`.
-    +  The main effect terms are indicated by `gestage` and `toxemia`.
+    + The ***interaction*** term between `gestage` and `toxemia` is indicated by `gestage:toxemia`.
+    +  The ***main-effect*** terms are indicated by `gestage` and `toxemia`.
     
 * In the model summary:
     + Information about the slope $\beta_3$ for the interaction term is in the row labelled `gestage:toxemia`.
@@ -159,8 +163,8 @@ retains $H_0$ at the 5% level ($p=0.78$).
 * Interaction terms appear as products of main-effect terms.
     + E.G. in the MLR with linear predictor 
     $\mu_{Y|X_1, X_2} = \alpha + \beta_1 X_1 + \beta_2X_2 + \beta_3 X_1X_2$,
-    the interaction term $X_1 X_2$ is a product of the main
-effect terms $X_1$ and $X_2$.  
+    the interaction term $X_1 X_2$ is a product of the 
+    main-effect terms $X_1$ and $X_2$.  
 * Interaction means that the slopes for $X_1$ can
 depend on the value of the modifying variable $X_2$.
 * E.G. Say $X_2$ is a quantitative variable taking
@@ -252,10 +256,11 @@ summary(lfit)$coefficients
     - Since the $p$-value is 0.09, we retain the null hypothesis
     of no interaction.
 
-* Conclude that `birthwt` does **not** modify the effect of 
+* Conclude that there is insufficient statistical
+evidence to claim that `birthwt` modifies the effect of 
 `gestage` on `headcirc`.
 
-* Though `birthwt` is not an effect modifier, it could still confound the association between `gestage` and `headcirc` $\ldots$
+* Though `birthwt` is not declared an effect modifier, it could still confound the association between `gestage` and `headcirc` $\ldots$
 
 
 
@@ -263,19 +268,16 @@ summary(lfit)$coefficients
 
 ## Changing the role of `birthwt`
 
-- Previously, we had been thinking of `birthwt` as a potential
-modifier of the effect of `gestage` on `headcirc`. 
-
 - Having declared `birthwt` not to be an effect modifier, we may now consider it as a potential **confounder** of the association
 between `gestage` and `headcirc`. 
      
 - Look at 
-the relationship between head circumference, $Y$, and gestational age, $X_1$, adjusted for birth weight, $X_2$.
+the relationship between head circumference, $Y$, and gestational age, $X_1$, both adjusting for and ignoring birth weight, $X_2$.
 - If analyses of an association between $Y$ and $X_1$
 with and without $X_2$ give
 "meaningfully different" estimates of the slope for $X_1$,
 then $X_2$ is declared to be a confounder.
-- The definition of "meaningfully different" depends on the context.
+- Definition of "meaningfully different" depends on context.
 - One rule-of-thumb: If the estimated slope $\hat{\beta}_1$ changes by more than 10\%
 when $X_2$ is excluded, then $X_2$ is a confounder
 (Budtz-Jorgensen et al. 2007, Annals of Epidemiology).
@@ -303,7 +305,7 @@ considered the safer estimate of the true effect.
 $|0.445-0.780|/|0.445| \times 100\% = 75\%$. 
     + As this is larger than 10%,  `birthwt` would be considered a confounder by the rule-of-thumb.
     
-## Interpreting slopes when `birthwt` is a confounder
+## Interpreting slope for `gestage` when `birthwt` is a confounder
 
 \scriptsize
 
@@ -313,14 +315,11 @@ coefficients(lm(headcirc ~ gestage + birthwt,data=lbwt))
 
 \normalsize
 
-* The interpretation of the slope for `gestage` is:
-    + For a given birth-weight, 
-    a one-week increase in the gestational age is associated
-    with an estimated 0.449cm increase in the head circumference.
+* Interpretations of the slope for `gestage`:
+    + "For a given birth weight, 
+    a one-week increase in gestational age is associated
+    with an estimated 0.449cm increase in head circumference."
     
-* The interpretation of the slope for `birthwt` is:
-    + For a given gestational age, 
-    a one-gram increase in birth weight is associated
-    with an estimated 0.005cm increase in the head circumference.
-
-  
+    + Or, "A one-week increase in gestational age is associated
+    with an estimated 0.449cm increase in head circumference,
+    after adjusting for the effect of birth weight."
