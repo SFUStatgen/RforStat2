@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 20, part 2: Inference in Logistic Regression'
 author: "Jinko Graham"
-date: '2018-11-13'
+date: '2018-11-28'
 output: 
   beamer_presentation:
     includes:
@@ -30,7 +30,8 @@ SD that depends on $\alpha$ and $\beta_1$.
 $\hat{\beta}_1$, obtained
 by inserting parameter estimates $\hat{\alpha}$ and $\hat{\beta}_1$
 into the SD formula for $\hat{\beta}_1$.
-* For large samples, the pivotal quantity has a standard normal distribution; i.e.,
+* For large samples, the pivotal quantity has an approximate 
+standard-normal distribution; i.e.,
 $$ 
 \frac{\hat\beta_1 - \beta_1}{SE(\hat\beta_1)} \sim N(0,1)
 $$
@@ -66,6 +67,7 @@ summary(bfit)$coefficients
 \small
 
 \vspace*{-.15in}
+
 * $\beta_1$ is the increase in the log-odds
 of BPD associated with a one-gram increase in birthweight.
 
@@ -110,7 +112,7 @@ is obtained by exponentiating and so is
 
 * The `confint()` function in R, when applied to a `glm()`-fitted object (such as `bfit`), gets the CIs for logistic-regression coefficients differently.
 
-* Its CIs are based on inverting hypothesis tests: 
+* Its CIs are based on inverting hypothesis tests directly: 
     + E.G., A 95% CI
     is the set of all $\beta_1$ values, $b$, retained
     in a test of $H_0: \beta_1=b$ _vs._ $H_a: \beta_1 \not= b$ 
@@ -131,7 +133,7 @@ exp(confint(bfit)["birthwt",]) # CI for OR parameter e^{beta1}
 applying `confint()` to the `glm()`-fitted object
 is (0.994,0.997), which is very similar to 
 the CI of (0.995,0.997) 
-form the pivotal-quantity method.
+for the pivotal-quantity method.
 * Know how to extract what is needed from the coefficients summary 
 below to calculate a CI for the logistic-regression coefficients
 using the pivotal-quantity method.
@@ -164,6 +166,7 @@ confint(bfit)["birthwt",]
 \small
 
 \vspace*{-.12in}
+
 * To get the 95% CI for the OR, $e^{\beta_1}$,
 exponentiate the above CI for $\beta_1$:
 
@@ -176,13 +179,14 @@ exp(confint(bfit)["birthwt",])
 \small
 
 \vspace*{-.14in}
-* Interpretation: "With 95% confidence, we estimate that an increase
-in birthweight of 1 gram is associated with a
+
+* Interpretation: "With 95% confidence, an increase
+in birthweight of 1 gram is associated with an estimated
 change in the odds of BPD by a factor 
 of between 0.994 and 0.997."
     
 
-## Binary Explanatory Variable
+## Example with Binary Explanatory Variable
 
 \normalsize
 
@@ -208,6 +212,8 @@ bfit2 <- glm(bpd~toxemia,data=bpd,family=binomial)
 summary(bfit2)$coefficients
 ```
 
+<!--
+
 ## Testing for association between toxemia and BPD.
 
 \scriptsize
@@ -230,7 +236,9 @@ which gives a reported $p$value of $p=0.11$.
 + At the 5\% level, there is insufficient statistical evidence 
     to conclude that BPD is associated with toxemia.
 
-## Confidence Intervals for the Toxemia Effect
+-->
+
+## CI for the Toxemia Effect
 
 * Recall:  For a binary exposure, $X_1$, $e^{\beta_1}$
 is the odds-ratio (OR) for exposed _vs._ unexposed groups.
