@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 20, part 2: Inference in Logistic Regression'
 author: "Jinko Graham"
-date: '2018-11-28'
+date: '2018-12-03'
 output: 
   beamer_presentation:
     includes:
@@ -112,12 +112,12 @@ is obtained by exponentiating and so is
 
 * The `confint()` function in R, when applied to a `glm()`-fitted object (such as `bfit`), gets the CIs for logistic-regression coefficients differently.
 
-* Its CIs are based on inverting hypothesis tests directly: 
-    + E.G., A 95% CI
-    is the set of all $\beta_1$ values, $b$, retained
-    in a test of $H_0: \beta_1=b$ _vs._ $H_a: \beta_1 \not= b$ 
-    at the 5% level, with the data at hand.
-    + Recall: Same approach used by `mantelhaen.test()` to get its CI (see Ch16 notes, pg 23).
+* Its CIs are based on inverting hypothesis tests directly\footnotemark:
+    + E.G., 95% CI
+    is set of all $\beta_1$ values, $b$, retained
+    in testing $H_0: \beta_1=b$ _vs._ $H_a: \beta_1 \not= b$ 
+    at 5% level, with data at hand.
+    + Recall: Similar approach used by `mantelhaen.test()` to get CI (see Ch16 notes, pg 23).
 
 \scriptsize
 
@@ -126,6 +126,9 @@ confint(bfit) # CIs for alpha and beta1
 exp(confint(bfit)["birthwt",]) # CI for OR parameter e^{beta1}
 ```
 
+\footnotetext[1]{\tiny Note to self: but inverting likelihood-ratio not Wald tests} 
+
+\normalsize
 
 ## Comparing CI methods
 
