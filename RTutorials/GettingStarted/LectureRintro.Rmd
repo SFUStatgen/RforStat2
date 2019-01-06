@@ -54,8 +54,15 @@ and "What is R Studio" (time 5:20) https://www.youtube.com/watch?v=riONFzJdXcs
 + Nicolas Horton on "First steps with R Markdown" (time 3:49) https://www.youtube.com/watch?v=w4hLT7WyjnM
 + Watch these on your own.
 
-## R Resources on the course canvas page
+## R Resources on the Course Canvas Page
 
 + This [overview](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/overview.Rmd) on R/RStudio options for the course. 
 
 + Note that the overview links to material on [getting started](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) in R/RStudio.
+
+## Example R Markdown File
+
++ After installing R, RStudio and the tidyverse, install the 
+`gapminder` package.
++ Exercise: Make sure you can "knit" the [`example.Rmd`](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/example.Rmd) RMarkdown document in the getting started folder
+of R tutorials.
