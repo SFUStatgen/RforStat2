@@ -42,38 +42,19 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Getting-Started Videos
 
-+ Below are short videos to give a flavour of RStudio and R Markdown: 
-    1. Katie Ann Jager on "Getting Started with RStudio" (time 8:53)
-        + For better viewing in SWH 100081, replace with Roger Marin on "Installing R and R Studio" (time 4:53) and "What is R Studio" (time 5:20).
-            
-    2. Roger Peng on "R Markdown with RStudio"  (time 6:38)
-    3. Nicolas Horton on "First steps with R Markdown" (time 3:49)
++ Below are links to short videos to give a flavour of RStudio and R Markdown: 
+\small
 
++ Katie Ann Jager on "Getting Started with RStudio" (time 8:53)
+https://www.youtube.com/watch?v=ikGdOt1WJyo
++ Roger Marin on "Installing R and R Studio" (time 4:53) 
+https://www.youtube.com/watch?v=cX532N_XLIs 
+and "What is R Studio" (time 5:20) https://www.youtube.com/watch?v=riONFzJdXcs
++ Roger Peng on "R Markdown with RStudio"  (time 6:38) https://www.youtube.com/watch?v=DNS7i2m4sB0
++ Nicolas Horton on "First steps with R Markdown" (time 3:49) https://www.youtube.com/watch?v=w4hLT7WyjnM
 + Watch these on your own.
 
-+ I'll show you where to go on the course Canvas page to find the associated written instructions. 
-
-## 1. Katie Ann Jager on "Getting Started with RStudio" (time 8:53)
-
-+ Find at https://www.youtube.com/watch?v=ikGdOt1WJyo
-
-+ To download RStudio, Katie says to go the Canvas page for her class. Instead go to https://www.rstudio.com/ and download from the first column that says "RStudio Desktop, Open source license". Don't forget to download R first; e.g, on the download page, find the line "RStudio requires R 3.0.1+. If you don't already have R, download it here" and follow the link. 
-
-+ Instead of Katie's intro, you may prefer Mike Marin's:
-
-    +  [Installing R and RStudio](https://www.youtube.com/watch?v=cX532N_XLIs) (time 4:53).
-
-    + [What is RStudio](https://www.youtube.com/watch?v=riONFzJdXcs)  (time 5:20).
-
-
-## 
-
-2. Roger Peng on ["R Markdown with RStudio"](https://www.youtube.com/watch?v=DNS7i2m4sB0) (time 6:38)
-
-
-3. Nicolas Horton on ["First steps with R Markdown"](https://www.youtube.com/watch?v=w4hLT7WyjnM) (time 3:49)
-
-Also can consult the written resources posted on our class Canvas page. For example,
+## R Resources on the course canvas page
 
 + This [overview](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/overview.Rmd) on R/RStudio options for the course. 
 
