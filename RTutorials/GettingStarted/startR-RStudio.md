@@ -3,7 +3,7 @@ Getting started with R and RStudio
 Brad McNeney
 2018-08-03
 
-These notes are adapted from Brad McNeney's Stat 341 course. Information on getting started with R and RStudio is given below. Please **install R first**, RStudio second, and the `tidyverse` package third.
+Information on getting started with R and RStudio is given below. Please **install R first**, RStudio second, and the `tidyverse` package third.
 
 R
 -
