@@ -66,3 +66,7 @@ and "What is R Studio" (time 5:20) https://www.youtube.com/watch?v=riONFzJdXcs
 `gapminder` package.
 + Exercise: Make sure you can "knit" the [`example.Rmd`](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/example.Rmd) RMarkdown document in the getting started folder
 of R tutorials.
+    + To save this file to your computer, click the "Raw" button to
+    switch to raw view, then use your browser's `File -> Save as` feature
+    to save the file.
+    + Open the file in RStudio and click "Knit"
