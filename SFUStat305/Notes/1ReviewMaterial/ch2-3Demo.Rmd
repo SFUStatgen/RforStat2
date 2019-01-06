@@ -2,7 +2,7 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapters 2 & 3: Data presentations and summaries'
 author: "Jinko Graham"
-date: '2018-09-10'
+date: '2019-09-07'
 output: 
   beamer_presentation:
     includes:
@@ -20,8 +20,6 @@ knitr::opts_chunk$set(echo = TRUE)
 used to create the data summaries of the Chapters 2 & 3
 lecture slides. 
 * This document should be read **after** reading the lecture slides for Chapters 2 & 3.
-* You may find the R commands in this demo useful for 
-your homework assignments.
 
 # Data Presentation (Chapter 2)
 

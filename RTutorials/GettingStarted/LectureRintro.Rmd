@@ -69,5 +69,5 @@ of R tutorials.
     + To save this file to your computer, click the "Raw" button to
     switch to raw view, then use your browser's `File -> Save as` feature
     to save the file. If your browser tries to add a `.txt` extension, 
-    you must remove this extension.
+    you must **remove this extension**.
     + Once you have saved the file, open it in RStudio and click "Knit"
