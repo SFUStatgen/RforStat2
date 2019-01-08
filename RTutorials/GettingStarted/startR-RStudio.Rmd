@@ -10,7 +10,7 @@ Information on getting started with R and RStudio is given below. Please **insta
 
 ## R
 
-[R](http://www.r-project.org) is an open-source software environment for statistical computing and graphics. You can download R from the [Comprehensive R Archive Network (CRAN)](http://cran.r-project.org), a network of mirror sites that host the "base" R code and add-on packages for R. Please use the SFU mirror of CRAN to download the version of R for your system. Windows and Mac users can download and install pre-compiled binary versions. Mac users should download and install XQuartz before installing R. Linux users may find pre-compiled versions for their distribution, but if not will have to install from the source code.
+[R](http://www.r-project.org) is an open-source software environment for statistical computing and graphics. You can download R from the [Comprehensive R Archive Network (CRAN)](http://cran.stat.sfu.ca), a network of mirror sites that host the "base" R code and add-on packages for R. Please use the SFU mirror of CRAN to download the version of R for your system. Windows and Mac users can download and install pre-compiled binary versions. Mac users should download and install XQuartz before installing R. Linux users may find pre-compiled versions for their distribution, but if not will have to install from the source code.
 
 ## RStudio
 
