@@ -36,7 +36,7 @@ As part of getting started, **please be sure to install the `tidyverse`** packag
 
 Tidyverse is a collection of packages for common data science tasks such as reading, manipulating and graphical display of data. It includes the `dplyr` and `ggplot2` packages that we will use frequently. It contains a lot of smaller packages and therefore takes a bit more time to download and install; be prepared to wait a bit.
 
-Note: Unless you install `tidyverse` (in Stat305 or Stat341), you will get a lot of cryptic error messages if you try to run the R Markdown templates for the exercises. To get the templates to work, you need to install `tidyverse`.
+Note: Unless you install `tidyverse` (in Stat305 or Stat341), you will get a lot of cryptic error messages if you try to run the R Markdown templates for the exercises/homeworks. To get the templates to work, you need to install `tidyverse`.
 
 Known issues with installation
 ------------------------------
