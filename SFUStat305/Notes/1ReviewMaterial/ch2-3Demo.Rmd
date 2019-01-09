@@ -39,6 +39,25 @@ head(Mungan)
 with(Mungan,table(Gender))
 ```
 
+## Software Notes: R objects
+
+* When you start R you are starting a "session".
+* Data that you read into R and the results of 
+computations on data are stored as R "objects" within
+your "workspace" or "environment".
+    + You can see a list of all objects in your environment
+    in "Environment" tab of the the upper-right pane in
+    RStudio, or you can type `ls()` in the R console.
+* We assign values to objects with the assignment 
+operator `<-`
+    + For example \small
+```
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/mung.csv")
+```
+    \normalsize creates an object `uu` that contains the output 
+    of the function `url()`.
+
+
 ## Software Notes: Reading Data Into R
 
 * `read.csv()` reads comma-separated-value (CSV) files into R.
@@ -47,7 +66,8 @@ with(Mungan,table(Gender))
     your Jupyter notebook), but
     it can read files from URLs too.
     + The `url()` function takes a quoted URL as input and
-    returns an object that `read.csv()` can use to fetch
+    returns an object that other functions, such as
+    `read.csv()`, can use to fetch
     the file from the internet.
     
 ##
@@ -170,9 +190,9 @@ will need to install packages before they can load them.
     of the [R/Rstudio getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) (hover over preceding for link).
     + RStudio-Cloud users should consult step 5 of the [RStudio-Cloud getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) (hover over preceding for link).
 
-* Jupyter users don't need to install
-    packages but do need to load them before they can be used.
-    
+* The `tidyverse` packages are pre-installed for
+Jupyter users, but others, like `gapminder`, 
+need to be installed every R session.
 
 
 ## Software Notes: `ggplot()`
@@ -257,7 +277,7 @@ tools for manipulating datasets in R.
 
 \scriptsize
 
-```{r}
+```{r,warning=FALSE}
 summarize(hyst,median(numHyster))
 ```
 
@@ -316,3 +336,10 @@ summarize(hyst,IQR(numHyster))
 ```{r,fig.height=3,fig.width=4}
 with(hyst,boxplot(numHyster)) 
 ```
+
+## Boxplots with `ggplot()`
+
+* Boxplots in `ggplot()` are intended for 
+the case where we have multiple samples.
+* In the hysterectomy example we only have one,
+so we will not use `ggplot()`.
