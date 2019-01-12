@@ -1,0 +1,346 @@
+---
+title: "Stat 305 Exercise Set 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE, message=FALSE)
+```
+
+## 1. Summaries of the hysterectomy data
+
+To answer this question we need a data frame 
+that contains the numbers of hysterectomies for the
+15 Swiss doctors in the class notes.
+We create a data frame called `hyst` with one 
+variable `numHyster`, as follows:
+```{r}
+hyst <- data.frame(numHyster = c(20,25,25,27,28,31,33,34,
+                                 36,37,44,50,59,85,86))
+```
+
+Notice that I'm cutting-and-pasting from the `ch2-3Demo.Rmd`
+demo. You
+will find lots of useful R code in the demos to draw from, with little or no modification.
+
+a. Draw a histogram of the data. Do you see any outliers?
+
+**Answer:**
+
+```{r}
+library(ggplot2)
+# Add your R commands to draw a histogram here -- the R demos in 
+# the lecture notes should be helpful. Note that the Workshop is
+# there to help you get started with R; please make use
+# of this excellent resource. 
+```
+
+*Insert your written comments here about the outliers that you see
+in the histogram.*
+
+b. Compute the sample mean, standard deviation, median, 25th
+percentile and 75th percentile from these data. Comment on the difference
+between the mean and the median, and the difference 
+between the SD and the IQR.
+
+**Answer:**
+
+```{r}
+library(dplyr)
+# Add your R commands to do this question here. You can use
+# the summarize() function as in the demo in ch2-3Demo.Rmd.
+```
+
+*Add your written comments that interpret the output of the R 
+commands here*
+
+## 2. Sampling Distributions
+
+The questions below will use the simulation function `samDist()`
+defined in the following code chunk. The function returns a
+sample from the sampling distribution of a statistic `stat`.
+In particular, the function
+simulates `N` datasets of size `n` from a normal 
+distribution with mean 0 and SD 1
+and returns the summary statistic `stat` for each dataset.
+The default values for the simulation parameters are
+`N=1000` and `n=30`. There is no default statistic to compute.
+You don't need to understand the R code used in this function. 
+You **do** need to run 
+the code chunk before answering the questions.
+
+```{r}
+samDist <- function(stat,N=1000,n=30) {
+  data.frame(stat=replicate(N,stat(rnorm(n))))
+}
+# Example uses:
+# mm <- samDist(stat=mean)
+# ggplot(mm,aes(x=stat)) + geom_histogram(binwidth=.1)
+# summarize(mm,mean(stat)) # compare to pop.mean
+# summarize(mm,sd(stat)) # compare to pop.sd/sqrt(n)
+```
+
+a. Use `samDist()` to draw a sample from 
+the sampling distribution of the sample mean (`stat=mean`)
+when all simulation parameters are left at their defaults. 
+Compute the mean and SD of your sampling distribution
+and compare these to the population mean and population SD 
+used to simulate datasets.
+
+```{r}
+# Insert your R commands here.
+```
+
+b. Repeat part (a) but with `stat=median` to 
+draw a sample from the sampling distribution of the 
+sample median.
+Compute the mean of your sampling distribution.
+Compare this to the SD of the sampling
+distribution of the sample mean (part a).
+
+```{r}
+# Insert your R commands here.
+```
+
+c. Repeat part (a) but with `stat=sd` to 
+draw a sample from the sampling distribution of the 
+sample SD. Compute the mean of your sampling 
+distribution and compare it to the population SD 
+used to simulate datasets.
+
+```{r}
+# Insert your R commands here.
+```
+
+
+## 3. Chapter 9, problem 12. 
+These questions are about serum zinc levels for 
+a sample of 462 males between the ages of 15 and 17 years. The units of measurement for serum zinc level are micrograms per deciliter.
+
+Before you do parts (a) - (d), draw a histogram of the data. 
+
+**Answer to histogram question:**
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/serzinc.txt")
+serzinc <- read.table(uu,header=TRUE)
+head(serzinc) 
+# Put your histogram commands here; they will show the histogram output.
+```
+
+a. Find a 2-sided 95\% CI for $\mu$, the true mean 
+serum zinc level for this population of males aged 15-17 years.
+
+Note: If you look at the `ch8-10.Rmd` demo, you will
+see that confidence intervals 
+can be constructed from summary statistics
+and quantiles (the "do-it-yourself" method) or read
+from the output of the
+`t.test()` function. You won't 
+get extra marks for do-it-yourself, so you might
+as well use `t.test()`.
+
+**Answer:** 
+
+```{r}
+# Put your R commands here for t.test() to get the 95% CI
+```
+
+b. Interpret this confidence interval 
+
+**Answer:**
+
+*Insert your written comments here about the interpretation of the CI. Use the units of measurement for serum zinc level in your interpretation and phrase it as though you were explaining it to a public health professional at work.* 
+
+c. Calculate a 90\% CI for $\mu$.
+
+**Answer:**
+
+```{r}
+# Put your R commands here for t.test() to get the 90% CI
+```
+
+d. How does the 90\% CI compare to the 95\% CI?
+
+**Answer:**
+
+*Insert your written comments here about how the two CI's differ.*
+
+
+## 4. Chapter 10, problem 16, but with modification
+
+Specifically, we will use the data on all 143 babies with
+congenital heart disease rather than just the 70 babies 
+who undergo reparative heart surgery during the first 3 
+months of life (and so have "trtment" variable equal to one).
+
+The Bayley Scales of Infant 
+Development yield scores on 2 indices -- the Psychomotor 
+Development Index (PDI) and the Mental Development Index (MDI)
+-- which can be used to assess a child's level of functioning
+in each of these areas at approximately one year of age.
+The Bayley Scales were
+administered to a sample of one-year-old infants born with
+congenital heart disease. 
+
+Before you do parts (a) - (d), draw a histogram of the PDI and
+MDI scores. The histogram should be handed in with your assignment. 
+
+
+**Answer to histogram question**
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/heart.txt")
+heart <- read.table(uu,header=TRUE)
+head(heart)
+# Put your histogram commands here
+```
+
+a. At the 0.05 level of significance, test the null hypothesis
+that the mean PDI score for children born with congenital
+heart disease is equal to 100, the mean score for healthy
+children. Use a 2-sided test. What is the pvalue? What
+do you conclude?
+
+**Answer** 
+
+Use the `t-test()` function to perform the test,
+and then interpret the results.
+```{r}
+# t.test commands go here
+```
+
+*Add your comments on interpretation here*
+
+
+b. Conduct the analogous test of hypothesis for the mean MDI
+score. What do you conclude?
+
+**Answer**
+
+```{r}
+# t.test commands go here
+```
+
+*Add your comments on interpretation here*
+
+
+c. Construct 95\% CIs for the true mean PDI score
+and the true mean MDI score for this population of
+children with congenital heart disease. Does either of
+these intervals contain the value 100? Would you have
+expected that they would?
+
+**Answer**
+
+*Add your interpretation here of the CI results in the t.test( ) output above.*
+
+## 5. Chapter 11, problem 14 with clarified wording. 
+
+The dataset `lowbwt` contains information
+for a sample of 100 low birth weight infants born in two 
+teaching hospitals in Boston, MA. Measurements of systolic 
+blood pressure are saved under the variable name `sbp` and
+indicators of gender -- with 1 respresenting a male and 0 a
+femaile -- under the name `sex`.
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.txt")
+lowbwt <- read.table(uu,header=TRUE)
+head(lowbwt)
+```
+
+a. Construct a histogram of systolic blood
+pressure (SBP) with observations **grouped by sex**.
+Based on the graph, does blood pressure look as though it is 
+approximately normally distributed in each gender?
+
+To group by sex, we need to create a categorical variable out
+of the numeric `sex` variable in the dataset. 
+
+```{r, fig.height=3,fig.width=4}
+lowbwt <- mutate(lowbwt,sexCateg = factor(sex))
+```
+
+Refer to the example histograms in the `ch11Demo.Rmd` demo
+to see how to "fill" the bars of your histogram 
+with different colours for different values of `sexCateg`.
+
+**Answer** 
+
+```{r}
+# histogram commands go here
+```
+
+*Add your comments on the approximate normality here*
+
+b. Test the null hypothesis that among low-birth-weight infants,
+the mean systolic blood pressure for boys is equal to the mean 
+for girls. Use a 2-sided test at 0.05 level of significance.
+What do you conclude?
+
+See the `ch11Demo.Rmd` demo for an example two-sample 
+t-test with the `t.test()` function.
+
+**Answer**
+
+```{r}
+# t.test commands go here
+```
+
+*Add your comments here on the interpretation of the results 
+from the 2-sample t-test.*
+
+## 6. Example Quiz Questions
+
+* a. A survey is given to 100 patients randomly selected from 
+BC residents aged 65 years or more on the waiting list for heart surgery. What is the population? What is the sample?
+
+**Answer:**
+*Insert your answer here. Your response should be short; e.g. a couple of sentences at most.*
+
+* b. Fifty batches of vaccine for diphtheria, tetanus, and pertussis were randomly selected from the set of all batches produced by a large national pharmaceutical company in 2017. What are the fifty batches called; how about the set of all batches? 
+
+**Answer:**  *Insert your answer here. Your response should be short (e.g. two words).*
+
+* c. Choose one: A mean is a statistic if it is computed from the (1) parameter, (2) population, (3) sample.
+
+**Answer:** *Insert your answer here. Your response can be one word.*
+
+* d. Choose one: A mean could be (1) a parameter only, (2) a statistic only, (3) a parameter or a statistic.
+
+**Answer:** *Insert your answer here. Your response can be one word.*
+
+* e. Choose one: An SD is a parameter if it is computed from a (1) statistic, (2) population, (3) sample.
+
+**Answer:** *Insert your answer here. Your response can be one word.*
+
+* f. Choose all that apply: Hypotheses are written in terms of (1) statistics, (2) parameters 
+
+**Answer:** *Insert your answer here. Your response can be short, just the words that apply.*
+ 
+* g. Choose all that apply:   
+    + (1) We use statistics such as the sample mean to assess the evidence in a sample for statistical hypotheses.
+    + (2) Statistical hypotheses ask questions about sample quantities known as statistics.
+    + (3) Statistical hypotheses ask questions about population quantities known as parameters.
+
+**Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
+    
+* h. Choose all that apply: The difference between $s$ and $\sigma$ in the class notes is that
+    + (1) $s$ is for a sample and $\sigma$ is for a population, 
+    + (2) $s$ is for a population and $\sigma$ is for a sample.
+    + (3) $s$ is a parameter and $\sigma$ is not
+    + (4) $s$ is a statistic and $\sigma$ is a parameter
+
+**Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
+    
+* i. Choose all that apply: 
+    + (1) s and $\sigma$ are statistics.
+    + (2) $\mu$ and $\sigma$ are statistics
+    + (3) $\mu$ and $s$ are parameters
+    + (4) $\bar{x}$ and $s$ are statistics
+    + (5) $\mu$ and $\sigma$ are parameters
+    + (6) $\bar{x}$ and $s$ are parameters
+    
+**Answer:** *Insert your answer here. Your response can be short, just the numbers of the options that apply.*  
+    
