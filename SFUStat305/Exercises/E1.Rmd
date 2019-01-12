@@ -85,24 +85,14 @@ the sampling distribution of the sample mean (`stat=mean`)
 when all simulation parameters are left at their defaults. 
 Compute the mean and SD of your sampling distribution
 and compare these to the population mean and population SD 
-used to simulate datasets.
+that were used as parameters to simulate the datasets.
 
 ```{r}
 # Insert your R commands here.
 ```
 
-b. Repeat part (a) but with `stat=median` to 
-draw a sample from the sampling distribution of the 
-sample median.
-Compute the mean of your sampling distribution.
-Compare this to the SD of the sampling
-distribution of the sample mean (part a).
 
-```{r}
-# Insert your R commands here.
-```
-
-c. Repeat part (a) but with `stat=sd` to 
+b. Repeat part (a) but with `stat=sd` to 
 draw a sample from the sampling distribution of the 
 sample SD. Compute the mean of your sampling 
 distribution and compare it to the population SD 
