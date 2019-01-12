@@ -24,7 +24,7 @@ Jupyter notebook (`.ipynb`) if you use Jupyter.
 Look for and click the "Raw" button near the top of the web page to see the 
 file in its raw form. Use your browser's 
 `File -> Save As`
-feature to save the file to the appropriate folder on your computer (e.g. the folder where you do you Stat305 homework assignments).
+feature to save the file to the appropriate folder on your computer (e.g. the folder where you do you Stat305 exercises).
     + Note: Some computers will add or ask to add a ".txt" extension to the file. Say "no" or, if it has been added, remove the ".txt" extension manually yourself. Otherwise, RStudio won't recognize the .Rmd file and Jupyter won't recognize the .ipynb file.
 * If your R interface is a server (RStudio Cloud or
 Jupyter), upload the template to the server.
