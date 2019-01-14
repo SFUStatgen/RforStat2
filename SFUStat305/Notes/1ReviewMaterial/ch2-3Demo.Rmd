@@ -337,9 +337,39 @@ summarize(hyst,IQR(numHyster))
 with(hyst,boxplot(numHyster)) 
 ```
 
+
+## Boxplots of Data from Multiple Groups
+
+* Augment the hysterectomy example by numbers of 
+hysterectomies performed by *female* Swiss doctors.
+
+```{r,echo=FALSE,eval=FALSE}
+hyst <- data.frame(numHyster = 
+             c(20,25,25,27,28,31,33,34,36,37,44,50,59,85,86,
+               5,7,10,14,18,19,25,29,31,33),
+           sex = factor(c(rep("male",15),rep("female",10))))
+write.csv(hyst,file="hyst.csv",row.names=FALSE)
+```
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/hyst.csv")
+hyst <- read.csv(uu)
+head(hyst)
+with(hyst,table(sex))
+```
+
 ## Boxplots with `ggplot()`
 
-* Boxplots in `ggplot()` are intended for 
-the case where we have multiple samples.
-* In the hysterectomy example we only have one,
-so we will not use `ggplot()`.
+\scriptsize
+
+```{r,fig.height=2.3,fig.width=4}
+ggplot(hyst,aes(x=sex,y=numHyster)) + geom_boxplot()
+```
+
+\normalsize
+
+* The `aes()` specification: `sex` (grouping variable) is on the x-axis and `numHyster` is on the y-axis.
+* Use `geom_boxplot()` to add the boxplots.
+

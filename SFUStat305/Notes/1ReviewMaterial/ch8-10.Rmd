@@ -62,7 +62,8 @@ repeated sampling from the population.
 
 \footnotesize
 Online demo: 
-http://onlinestatbook.com/stat_sim/sampling_dist/index.html
+http://onlinestatbook.com/stat_sim/sampling_dist/index.html  
+R code: Exercise set 1, question 2
 
 ## Properties of the Sampling Distribution of $\bar{X}$
 

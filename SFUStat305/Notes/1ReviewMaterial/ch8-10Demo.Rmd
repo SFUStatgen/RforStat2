@@ -121,13 +121,14 @@ to push the dataset from one data manipulation to another.
 to use as input to `summarize()`, then take the dataframe
 output by summarize and push it through the pipe to 
 use as input to `mutate()`.
-    + Each data processing step is a verb, and we 
+    + Each data-processing step is a verb, and we 
     are to read the result like a sentence:
     Start with `plasmaAlu`, summarize it 
     (mean, SD and sample size), then mutate it to 
     add the lower and upper CI limits.
     + Notice that we do not need to explicitly specify the 
-    input data to `summarize()` and `mutate()`.
+    input data to `summarize()` and `mutate()` when
+    they receive these data through the forward pipe.
 
 ## CIs with the `t.test()` Function
 
@@ -180,6 +181,7 @@ with(mysummary,(xbar - 4.13)/(s/sqrt(n)))
 
 * The $p$-value is 
 $2P(T \geq |15.63|)$ for $T$ with $10-1=9$ df:
+
 \scriptsize
 ```{r}
 2*pt(15.63,df=9,lower.tail=FALSE)
