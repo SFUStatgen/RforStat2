@@ -8,7 +8,8 @@ Templates for exercise sets are to be downloaded from the class website and modi
 **For each set of exercises** do the following:
 
 -   Download the template to your computer. To do so, click on the link to the RMarkdown (`.Rmd`) file if you use RStudio (Desktop or Cloud) or the Jupyter notebook (`.ipynb`) if you use Jupyter. Look for and click the "Raw" button near the top of the web page to see the file in its raw form. Use your browser's `File -> Save As` feature to save the file to the appropriate folder on your computer (e.g. the folder where you do you Stat305 exercises).
-    -   Note: Some computers will add or ask to add a ".txt" extension to the file. Say "no" or, if it has been added, remove the ".txt" extension manually yourself. Otherwise, RStudio won't recognize the .Rmd file and Jupyter won't recognize the .ipynb file.
+    -   Note 1: Some computers will add or ask to add a ".txt" extension to the file. Say "no" or, if it has been added, remove the ".txt" extension manually yourself. Otherwise, RStudio won't recognize the .Rmd file and Jupyter won't recognize the .ipynb file.
+    -   Note 2: The default to save .Rmd files in Safari is as a "Web Archive". Do **not** use this default. Instead, save as "Page Source".
 -   If your R interface is a server (RStudio Cloud or Jupyter), upload the template to the server. For example, RStudio Cloud users can use the upload button found in the files pane in the lower right corner of their RStudio.
     -   Jupyter users will find that the templates require a few minor modifications before you start. See the instructions [here](https://github.com/SFUStatgen/RforStat2/blob/master/SFUStat305/Exercises/Instructions/TemplateMods.pdf)
 -   Start your R interface and open the template.
