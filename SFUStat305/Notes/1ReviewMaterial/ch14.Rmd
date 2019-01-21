@@ -1,8 +1,8 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 14 : Inference for Proportions'
-author: "Jinko Graham"
-date: '2018-09-26'
+author: "Brad McNeney"
+date: '2019-09-21'
 output: 
   beamer_presentation:
     includes:
@@ -53,6 +53,8 @@ the unknown $p_i$'s in the denominator of $Z_1$ with estimates.
 the approximate sampling distribution of the final pivotal quantity, $Z$.
 * Note: Not covering _Inference for a single proportion_ (text, sections 14.2 -- 14.5).
 
+<!--
+
 ## Sampling Distribution of $\hat{p}_1 - \hat{p}_2$
 
 * Assume that we have independent simple random samples 
@@ -92,6 +94,16 @@ $$
 * What is the distribution of $Z$? 
     + Under certain conditions (see below) it is reasonable to assume that $Z$ is approximately normal.
 
+-->
+
+## Pivotal Quantity $Z$
+
+$$
+Z= \frac{(\hat{p}_1-\hat{p}_2)-(p_1-p_2)}{\sqrt{\hat{p}_1(1-\hat{p}_1)/n_1 + \hat{p}_2(1-\hat{p}_2)/n_2}}
+$$
+
+* What is the distribution of $Z$? 
+    + Under certain conditions (see below) it is reasonable to assume that $Z$ is approximately normal.
 
 ## Rule of Thumb for Normal Approximation
 
