@@ -116,12 +116,19 @@ summary(hui)
 * The sampling weight for a sample member is
 the number of units in the population represented
 by the sample member.
+    + The sampling weight is the inverse of the 
+    probability that the sample member
+    was included in the sample.
 * For example, if the population has 1600 men and
 400 women, and a stratified sample is of 
 200 men and 200 women, then each sampled man represents
 8 and each sampled woman represents 2.
+    + Each man has a 1/8 chance
+    and each woman a 1/2 chance of being included in the study.
 * For complex surveys, determining sampling weights 
 requires specialized expertise.
+    + In the CCHS-HA, sampling weights are provided
+    in the `WTS_M` variable.
 
 ## Sampling Weights for CCHS-HA
 
@@ -130,6 +137,17 @@ requires specialized expertise.
 ```{r}
 library(dplyr)
 hui %>% group_by(GEO_PRV,GEOGCMA2) %>%
+  summarize(Q1=quantile(WTS_M,.25),
+            Q2=quantile(WTS_M,.5),
+            Q3=quantile(WTS_M,.75))
+```
+
+## Sampling Weights by Age
+
+\scriptsize
+
+```{r}
+hui %>% group_by(DHHGAGE) %>%
   summarize(Q1=quantile(WTS_M,.25),
             Q2=quantile(WTS_M,.5),
             Q3=quantile(WTS_M,.75))
