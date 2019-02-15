@@ -1,0 +1,299 @@
+---
+title: "Stat 305 Exercise Set 2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+
+Chapter 15, #10 but with modification. Survey of Italian physicians on breast cancer. Physicians in different specialties were asked about
+their recommendations for radical (mastectomy) vs.
+conservative (lumpectomy) surgery. In particular, 
+would they recommend radical surgery regardless
+of a patient's age (RR), conservative surgery for 
+younger patients only (CY), or conservative surgery regardless of age (CR)?
+
+
+To answer this question we need a data-frame 
+that contains the results of the survey.  
+Create one called `survey` with 3 
+variables `RR`, `CY` and `CR` as follows:
+```{r}
+survey <- data.frame(
+  RR=c(6,23,2,1,1), 
+  CY=c(22,61,3,12,12), 
+  CR=c(42,127,54,43,31))
+row.names(survey)<-c("Internal", "Surgery", "Radiotherapy",
+              "Oncology", "Gynecology")
+survey
+```
+
+(a) At the 0.05 level, test the null hypothesis
+that there is no association between physician
+specialty and recommended treatment. (Note: Ignore
+the warning message from R about the chi-squared approximation.)
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(b) Report the expected cell
+counts in the table under the null hypothesis. Comment on whether the chi-square
+approximation is reliable for these data.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+
+(c) What do you conclude?
+
+**Answer:**
+
+*Insert your written comments here.*
+
+## Question 2
+
+Chapter 15, #12 but with modification. Intra-observer
+variability in assessing cervical smears. This study
+screened 3325 pap-smear slides for the presence or
+absence of abnormal squamous cells. Each slide
+was screened by a particular observer and then
+rescreened 6 months later by the same observer.
+The results of the study are shown below:
+
+<table cellpadding="10">
+<tr> 
+ <td> &nbsp; </td>  
+ <td colspan="2" align="center"> &nbsp; <b>2nd screen</b> &nbsp; </td>
+ <td> &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; <b>1st screen</b> &nbsp; </td> 
+ <td> &nbsp; Present &nbsp; </td> 
+ <td> &nbsp; Absent &nbsp; </td> 
+ <td> &nbsp; Total &nbsp; </td>
+</tr>
+<tr>
+ <td> &nbsp; Present &nbsp; </td> 
+ <td> &nbsp; 1763 &nbsp; </td> 
+ <td> &nbsp; 489 &nbsp; </td> 
+ <td> &nbsp; 2252 &nbsp; </td> 
+</tr>
+<tr>
+ <td> &nbsp; Absent &nbsp; </td> 
+ <td> &nbsp; 403 &nbsp; </td> 
+ <td> &nbsp; 670 &nbsp; </td> 
+ <td> &nbsp; 1073 &nbsp; </td> 
+</tr>
+<tr>
+ <td> &nbsp; Total &nbsp; </td> 
+ <td> &nbsp; 2166 &nbsp; </td> 
+ <td> &nbsp; 1159 &nbsp; </td> 
+ <td> &nbsp; 3325 &nbsp; </td> 
+</tr>
+</table>
+<p>
+
+
+(a) Do these data support the null hypothesis
+that there is no association between the time of 
+screening and diagnosis? 
+
+ **Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+The data could also be displayed in the following
+manner:
+<table cellpadding="10">
+<tr> 
+ <td> &nbsp; </td>  
+ <td colspan="2" align="center"> &nbsp; <b>Screening</b> &nbsp; </td>
+ <td> &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; <b>Abnormal cells </b> &nbsp; </td> 
+ <td> &nbsp; First &nbsp; </td> 
+ <td> &nbsp; Second &nbsp; </td> 
+ <td> &nbsp; Total &nbsp; </td>
+</tr>
+<tr>
+ <td> &nbsp; Present &nbsp; </td> 
+ <td> &nbsp; 2252 &nbsp; </td> 
+ <td> &nbsp; 2166 &nbsp; </td> 
+ <td> &nbsp; 4418 &nbsp; </td> 
+</tr>
+<tr>
+ <td> &nbsp; Absent &nbsp; </td> 
+ <td> &nbsp; 1073 &nbsp; </td> 
+ <td> &nbsp; 1159 &nbsp; </td> 
+ <td> &nbsp; 2232 &nbsp; </td> 
+</tr>
+<tr>
+ <td> &nbsp; Total &nbsp; </td> 
+ <td> &nbsp; 3325 &nbsp; </td> 
+ <td> &nbsp; 3325 &nbsp; </td> 
+ <td> &nbsp; 6650 &nbsp; </td> 
+</tr>
+</table>
+<p>
+
+
+(b) Is there anything wrong with this presentation?
+Please describe briefly.
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(c) If you didn't know there was anything wrong with the
+presentation in part b, how would you analyze the data? For instance, what type of test would you apply and what would be the null hypothesis that you'd be testing? (Note: You don't actually have to do the test; just say what you would do.)
+
+**Answer:**
+
+*Insert your written comments here.*
+
+
+## Question 3
+
+Chapter 15, #18. Alcohol and miscarriages. A study investigating the association between spontaneous abortion (miscarriage) and alcohol consumption obtained the data below. Note that the second column labeled "pregnancies" counts the total number of women who got pregnant whereas the third column labeled "miscarriages" counts the number (out of the total in the second column) who subsequently lost their pregnancy due to spontaneous abortion. 
+
+<table cellpadding="10">
+<tr> 
+ <td> <b>drinks/week</b> &nbsp; </td>
+ <td> <b>pregnancies</b> &nbsp; </td>
+ <td> <b>miscarriages</b> &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 0 &nbsp; </td>
+ <td> &nbsp; 33164 &nbsp; </td>
+ <td> &nbsp; 6793 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 1-2 &nbsp; </td>
+ <td> &nbsp; 9099 &nbsp; </td>
+ <td> &nbsp; 2068 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 3-6 &nbsp; </td>
+ <td> &nbsp; 3069 &nbsp; </td>
+ <td>  &nbsp; 776 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 7-20 &nbsp; </td>
+ <td> &nbsp; 1527 &nbsp; </td>
+ <td>  &nbsp; 456 &nbsp; </td>
+</tr>
+<tr> 
+ <td> &nbsp; 21+ &nbsp; </td>
+ <td> &nbsp; 287 &nbsp; </td>
+ <td> &nbsp; 98 &nbsp; </td>
+</tr>
+</table>
+<p>
+
+For parts a-d below, you may **modify** this R code chunk as necessary (and then run it) if you find it helpful.
+```{r, message=FALSE, warning=FALSE}
+mydf <- data.frame(group=c("0", "1-2", "3-6", "7-20", "21+"),
+                   preg=c(33164,9099,3069,1527,287),
+                   mis=c(6793,2068,776,456,98))
+
+library(dplyr)
+mydf <- mutate(mydf,ok=preg-mis, prmis = mis/preg, odds = (prmis/(1-prmis)))
+odds0 <- mydf[mydf$group=="0","odds"]
+c <- mydf[mydf$group=="0","mis"]
+d <- mydf[mydf$group=="0","ok"]
+mydf <- mutate(mydf, OR=odds/odds0, se.logOR = sqrt(1/mis + 1/ok + 1/c + 1/d))
+lev <- 0.80 #confidence level or coverage probability
+critval <- qnorm( (1-lev)/2, lower.tail=FALSE)
+mydf <- mutate(mydf, 
+lowerCI = exp(log(OR) - critval*se.logOR), 
+upperCI = exp(log(OR) + critval*se.logOR))
+mydf <- mutate(mydf, 
+prmis=round(prmis,3), odds=round(odds,3), 
+OR=round(OR,3), se.logOR=round(se.logOR,3),
+lowerCI=round(lowerCI,3), upperCI=round(upperCI,3))
+mydf[mydf$group=="0",c("se.logOR", "lowerCI", "upperCI")] <- c(NA, NA, NA)
+mydf
+```
+
+(a) For each level of alcohol consumption, estimate
+the probability that a woman who becomes pregnant
+will have a miscarriage.
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(b) For each category of alcohol use, estimate the
+relative odds of miscarriage 
+for women who consume some amount of alcohol versus
+those who do not consume any. 
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(c) In each case, calculate a 95\% confidence 
+interval for the odds ratio
+
+**Answer:**
+
+*Insert your written comments here.*
+
+(d) What do you conclude? Do the data suggest a dose-response 
+relationship between alcohol use and the odds of miscarriage?
+
+**Answer:**
+
+*Insert your written comments here.*
+
+## Question 4
+
+Chapter 15, #21, with modification. Beer-drinking questionnaires. Two different questionnaires addressing drinking habits
+were administered to the same set of men and women aged 50-65 years from a certain community. The first questionnaire format concerned
+general diet and lifestyle while the second format specifically targeted alcohol use. For each questionnaire, the responses were processed to classify a respondent as either a non-drinker or drinker of beer.  Categories for the general questionnaire are saved under the variable `genques` and those for the questionnaire targeting alcohol use are saved under the variable `alcques`.
+The data are available as a plain text file; see the R code below for accessing it.
+
+```{r}
+uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/alcohol.txt")
+alc <- read.table(uu,header=TRUE)
+head(alc) 
+```
+
+a) Are the drinking statuses on the two different types of questionnaires associated? Use a 5\% level in your test. What do you conclude?
+
+
+**Answer:**
+
+```{r}
+# Put your R commands here.
+```
+
+*Insert your written comments here.*
+
+b) Is the type of questionnaire associated with drinking status? Use a 5\% level and continuity correction in your test. What do you conclude?
+
+**Answer:**
+
+```{r}
+# Put your R commands here.
+```
+
+*Insert your written comments here.*
