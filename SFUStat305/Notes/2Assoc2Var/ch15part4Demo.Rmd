@@ -1,8 +1,6 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Demo for Chapter 15, part 4: Inference for Odds Ratios'
-author: "Jinko Graham"
-date: '2018-10-06'
 output: 
   beamer_presentation:
     includes:
