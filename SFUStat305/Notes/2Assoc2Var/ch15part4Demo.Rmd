@@ -39,130 +39,34 @@ data frame manipulation in R.
     that will generalize to the case of multiple exposures,
     as in the Doll and Hill dataset where smoking status
     has four levels.
-    + If you are not interested in learning R, 
-    don't struggle to understand each line of code.
-    + Instead focus on understanding the *purpose* of each 
-    line of code. 
-        + There will be similar code in assignment 2 and you
-    will need to understand the steps to make
-    simple modifications as necessary.
     
-## Add Odds of Case to Data Frame
+## Data Frame for Confidence Intervals
 
 \scriptsize
  
 ```{r}
-mydf <- data.frame(group=c("smoker","non-smoker"),
-                   case=c(1350,7),
-                   control=c(1296,61)) # Doll and Hill's data
 library(dplyr) # for the mutate() function
-mydf <- mutate(mydf,total = case+control,prcase  = case/total,
-               odds = prcase/(1-prcase))
-mydf
+mydf <- data.frame(a=1350,b=1296,c=7,d=61)
+zstar <- qnorm((1-.95)/2,lower.tail=FALSE)
+mydf <- mutate(mydf,
+               OR=a*d/(b*c),
+               logOR=log(OR),
+               SE=sqrt(1/a+1/b+1/c+1/d),
+               logci.lower=logOR-zstar*SE,
+               logci.upper=logOR+zstar*SE,
+               ci.lower=exp(logci.lower),
+               ci.upper=exp(logci.upper))
+round(mydf,2) # Round all numbers to 2 decimals when printing
 ```
 
 \normalsize
 
 * `mutate()` is used to create new variables from existing ones
 and add them to our data frame.
-* In this example, the variables `total`, `prcase` and
-`odds` are created and added to `mydf`.
-    + Notice that the calculation of `odds` can use
-    the newly-created variable `prcase`.
-
-## Extract the Baseline Odds
-
-* As a baseline for comparison, we will use the group of non-smokers.
-Let's extract their estimated odds of lung cancer.
-
-\scriptsize
-
-<!--
-```{r}
-odds0 <- mydf %>% filter(group=="non-smoker") %>% 
-  select(odds) %>% unlist()
-```
--->
-
-```{r}
-odds0 <- mydf[mydf$group=="non-smoker","odds"]
-odds0
-```
-
-\normalsize
-
-* We can grab elements of a dataframe by referencing
-the desired rows and columns inside square brackets.
-* E.G, `mydf[1,2]` will grab the element in the 
-1st row and 2nd column of `mydf`.
-* Above, we indicate the desired row with 
-the logical condition `mydf$group=="non-smoker"`,
-    + `mydf$group` refers to the variable `group` in the 
-    data frame `mydf`. 
-    + Grab only the row for the non-smoking group.
-* The desired column has the variable name `odds`.
-
-## Extracting Other Baseline Data
-
-* Extract the number of non-smoker cases and controls
-analogously.
-
-\scriptsize
-
-```{r}
-c <- mydf[mydf$group=="non-smoker","case"] 
-c
-d <- mydf[mydf$group=="non-smoker","control"] 
-d
-```
-
-## Add the SE for the log-OR
-
-\scriptsize
-
-```{r}
-mydf <- mutate(mydf, OR=odds/odds0, 
-               se.logOR = sqrt(1/case + 1/control + 1/c + 1/d))
-mydf
-```
-
-\small
-
-## Add the CI
-
-\scriptsize
-
-```{r}
-critval <- qnorm( 0.025, lower.tail=FALSE)
-mydf <- mutate(mydf, 
-               lowerCI=round(exp(log(OR) - critval*se.logOR),3), 
-               upperCI=round(exp(log(OR) + critval*se.logOR),3))
-mydf <- mutate(mydf, prcase=round(prcase,3), 
-               odds=round(odds,3), OR=round(OR,3),
-               se.logOR=round(se.logOR,3))
-mydf
-```
-
-## 
-
-* The `se.logOR` and CI for the non-smokers are not defined because we are using the non-smokers as the baseline group in our calculations.
-    + Technically, the `se.logOR` is 0 and the CI is exactly 1, by definition.
-* As a result, we set these to be the missing data code `NA` 
-in the baseline group:
-
-\scriptsize
-
-```{r}
-mydf[mydf$group=="non-smoker",
-     c("se.logOR", "lowerCI", "upperCI")] <- 
-  c(NA, NA, NA)
-mydf
-```
-
-\normalsize
-
-* Notice how we referenced multiple columns at once
-with `c("se.logOR","lowerCI","upperCI")`.
+* In this example, variables such as `OR` and `logOR`
+are created and added to `mydf`.
+    + Notice that the calculation of `logOR` can use
+    the newly-created variable `OR`.
 
 
 ## More Than Two Exposure Levels
@@ -182,41 +86,26 @@ per day     & 1-14    & 565 & 706  \\
 each level of exposure. 
 
 * Here is where the R code we wrote can pay off. We 
-essentially repeat the code, but now refer to the baseline
-group as `"0"` instead of `"non-smoker"`.
+essentially repeat the code, but with different
+definitions of `a`, `b`, `c` and `d`.
 
 ##
 
 \scriptsize
 
 ```{r}
-mydf <- data.frame(group=c("25+", "15-24", "1-14", "0"),
-                   case=c(340,445,565,7),
-                   control=c(182,408,706,61))
-
-library(dplyr)
-mydf <- mutate(mydf,total = case+control,
-               prcase  = case/total,odds = prcase/(1-prcase))
-odds0 <- mydf[mydf$group=="0","odds"]
-c <- mydf[mydf$group=="0","case"]
-d <- mydf[mydf$group=="0","control"]
-mydf <- mutate(mydf, OR=odds/odds0, 
-               se.logOR = sqrt(1/case + 1/control + 1/c + 1/d))
-critval <- qnorm( 0.025, lower.tail=FALSE)
-mydf <- mutate(mydf, 
-             lowerCI = round(exp(log(OR) - critval*se.logOR),3), 
-             upperCI = round(exp(log(OR) + critval*se.logOR),3))
-mydf <- mutate(mydf, prcase=round(prcase,3), odds=round(odds,3), 
-               OR=round(OR,3), se.logOR=round(se.logOR,3))
-mydf[mydf$group=="0",c("se.logOR", "lowerCI", "upperCI")] <- 
-  c(NA, NA, NA)
-```
-
-##
-
-\scriptsize
-
-```{r}
-mydf
+mydf <- data.frame(a=c(340,445,566),
+                   b=c(182,408,706),
+                   c=c(7,7,7),
+                   d=c(61,61,61))
+mydf <- mutate(mydf,
+               OR=a*d/(b*c),
+               logOR=log(OR),
+               SE=sqrt(1/a+1/b+1/c+1/d),
+               logci.lower=logOR-zstar*SE,
+               logci.upper=logOR+zstar*SE,
+               ci.lower=exp(logci.lower),
+               ci.upper=exp(logci.upper))
+round(mydf,2) # 
 ```
 
