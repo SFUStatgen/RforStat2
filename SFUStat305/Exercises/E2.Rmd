@@ -208,29 +208,24 @@ Chapter 15, #18. Alcohol and miscarriages. A study investigating the association
 </table>
 <p>
 
+Below is a revised code chunk using the style of
+the revised chapter 15, part 4 R demo.
 For parts a-d below, you may **modify** this R code chunk as necessary (and then run it) if you find it helpful.
 ```{r, message=FALSE, warning=FALSE}
-mydf <- data.frame(group=c("0", "1-2", "3-6", "7-20", "21+"),
-                   preg=c(33164,9099,3069,1527,287),
-                   mis=c(6793,2068,776,456,98))
-
-library(dplyr)
-mydf <- mutate(mydf,ok=preg-mis, prmis = mis/preg, odds = (prmis/(1-prmis)))
-odds0 <- mydf[mydf$group=="0","odds"]
-c <- mydf[mydf$group=="0","mis"]
-d <- mydf[mydf$group=="0","ok"]
-mydf <- mutate(mydf, OR=odds/odds0, se.logOR = sqrt(1/mis + 1/ok + 1/c + 1/d))
+group=c("1-2", "3-6", "7-20", "21+")
+preg <- c(9099,3069,1527,287)
+mis <- c(2068,776,456,98)
+mydf <- data.frame(group=group,a=mis,b=preg-mis,c=6793,d=33164-6793)
+mydf # comment: the values of c and d are repeated as necessary
 lev <- 0.80 #confidence level or coverage probability
 critval <- qnorm( (1-lev)/2, lower.tail=FALSE)
-mydf <- mutate(mydf, 
-lowerCI = exp(log(OR) - critval*se.logOR), 
-upperCI = exp(log(OR) + critval*se.logOR))
-mydf <- mutate(mydf, 
-prmis=round(prmis,3), odds=round(odds,3), 
-OR=round(OR,3), se.logOR=round(se.logOR,3),
-lowerCI=round(lowerCI,3), upperCI=round(upperCI,3))
-mydf[mydf$group=="0",c("se.logOR", "lowerCI", "upperCI")] <- c(NA, NA, NA)
-mydf
+library(dplyr)
+mydf <- mutate(mydf, OR=a*d/(b*c),
+               logOR = log(OR),
+               se.logOR = sqrt(1/a + 1/b + 1/c + 1/d),
+               ci.lower = exp(logOR-critval*se.logOR),
+               ci.upper = exp(logOR+critval*se.logOR))
+print(mydf,digits=3)
 ```
 
 (a) For each level of alcohol consumption, estimate
