@@ -1,8 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 16: Multiple $2\times 2$ Contingency Tables'
-author: "Jinko Graham"
-date: '2018-10-28'
+author: "Brad McNeney"
 output: 
   beamer_presentation:
     includes:
@@ -98,7 +97,9 @@ extraneous variable ```sex``` (for females).
 
 \scriptsize
 ```{r}
-s1 <- stratumStats(47,19,29,14)
+# a=exposed cases, b=exposed controls, c=unexposed cases,
+# d=unexposed controls.
+s1 <- stratumStats(14,29,19,47) 
 s1
 ```
 \normalsize
@@ -109,7 +110,8 @@ s1
 
 \scriptsize
 ```{r}
-s2 <- stratumStats(20,24,25,37)
+#s2 <- stratumStats(20,24,25,37)
+s2 <- stratumStats(37,25,24,20)
 s2
 ```
 
@@ -190,7 +192,7 @@ sex are about the same: 1.19 for females and 1.23 for males.
 
 ```{r}
 xtabs(~AS + smoke, data=stenosis)
-a<-67; b<-43; c<-54; d<-51
+a<-51; b<-54; c<-43; d<-67
 ORpooled<-a*d/(b*c)
 ORpooled
 ```
