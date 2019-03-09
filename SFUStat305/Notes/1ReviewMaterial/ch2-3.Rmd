@@ -1,7 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapters 2 & 3: Data presentations and summaries'
-author: "Brad McNeney"
+author: "Jinko Graham"
 date: '2019-09-07'
 output: 
   beamer_presentation:

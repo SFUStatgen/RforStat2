@@ -1,7 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 14 : Inference for Proportions'
-author: "Brad McNeney"
+author: "Jinko Graham, Brad McNeney"
 date: '2019-09-21'
 output: 
   beamer_presentation:
