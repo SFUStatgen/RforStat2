@@ -1,7 +1,6 @@
 ---
 title: "Self-study for Review Notes"
-author: "Brad McNeney"
-date: '2018-01-27'
+author: "Jinko Graham"
 output: pdf_document
 ---
 
@@ -99,13 +98,3 @@ lowbwt %>% mutate(gender=recode(sex,`0`="female", `1`="male")) %>%
 
 (c) Repeat the test of part (b) using the `t.test()` function
 in R.
-
-```{r, echo=TRUE}
-uu<-url("http://people.stat.sfu.ca/~mcneney/Teaching/Stat305/Data/HUI.csv")
-hui <- read.csv(uu)
-t.test(HUIDHSI ~ DHH_SEX,data=hui)
-hui <- na.omit(hui)
-hui %>% 
-  group_by(DHH_SEX) %>% 
-  summarize(mean=mean(HUIDHSI), sd=sd(HUIDHSI), n=n()) 
-```

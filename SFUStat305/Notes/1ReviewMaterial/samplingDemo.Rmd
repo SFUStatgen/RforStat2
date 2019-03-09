@@ -1,7 +1,6 @@
 ---
 title: "Sampling R Demo"
 author: "Brad McNeney"
-date: '2019-01-28'
 output: beamer_presentation
 ---
 

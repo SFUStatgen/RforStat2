@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 15, part 1: Contingency Tables'
 author: "Jinko Graham, Brad McNeney"
-date: '2019-01-31'
 output: 
   beamer_presentation:
     includes:

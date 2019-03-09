@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapters 8-10: Review of Statistical Inference'
 author: "Jinko Graham"
-date: '2018-09-12'
 output: 
   beamer_presentation:
     includes:

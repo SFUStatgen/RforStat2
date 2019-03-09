@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 18, part 3: Prediction intervals, $r^2$ and Residual Plots'
 author: "Jinko Graham"
-date: '2018-11-06'
 output: 
   beamer_presentation:
     includes:

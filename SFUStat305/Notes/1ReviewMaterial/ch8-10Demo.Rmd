@@ -2,7 +2,6 @@
 title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demos for Chapters 8-10: Review of Statistical Inference'
 author: "Jinko Graham, Brad McNeney"
-date: '2019-09-09'
 output: 
   beamer_presentation:
     includes:
