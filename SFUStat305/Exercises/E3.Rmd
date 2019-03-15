@@ -266,7 +266,7 @@ You will need the critical value 1.96.
 *Insert your written comments here.*
 
 
-## Question 4 (Optional)
+## Question 4
 
 
 
