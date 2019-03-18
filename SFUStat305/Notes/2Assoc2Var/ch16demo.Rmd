@@ -72,7 +72,7 @@ Does `sex` modify the effect of smoking on AS?
 * R has no built-in function or add-on packages (that I know of) for this test.  You can use one that I wrote. Below are the steps.
     1. For each stratum $i$ of the extraneous variable, get the stratum-specific log-ORs and weights,
     $y_i=\log_e(\widehat{OR}_i)$'s and $w_i=1/se^2(\log_e \widehat{OR}_i)$ using ```stratumStats()```
-    2. Pass these stratum-specific statistics to ```homogTest()```,
+    2. Pass these stratum-specific statistics to ```homogStat()```,
     which combines them into the homogeneity test 
     statistic and returns a $p$-value for the test of homogeneity 
     of ORs across the strata.
@@ -123,11 +123,11 @@ contain the $(y_i, w_i)$ pairs
 for the 1st (females) and 2nd (males) stratum of ```sex```, respectively.
 
 
-## ```homogTest()```
+## ```homogStat()```
 
 \small 
 
-* homogTest() takes the stratum-specific log-ORs and weights 
+* homogStat() takes the stratum-specific log-ORs and weights 
 in ```s1``` and ```s2``` as arguments and
 returns the $X^2$ statistic for homogeneity, along with a $p$-value.
 
