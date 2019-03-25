@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 20, part 3: Multiple Logistic Regression'
 author: "Jinko Graham"
-date: '2017-12-02'
 output: 
   beamer_presentation:
     includes:
