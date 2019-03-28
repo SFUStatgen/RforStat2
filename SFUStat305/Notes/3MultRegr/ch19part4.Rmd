@@ -301,7 +301,7 @@ considered the safer estimate of the true effect.
     - Specifically, look at change as \% of this estimate.
 
 - The percent change in $\hat{\beta}_1$ is
-$|0.445-0.780|/|0.445| \times 100\% = 75\%$. 
+$|0.449-0.780|/|0.449| \times 100\% = 74\%$. 
     + As this is larger than 10%,  `birthwt` would be considered a confounder by the rule-of-thumb.
     
 ## Interpreting slope for `gestage` when `birthwt` is a confounder
