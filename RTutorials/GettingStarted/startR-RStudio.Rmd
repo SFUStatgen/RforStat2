@@ -1,7 +1,6 @@
 ---
 title: "Getting started with R and RStudio"
-author: "Brad McNeney"
-date: '2018-08-03'
+author: "Jinko Graham, Brad McNeney"
 output: rmarkdown::github_document
 ---
 
