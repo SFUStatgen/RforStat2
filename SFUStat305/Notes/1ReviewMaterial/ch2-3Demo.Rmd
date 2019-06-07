@@ -49,13 +49,40 @@ your "workspace" or "environment".
     RStudio, or you can type `ls()` in the R console.
 * We assign values to objects with the assignment 
 operator `<-`
-    + For example \small
+    + For example, the following creates an object `uu` that contains the output 
+    of the function `url()`:
+    
+\scriptsize 
 ```
 uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/mung.csv")
 ```
-    \normalsize creates an object `uu` that contains the output 
-    of the function `url()`.
 
+## Software Notes: R functions
+
+* Most of the work we do in R is done by functions.
+* You are familiar with functions such as `log` on your calculator: 
+it takes a number (data) as input, an gives an output.
+*  In R, functions are used to do such calculations with data, but also to 
+do non-data-related tasks such as managing R objects, reading/writing
+datasets, etc.
+* A function has inputs:
+    + The inputs, sometimes called "arguments", are the R objects the 
+    function will work with. 
+    + Arguments are listed within parentheses; multiple arguments are separated by commas.
+    + Many R functions have default values for some or all of their 
+    arguments. Default values need not be supplied by the user.
+* A function has output:
+    + The output, or what the function "returns", is an R object that encapsulates
+    the results of the calculations done with the input objects.
+* We have so far used the functions `ls()` and `url()`, but these are not 
+ideal for illustrating what a function is.
+* Example: `sqrt()`.
+    + `sqrt()` takes a single argument, which is the number whose square root 
+    + The argument to `ls()` is an environment (default is your workspace),
+    and the output is a list of the objects in your workspace.
+    + The argument to `url()` is a URL (internet address) encapsulated in quotation marks,
+    and the output is a special object that contains technical information about
+    the connection to the the URL -- details not important.
 
 ## Software Notes: Reading Data Into R
 
