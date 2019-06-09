@@ -1,7 +1,7 @@
 ---
 title: "Jupyter Notebook Template Modifications"
 author: "Brad McNeney"
-date: '2018-08-20'
+date: '2019-01-10'
 output: pdf_document
 ---
 
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Overview
 
-All homework assignment question templates
+All question templates
 were originally created in RMarkdown. The Jupyter
 notebook versions were created with
 a converstion tool called `notedown`. Unfortunately,
@@ -68,7 +68,7 @@ the "Edit" menu item and choose "Delete Cells".
 
 4. Save. Click the floppy disk icon below the "File"
 menu to save your work. You are now ready to answer
-the homework questions.
+the questions.
 
 
 

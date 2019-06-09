@@ -1,16 +1,15 @@
 ---
 title: "Getting started with R and RStudio"
-author: "Brad McNeney"
-date: '2018-08-03'
+author: "Jinko Graham, Brad McNeney"
 output: rmarkdown::github_document
 ---
 
 
-These notes are adapted from Brad McNeney's Stat 341 course. Information on getting started with R and RStudio is given below. Please **install R first**, RStudio second, and the `tidyverse` package third.
+Information on getting started with R and RStudio is given below. Please **install R first**, RStudio second, and the `tidyverse` package third.
 
 ## R
 
-[R](http://www.r-project.org) is an open-source software environment for statistical computing and graphics. You can download R from the [Comprehensive R Archive Network (CRAN)](http://cran.r-project.org), a network of mirror sites that host the "base" R code and add-on packages for R. Please use the SFU mirror of CRAN to download the version of R for your system. Windows and Mac users can download and install pre-compiled binary versions. Mac users should download and install XQuartz before installing R. Linux users may find pre-compiled versions for their distribution, but if not will have to install from the source code.
+[R](http://www.r-project.org) is an open-source software environment for statistical computing and graphics. You can download R from the [Comprehensive R Archive Network (CRAN)](http://cran.stat.sfu.ca), a network of mirror sites that host the "base" R code and add-on packages for R. Please use the SFU mirror of CRAN to download the version of R for your system. Windows and Mac users can download and install pre-compiled binary versions. Mac users should download and install XQuartz before installing R. Linux users may find pre-compiled versions for their distribution, but if not will have to install from the source code.
 
 ## RStudio
 
@@ -40,7 +39,7 @@ and graphical display of data. It includes the
 `dplyr` and `ggplot2` packages that we will use frequently.
 It contains a lot of smaller packages and therefore takes a bit more time to download and install; be prepared to wait a bit.
 
-Note: Unless you install `tidyverse` (in Stat305 or Stat341), you will get a lot of cryptic error messages if you try to run the R Markdown templates for the assignments. To get the templates to work, you need to install `tidyverse`.
+Note: Unless you install `tidyverse` (in Stat305 or Stat341), you will get a lot of cryptic error messages if you try to run the R Markdown templates for the exercises/homeworks. To get the templates to work, you need to install `tidyverse`.
 
 ## Known issues with installation
 

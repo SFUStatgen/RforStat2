@@ -1,7 +1,6 @@
 ---
 title: "Getting started with RStudio Cloud"
 author: "Jinko Graham"
-date: '2018-10-25'
 output: rmarkdown::github_document
 ---
 

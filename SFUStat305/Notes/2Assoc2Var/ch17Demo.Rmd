@@ -2,7 +2,6 @@
 title: 'Statistics 305: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 17: Correlation'
 author: "Jinko Graham"
-date: '2018-10-09'
 output: 
   beamer_presentation:
     includes:

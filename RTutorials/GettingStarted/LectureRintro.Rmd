@@ -1,7 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Getting Started with RStudio'
-author: "Jinko Graham"
+author: "Jinko Graham, Brad McNeney"
 output: 
   beamer_presentation:
     includes:
@@ -12,31 +12,17 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Announcements
+## The Stat Workshop
 
-+ SFU International [poster](https://canvas.sfu.ca/files/8649766/download?download_frd=1) 
-+ Audio-lectures problem for Stats 
-    + Last week, **all** Stats audio files, including ours, were **empty**. 
-    + Malfunction at SFU IT services. 
-    + Working on it but they're overloaded and may be slow to fix. 
-
-+ All emails to class list from last week are now posted on Canvas under link for [Materials](https://canvas.sfu.ca/courses/40363/pages/materials)
-+ Workshop drop-in sessions for R on their Canvas [site](https://canvas.sfu.ca/courses/40483)
-    + You can bring your own computer to get help with installation
-    of R/RStudio.
-    
-+ Workshop [hours and temporary location](https://canvas.sfu.ca/courses/40483) until renos completed. 
-
-    + Renos should be finished end of Sept/mid-Oct. Marie Loughin, Workshop coordinator, will let us know.
-    
-    + JG office hours (Weds, 1:30-2:20pm) in temp Workshop until renos complete. Move to permanent location once renos done.
++ Workshop [hours and location](https://canvas.sfu.ca/courses/43539). 
++ BM office hours are Wed 11:00-noon in the Workshop.
 
 ## Getting Started with RStudio
 
 + In Stat305/605, 
     + software demos will be in **RStudio**  
         + RStudio allows you to better organize your work in R.
-    + homework templates will be in **R Markdown** 
+    + exercise templates will be in **R Markdown** 
         + R Markdown documents allow you to integrate your written comments with R commands and their output. 
 
 ## What is RStudio? 
@@ -56,42 +42,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Getting-Started Videos
 
-+ Below are short videos to give a flavour of RStudio and R Markdown: 
-    1. Katie Ann Jager on "Getting Started with RStudio" (time 8:53)
-        + For better viewing in SWH 100081, replace with Roger Marin on "Installing R and R Studio" (time 4:53) and "What is R Studio" (time 5:20).
-            
-    2. Roger Peng on "R Markdown with RStudio"  (time 6:38)
-    3. Nicolas Horton on "First steps with R Markdown" (time 3:49)
++ Below are links to short videos to give a flavour of RStudio and R Markdown: 
+\small
 
-+ We'll watch these today.  
++ Katie Ann Jager on "Getting Started with RStudio" (time 8:53)
+https://www.youtube.com/watch?v=ikGdOt1WJyo
++ Roger Marin on "Installing R and R Studio" (time 4:53) 
+https://www.youtube.com/watch?v=cX532N_XLIs 
+and "What is R Studio" (time 5:20) https://www.youtube.com/watch?v=riONFzJdXcs
++ Roger Peng on "R Markdown with RStudio"  (time 6:38) https://www.youtube.com/watch?v=DNS7i2m4sB0
++ Nicolas Horton on "First steps with R Markdown" (time 3:49) https://www.youtube.com/watch?v=w4hLT7WyjnM
++ Watch these on your own.
 
-+ Then I'll show you where to go on the course Canvas page to find the associated written instructions. 
-
-## 1. Katie Ann Jager on "Getting Started with RStudio"
-
-+ Better to watch on your own computer (time 8:53) 
-    + Doesn't project well in SWH 100081
-    + Find at https://www.youtube.com/watch?v=ikGdOt1WJyo
-
-
-+ To download RStudio, Katie says to go the Canvas page for her class. Instead go to https://www.rstudio.com/ and download from the first column that says "RStudio Desktop, Open source license". Don't forget to download R first; e.g, on the download page, find the line "RStudio requires R 3.0.1+. If you don't already have R, download it here" and follow the link. 
-
-+ Instead of Katie's intro, show Mike Marin's:
-
-    +  [Installing R and RStudio](https://www.youtube.com/watch?v=cX532N_XLIs) (time 4:53).
-
-    + [What is RStudio](https://www.youtube.com/watch?v=riONFzJdXcs)  (time 5:20).
-
-
-## 
-
-2. Roger Peng on ["R Markdown with RStudio"](https://www.youtube.com/watch?v=DNS7i2m4sB0) (time 6:38)
-
-
-3. Nicolas Horton on ["First steps with R Markdown"](https://www.youtube.com/watch?v=w4hLT7WyjnM) (time 3:49)
-
-Also can consult the written resources posted on our class Canvas page. For example,
+## R Resources on the Course Canvas Page
 
 + This [overview](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/overview.Rmd) on R/RStudio options for the course. 
 
 + Note that the overview links to material on [getting started](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) in R/RStudio.
+
+## Example R Markdown File
+
++ After installing R, RStudio and the tidyverse, install the 
+`gapminder` package.
++ Exercise: Make sure you can "knit" the [`example.Rmd`](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/example.Rmd) RMarkdown document in the getting started folder
+of R tutorials.
+    + To save this file to your computer, click the "Raw" button to
+    switch to raw view, then use your browser's `File -> Save as` feature
+    to save the file. If your browser tries to add a `.txt` extension, 
+    you must **remove this extension**.
+    + Once you have saved the file, open it in RStudio and click "Knit"

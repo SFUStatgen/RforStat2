@@ -1,15 +1,14 @@
 ---
-title: "Self-study for Ch2-3, Ch8-10, Ch11 notes"
+title: "Self-study for Review Notes"
 author: "Jinko Graham"
-date: '2018-09-22'
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
 ```
 
-The answers won't be posted. Instead, we (Jinko, Payman, Erin, Alex, Boyi) ask you to visit us in the Workshop and show us what you tried as well as explain why you tried it. Then, we're happy to share the answers with you. You're also welcome to ask any of the other TAs in the Workshop. (See the Workshop weekly schedule for TA office hours; JG office hours are Weds 1:30-2:20pm in the Workshop.)  
+The answers won't be posted. Instead, visit us in the Workshop and show us what you tried as well as explain why you tried it. Then, we're happy to share the answers with you. You're also welcome to ask any of the other TAs in the Workshop. 
 
 ## Question 1
 
@@ -64,6 +63,10 @@ tstar2<-qt(p=(1-.90)/2, df=461, lower.tail=FALSE)
 tstar2
 ```
 
+(c) Repeat the calculation of 95% and 90% CIs using the 
+`t.test()` function in R.
+
+
 ## Question 3 (Babies with congenital heart disease)
 
 ```{r, echo=TRUE}
@@ -76,13 +79,16 @@ summarize(heart, mean=mean(mdi), sd=sd(mdi), n=n())
 
 (b)  The value of the test statistic observed in part (a) leads to a $p$-value of 0.0013. Conduct the test of the hypotheses in part (a) at level $\alpha=0.05$. What do you conclude?
 
+(c) Repeat the test of part (b) using the `t.test()` function
+in R.
 
 ## Question 4 (Low-birthweight babies)
 
 ```{r, echo=TRUE}
 uu<-url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.txt")
 lowbwt <- read.table(uu,header=TRUE)
-lowbwt %>% mutate(gender=recode(sex,`0`="female", `1`="male")) %>% group_by(gender) %>% 
+lowbwt %>% mutate(gender=recode(sex,`0`="female", `1`="male")) %>% 
+  group_by(gender) %>% 
   summarize(mean=mean(sbp), sd=sd(sbp), n=n()) 
 ```
 
@@ -90,3 +96,5 @@ lowbwt %>% mutate(gender=recode(sex,`0`="female", `1`="male")) %>% group_by(gend
 
 (b) The value of the test statistic observed in part (a) leads to a $p$-value of 0.5480. Conduct the test of the hypotheses in part (a) at level $\alpha=0.05$. What do you conclude?
 
+(c) Repeat the test of part (b) using the `t.test()` function
+in R.

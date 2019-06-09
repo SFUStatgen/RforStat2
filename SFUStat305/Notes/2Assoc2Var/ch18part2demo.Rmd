@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 18, part 2: Inference in Simple Linear Regression'
 author: "Jinko Graham"
-date: '2018-11-04'
 output: 
   beamer_presentation:
     includes:

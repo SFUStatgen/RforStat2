@@ -1,8 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapters 2 & 3: Data presentations and summaries'
-author: "Jinko Graham"
-date: '2018-09-10'
+author: "Jinko Graham, Brad McNeney"
 output: 
   beamer_presentation:
     includes:
@@ -20,8 +19,6 @@ knitr::opts_chunk$set(echo = TRUE)
 used to create the data summaries of the Chapters 2 & 3
 lecture slides. 
 * This document should be read **after** reading the lecture slides for Chapters 2 & 3.
-* You may find the R commands in this demo useful for 
-your homework assignments.
 
 # Data Presentation (Chapter 2)
 
@@ -41,6 +38,43 @@ head(Mungan)
 with(Mungan,table(Gender))
 ```
 
+## Software Notes: R objects
+
+* When you start R you are starting a "session".
+* Data that you read into R and the results of 
+computations on data are stored as R "objects" within
+your "workspace" or "environment".
+    + You can see a list of all objects in your environment
+    in "Environment" tab of the the upper-right pane in
+    RStudio, or you can type `ls()` in the R console.
+* We assign values to objects with the assignment 
+operator `<-`
+    + For example, the following creates an object `uu` that contains the output 
+    of the function `url()`:
+    
+\scriptsize 
+```
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_17/Data/mung.csv")
+```
+
+## Software Notes: R functions
+
+* Most of the data analyses we do in R is with functions.
+* You are familiar with functions such as `log` on your calculator 
+that take a number as input, and output another number.
+*  In R, functions are used to do such calculations with data, but also to 
+do non-data-related tasks such as managing R objects, reading/writing
+datasets, etc.
+* R function inputs:
+    + The inputs, sometimes called "arguments", are the R objects the 
+    function will work with. 
+* R function output:
+    + The output, or what the function "returns", is an R object that summarizes
+    the computations or other work done by the function.
+* Examples: 
+    + `log(x)` takes a number `x` as input and returns its natural log
+    + `ls()` lists the R objects in your workspace -- no arguments needed.
+
 ## Software Notes: Reading Data Into R
 
 * `read.csv()` reads comma-separated-value (CSV) files into R.
@@ -49,7 +83,8 @@ with(Mungan,table(Gender))
     your Jupyter notebook), but
     it can read files from URLs too.
     + The `url()` function takes a quoted URL as input and
-    returns an object that `read.csv()` can use to fetch
+    returns an object that other functions, such as
+    `read.csv()`, can use to fetch
     the file from the internet.
     
 ##
@@ -172,9 +207,9 @@ will need to install packages before they can load them.
     of the [R/Rstudio getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startR-RStudio.Rmd) (hover over preceding for link).
     + RStudio-Cloud users should consult step 5 of the [RStudio-Cloud getting-started document](https://github.com/SFUStatgen/RforStat2/blob/master/RTutorials/GettingStarted/startRStudioCloud.Rmd) (hover over preceding for link).
 
-* Jupyter users don't need to install
-    packages but do need to load them before they can be used.
-    
+* The `tidyverse` packages are pre-installed for
+Jupyter users, but others, like `gapminder`, 
+need to be installed every R session.
 
 
 ## Software Notes: `ggplot()`
@@ -259,7 +294,7 @@ tools for manipulating datasets in R.
 
 \scriptsize
 
-```{r}
+```{r,warning=FALSE}
 summarize(hyst,median(numHyster))
 ```
 
@@ -318,3 +353,40 @@ summarize(hyst,IQR(numHyster))
 ```{r,fig.height=3,fig.width=4}
 with(hyst,boxplot(numHyster)) 
 ```
+
+
+## Boxplots of Data from Multiple Groups
+
+* Augment the hysterectomy example by numbers of 
+hysterectomies performed by *female* Swiss doctors.
+
+```{r,echo=FALSE,eval=FALSE}
+hyst <- data.frame(numHyster = 
+             c(20,25,25,27,28,31,33,34,36,37,44,50,59,85,86,
+               5,7,10,14,18,19,25,29,31,33),
+           sex = factor(c(rep("male",15),rep("female",10))))
+write.csv(hyst,file="hyst.csv",row.names=FALSE)
+```
+
+\scriptsize
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/hyst.csv")
+hyst <- read.csv(uu)
+head(hyst)
+with(hyst,table(sex))
+```
+
+## Boxplots with `ggplot()`
+
+\scriptsize
+
+```{r,fig.height=2.3,fig.width=4}
+ggplot(hyst,aes(x=sex,y=numHyster)) + geom_boxplot()
+```
+
+\normalsize
+
+* The `aes()` specification: `sex` (grouping variable) is on the x-axis and `numHyster` is on the y-axis.
+* Use `geom_boxplot()` to add the boxplots.
+

@@ -1,8 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
-subtitle: 'Chapter 15, part 3: McNemar''s Test (take 2)'
+subtitle: 'Chapter 15, part 3: McNemar''s Test'
 author: "Jinko Graham"
-date: '2018-10-24'
 output: 
   beamer_presentation:
     includes:

@@ -1,8 +1,7 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 16: Multiple $2\times 2$ Contingency Tables'
-author: "Jinko Graham"
-date: '2018-10-28'
+author: "Jinko Graham, Brad McNeney"
 output: 
   beamer_presentation:
     includes:
@@ -73,7 +72,7 @@ Does `sex` modify the effect of smoking on AS?
 * R has no built-in function or add-on packages (that I know of) for this test.  You can use one that I wrote. Below are the steps.
     1. For each stratum $i$ of the extraneous variable, get the stratum-specific log-ORs and weights,
     $y_i=\log_e(\widehat{OR}_i)$'s and $w_i=1/se^2(\log_e \widehat{OR}_i)$ using ```stratumStats()```
-    2. Pass these stratum-specific statistics to ```homogTest()```,
+    2. Pass these stratum-specific statistics to ```homogStat()```,
     which combines them into the homogeneity test 
     statistic and returns a $p$-value for the test of homogeneity 
     of ORs across the strata.
@@ -98,7 +97,9 @@ extraneous variable ```sex``` (for females).
 
 \scriptsize
 ```{r}
-s1 <- stratumStats(47,19,29,14)
+# a=exposed cases, b=exposed controls, c=unexposed cases,
+# d=unexposed controls.
+s1 <- stratumStats(14,29,19,47) 
 s1
 ```
 \normalsize
@@ -109,7 +110,8 @@ s1
 
 \scriptsize
 ```{r}
-s2 <- stratumStats(20,24,25,37)
+#s2 <- stratumStats(20,24,25,37)
+s2 <- stratumStats(37,25,24,20)
 s2
 ```
 
@@ -121,11 +123,11 @@ contain the $(y_i, w_i)$ pairs
 for the 1st (females) and 2nd (males) stratum of ```sex```, respectively.
 
 
-## ```homogTest()```
+## ```homogStat()```
 
 \small 
 
-* homogTest() takes the stratum-specific log-ORs and weights 
+* homogStat() takes the stratum-specific log-ORs and weights 
 in ```s1``` and ```s2``` as arguments and
 returns the $X^2$ statistic for homogeneity, along with a $p$-value.
 
@@ -190,7 +192,7 @@ sex are about the same: 1.19 for females and 1.23 for males.
 
 ```{r}
 xtabs(~AS + smoke, data=stenosis)
-a<-67; b<-43; c<-54; d<-51
+a<-51; b<-54; c<-43; d<-67
 ORpooled<-a*d/(b*c)
 ORpooled
 ```

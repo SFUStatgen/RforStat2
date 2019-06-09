@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'R Demo for Chapter 18, part 3: Prediction intervals, $r^2$ and Residual Plots'
 author: "Jinko Graham"
-date: '2018-11-06'
 output: 
   beamer_presentation:
     includes:
@@ -25,7 +24,7 @@ lbwt <- read.csv(uu) #load the data
 lfit <- lm(headcirc ~ gestage,data=lbwt) #fit the regression model
 lCI <- predict(lfit,interval="confidence") #get the 95% CI
 #Now make a dataframe of the results
-lbwtCIs<-data.frame(gestage=with(lbwt,gestage), lCI )
+lbwtCIs<-data.frame(gestage=lbwt$gestage, lCI )
 head(lbwtCIs)
 ```
 
@@ -40,7 +39,7 @@ head(lbwtCIs)
 
 ```{r}
 lPI <- predict(lfit,interval="prediction")
-lbwtPIs <- data.frame(gestage=with(lbwt,gestage), lPI) 
+lbwtPIs <- data.frame(gestage=lbwt$gestage, lPI) 
 head(lbwtPIs,n=3)
 ```
 

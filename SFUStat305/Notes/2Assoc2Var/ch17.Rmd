@@ -2,7 +2,6 @@
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
 subtitle: 'Chapter 17: Correlation'
 author: "Jinko Graham"
-date: '2017-10-09'
 output: 
   beamer_presentation:
     includes:
@@ -189,7 +188,7 @@ $$
 t = \frac{r_s}{\sqrt{(1-r_s^2)/(n-2)}} = r_s \sqrt{\frac{n-2}{1-r_s^2}},
 $$
 which has an approximate $t$-distribution with $n-2$ df under $H_0$.
-    + The test considers this approximation to be reliable for $n\geq 10$.
+    + The text considers this approximation to be reliable for $n\geq 10$.
 
 ## Application to Child Mortality Data
 

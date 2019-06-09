@@ -1,0 +1,324 @@
+---
+title: "Stat 305 Exercise Set 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE)
+```
+
+## Question 1
+
+Chapter 19, #8, parts (a)-(f), plus extra questions (g)
+and (h) below.  
+For the population of low birth weight infants, 
+a significant linear relationship was
+found to exist between systolic blood pressure, in millimetres
+mercury (mmHg), and gestational age. The
+relevant data are in the file `lowbwt.csv` that is
+read in by the R code chunk below.
+The measurements of systolic blood pressure are saved 
+under the variable name `sbp`, and
+corresponding gestational ages under `gestage`. 
+Also contained in the data set is `apgar5`, 
+the five-minute apgar score for each infant. 
+(The apgar score is an indicator of a child's 
+general state of health five minutes after it is 
+born; although actually an ordinal measurement, 
+it is often treated as if it were continuous.)
+
+Report numerical answers to 3-4 significant digits.
+
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.csv")
+lowbwt <- read.csv(uu) # Note: this is not the same dataset used in lectures
+head(lowbwt)
+```
+
+
+(a) Construct a two-way scatter plot of systolic blood
+pressure *versus* five-minute apgar score. Does 
+there appear to be a linear relationship between 
+these two variables?
+
+**Answer:**
+
+```{r}
+library(ggplot2)
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(b) Using systolic blood pressure as the response and 
+gestational age and apgar
+score as the explanatory variables, fit the 
+least-squares model
+$$
+\hat{y} = a+ \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2.
+$$
+Interpret $\hat{\beta}_1$, the estimated coefficient of gestational age. What does it mean in
+words? Similarly, interpret $\hat{\beta}_2$, 
+the estimated coefficient of five-minute apgar
+score.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+
+(c) What is the estimated mean systolic blood pressure 
+for the population of low
+birth weight infants whose gestational age is 31 weeks 
+and whose five-minute
+apgar score is 7?
+
+**Answer:**
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(d) Construct a 95% confidence interval for the true 
+mean value of systolic blood
+pressure when gestational age is $x_1 = 31$ weeks and the apgar score is $x_2 = 7$.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+
+(e) Test the null hypothesis
+$$
+H_0 : \beta_2 = 0
+$$
+at the 0.05 level of significance. What do you conclude?
+
+**Answer:**
+*Insert your written comments here.*
+
+(f) Comment on the magnitude of $R^2$. 
+Does the inclusion of five-minute apgar
+score in the model already containing 
+gestational age appear to greatly improve the ability to
+predict systolic blood pressure? 
+
+**Answer:**
+*Insert your written comments here.*
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+
+(g) Construct a plot of the residuals versus the fitted values of systolic blood pressure. From this plot, are there any obvious problems with how the linear predictor has been specified and or with the assumption of constant SD for the random errors? 
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(h) From the Normal QQ plot of the standardized residuals, does the assumption of normal random errors appear plausible?  Based on the standardized residuals, are there any infants you would describe as obvious outliers? If so, what are their case numbers?
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+
+## Question 2
+
+Use the dataset on babies with low birthweight from the previous question. 
+We will use `ggplot()` to create a scatterplot of systolic blood pressure versus gestational age with different colours for male and female babies. 
+
+In the R code chunk below, we first change the numeric variable `sex`
+in the dataframe to a categorical variable or factor variable, `sexCateg`, with the `mutate()` function. The categorical 
+`sexCateg` variable is then used to specify colors in `ggplot()`.
+ 
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.csv")
+lowbwt <- read.csv(uu)
+library(dplyr)
+lowbwt <- mutate(lowbwt, sexCateg=factor(sex))
+head(lowbwt)
+library(ggplot2)
+ggplot(lowbwt,aes(x=gestage,y=sbp,color=sexCateg)) +
+  geom_point()
+```
+
+(a)	In the following code chunk we add fitted least-squares-regression lines for each group defined by the gender of the babies. Do the slopes of these fitted lines look similar or different (no testing necessary)?
+
+```{r}
+ggplot(lowbwt,aes(x=gestage,y=sbp,color=sexCateg)) +
+  geom_point() + geom_smooth(method="lm",se=FALSE)
+```
+
+**Answer:**
+*Insert your written comments here.*
+
+(b) Fit a multiple-linear-regression model of mean systolic blood pressure that includes main effects for gestational age, sex and statistical interaction between gestational age and sex. Test the hypothesis of no statistical interaction at the 5% level and report your conclusion.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(c) Fit a multiple-linear-regression model of the mean systolic blood pressure that includes main effects for gestational age and sex. Interpret the estimated sex effect (i.e. the slope term for sex).
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+(d) Does sex confound the relationship between gestational age and systolic blood pressure? Use the 10% rule-of-thumb from class.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+## Question 3
+
+Chapter 20, #5 (modified). 
+In a study investigating maternal risk factors for congenital
+syphilis, syphilis is treated as a dichotomous response variable,
+where 1 represents the presence of disease in a 
+newborn and 0 its absence.
+(Note: Syphilis can be spread from an infected mother to the fetus during pregnancy or to the infant at birth. When born, the infant has congenital syphilis.)
+The estimated coefficients from a logistic-regression model 
+containing the explanatory variables of cocaine or crack use,
+marital status, number of prenatal visits to a doctor,
+alcohol use, and level of education are listed below.
+The estimated intercept $\hat{\alpha}$ is not given.
+
+| Variable                  | Coefficient  |
+| ------------------------- | -----------: |
+| Cocaine/Crack Use         | $1.354$      |
+| Marital Status            | $0.779$      |
+| Number of Prenatal Visits | $-0.098$     |
+| Alcohol Use               | $0.723$      |
+| Level of Education        | $0.298$      |
+
+Report numerical answers to 3-4 significant digits.
+
+
+(a)	As an expectant mother's number of prenatal
+visits to the doctor increases, what happens to 
+the probability that her child will be born with
+congenital syphilis?
+
+**Answer:**
+*Insert your written comments here.*
+
+(b) Marital status is a dichotomous random variable,
+where the value 1 indicates that a woman is unmarried
+and 0 that she is married. For unmarried mothers, what are the estimated odds that a newborn will suffer from syphilis relative to married mothers? 
+
+**Answer:**
+*Insert your written comments here.*
+
+(c) Cocaine or crack use is also a dichotomous random variable;
+the value 1 indicates that a woman used drugs during her
+pregnancy and 0 that she did not. 
+What is the estimated odds ratio that a child will be born
+with congenital syphilis for women who used cocaine or
+crack *versus* women who did not?
+
+**Answer:**
+*Insert your written comments here.*
+
+
+(d) The estimated slope coefficient for cocaine or crack use
+has standard error 0.162. Construct a 95\% confidence
+interval for the population **odds ratio** using the 
+pivotal method described in the class notes. 
+You will need the critical value 1.96. 
+
+**Answer:**
+*Insert your written comments here.*
+
+
+## Question 4
+
+
+
+Use the dataset on babies with low birthweight from the
+first two questions:
+ 
+```{r}
+uu <- url("http://people.stat.sfu.ca/~jgraham/Teaching/S305_18/Data/lowbwt.csv")
+lowbwt <- read.csv(uu)
+head(lowbwt)
+```
+
+In this problem, use germinal-matrix hemorrhage (`grmhem`) as the response variable and five-minute apgar score (`apgar5`)
+as an explanatory variable. Note that apgar is a score without any real units. Where necessary you may refer to apgar score in terms of “points” (e.g., a one point increase). Report R output and perform your calculations using three significant digits.
+
+a)	Fit a logistic-regression model for the log odds of germinal-matrix hemorrhage that includes main effects for five-minute apgar score (`apgar5`) and toxemia (`tox`), and statistical interaction between these two variables. You’re asked whether or not toxemia modifies the effect of the apgar score on the odds of 
+germinal-matrix hemorrhage? Answer this question using a statistical test with significance level 5\% and explain your response.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+b)	Assess whether or not toxemia confounds the effect of five-minute apgar score on the odds of germinal-matrix hemorrhage using the rule-of-thumb based on the 10%-change discussed in the notes.
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+c)	In light of parts (a) and (b), is it necessary to adjust for toxemia if we are interested in the effect of five-minute apgar score on germinal-matrix hemorrhage? Justify your answer. Based on your answer, fit an appropriate model and report the point estimate of the effect of the five-minute apgar score. (Note: Don’t bother to interpret this point estimate; instead, you will be asked to interpret the interval estimate in part (d) below.)
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*
+
+d)	Use R to construct a 95% CI for the slope coefficient describing the effect of the five-minute apgar score in the logistic-regression model fitted in part (c). Report this interval on the log-odds scale, and also transform the CI to the odds scale. Interpret the interval on the odds scale. 
+
+**Answer:**
+
+```{r}
+# Add your R commands here.  
+```
+
+*Insert your written comments here.*

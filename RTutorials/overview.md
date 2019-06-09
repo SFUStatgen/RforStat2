@@ -1,9 +1,9 @@
-Overview of R for assignments
+Overview of R for exercises
 ================
-Jinko Graham
-2018-10-25
+Brad McNeney
+2019-01-04
 
-[R](http://www.r-project.org) is a powerful environment for statistical computing and graphics. We will be using R for homework assignments as it is supported by the Stats Workshop. I would not say that you will "learn R" in this course. Instead you'll get example code in class notes or templates that you can modify to do your analyses. Your focus should be on getting practice with data wrangling, analysis, and **interpretation** of the results. In the course of doing the homework assignments you will probably pick up a bit of R and you will have a set of templates for doing future analyses (e.g., as a lab assistant at SFU), but you will not be a serious R user. Students interested in learning R should consider taking Stat 341.
+[R](http://www.r-project.org) is a powerful environment for statistical computing and graphics. We will be using R for exercises as it is supported by the Stats Workshop. I would not say that you will "learn R" in this course. Instead you'll get example code in class notes or templates that you can modify to do your analyses. Your focus should be on getting practice with data wrangling, analysis, and **interpretation** of the results. In the course of doing the exercises you will probably pick up a bit of R and you will have a set of templates for doing future analyses (e.g., as a lab assistant at SFU), but you will not be a serious R user. Students interested in learning R should consider taking Stat 341.
 
 R may be downloaded from the [Comprehensive R Archive Network](http://cran.r-project.org) and comes with its own user interface called the R console. However, to simplify the process of doing assignments, I recommend installing and using RStudio Desktop on your personal computer because it will allow you to integrate text, R code and R output in the documents that you turn in to the Workshop through their Crowdmark online system. Alternatively, if you can't install R/RStudio on your personal computer, you can use RStudio Cloud or Jupyter.
 
