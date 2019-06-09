@@ -1,6 +1,6 @@
 ---
 title: 'Statistics 305/605: Introduction to Biostatistical Methods for Health Sciences'
-subtitle: 'Chapter 14 : Inference for Proportions'
+subtitle: 'Chapter 14 : Inference for Difference between Proportions'
 author: "Jinko Graham, Brad McNeney"
 output: 
   beamer_presentation:
@@ -13,15 +13,14 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Inference for Proportions (Chapter 14)
+## Inference for Difference between Proportions (Chapter 14)
 
 * Instead of quantitative measurements, we classify each sampled individual 
 into one of two categories.
     + success, failure (canonical)
     + breast cancer, no breast cancer
     + Etc.
-* Want to make inference about the proportion $p$ of successes
-in a population, or about
+* Want to make inference about 
 the difference between the proportions $p_1$ and $p_2$ of successes in two populations.
 
 ## Example: Women's Health Initiative (WHI)
@@ -44,12 +43,15 @@ breast cancer, but could this difference be due to chance?
 * Similar approach to inference of population means 
 (quantitative outcomes), with some minor differences.
 * Inference is based on the sampling distribution of $\hat{p}_1 - \hat{p}_2$
+<!--
 * Two-stage reasoning:
      1. Transform the statistic $\hat{p}_1 - \hat{p}_2$ into an initial pivotal quantity, $Z_1$, whose denominator depends on the unknown parameters $p_1$ and $p_2$.
      2. Get a final pivotal quantity, $Z$, by replacing 
 the unknown $p_i$'s in the denominator of $Z_1$ with estimates.
+-->
 * CIs and hypothesis tests follow from 
-the approximate sampling distribution of the final pivotal quantity, $Z$.
+the approximate sampling distribution of a pivotal quantity, $Z$,
+that depends on $\hat{p}_1 - \hat{p}_2$.
 * Note: Not covering _Inference for a single proportion_ (text, sections 14.2 -- 14.5).
 
 <!--
@@ -106,18 +108,21 @@ $$
 
 ## Rule of Thumb for Normal Approximation
 
-* The normal approximation to the distribution of $Z$ is considered reliable when the sample sizes $n_1$ and $n_2$ are "large"
+* The normal approximation to the distribution of $Z$ is reliable when the sample sizes $n_1$ and $n_2$ are "large"
+relative to the $p_j$'s.
+<!--
 * The definition of large depends on the underlying $p_j$'s.
 The text (page 324) suggests:
     + $n_1p_1 \geq 5$ and $n_1(1-p_1) \geq 5$ and
     + $n_2p_2 \geq 5$ and $n_2(1-p_2) \geq 5$
-* The parameters $p_1$ and $p_2$ are not known so we insert the estimates
-$\hat{p}_1=(\mbox{number of successes in sample 1})/n_1$ and $\hat{p}_2= (\mbox{number of successes in sample 2})/n_2$. 
-* After inserting estimates, one can simplify the 
-requirements to the following rule: 
-    + The normal approximation is reliable when there 
+-->
+* The parameters $p_1$ and $p_2$ are not known so estimates
+$$\hat{p}_1=(\mbox{number of successes in sample 1})/n_1 $$ 
+$$\hat{p}_2= (\mbox{number of successes in sample 2})/n_2$$
+are used instead to get the following rule:
+    + **The normal approximation is reliable when there 
     are at least 5 successes _and_ 5 failures in 
-    both sample 1 and sample 2.  
+    both sample 1 and sample 2.**  
     
     
 ## Checking rule of thumb for WHI Data

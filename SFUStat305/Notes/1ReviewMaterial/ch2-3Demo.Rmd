@@ -71,9 +71,22 @@ datasets, etc.
 * R function output:
     + The output, or what the function "returns", is an R object that summarizes
     the computations or other work done by the function.
-* Examples: 
-    + `log(x)` takes a number `x` as input and returns its natural log
-    + `ls()` lists the R objects in your workspace -- no arguments needed.
+    
+## Softward Notes: R functions, cont.
+
+* `log(x)` takes a number `x` as input and returns its natural log; e.g.,
+
+```{r}
+log(1)
+```
+
+
+* `ls()` lists the R objects in your workspace -- no arguments needed.
+
+```{r}
+ls()
+```
+
 
 ## Software Notes: Reading Data Into R
 
