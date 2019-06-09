@@ -120,12 +120,14 @@ to push the dataset from one data manipulation to another.
 to use as input to `summarize()`, then take the dataframe
 output by summarize and push it through the pipe to 
 use as input to `mutate()`.
-    + Each data-processing step is a verb, and we 
-    are to read the result like a sentence:
-    Start with `plasmaAlu`, summarize it 
-    (mean, SD and sample size), then mutate it to 
+* Each data-processing step is a verb (summarize, mutate)
+* We are intended to read the result like a sentence:
+    + Start with `plasmaAlu`, 
+    + summarize it 
+    (mean, SD and sample size), 
+    + then mutate it to 
     add the lower and upper CI limits.
-    + Notice that we do not need to explicitly specify the 
+* Notice that we do not need to explicitly specify the 
     input data to `summarize()` and `mutate()` when
     they receive these data through the forward pipe.
 
