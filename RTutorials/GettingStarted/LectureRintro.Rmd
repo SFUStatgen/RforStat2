@@ -70,4 +70,5 @@ of R tutorials.
     switch to raw view, then use your browser's `File -> Save as` feature
     to save the file. If your browser tries to add a `.txt` extension, 
     you must **remove this extension**.
-    + Once you have saved the file, open it in RStudio and click "Knit"
+    + Once you have saved the file, open it in RStudio and click "Knit". An html file titled Example RMarkdown File should appear in the RStudio Viewer. This html file should contain some exploratory analyses of the gapminder data. 
+    + (Note: You do not need to understand the data analysis. The point of this exercise is to ensure that you can successfully download RMarkdown files containing analysis commands from the class Canvas site to your personal computer and then "knit" them on RStudio to obtain an html file with the results of the analysis commands.) 
