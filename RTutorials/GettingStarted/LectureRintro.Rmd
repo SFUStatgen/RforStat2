@@ -14,8 +14,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## The Stat Workshop
 
-+ Workshop [hours and location](https://canvas.sfu.ca/courses/43539). 
-+ BM office hours are Wed 11:00-noon in the Workshop.
++ Workshop [hours and location](https://canvas.sfu.ca/courses/43539):
+    + An invaluable resource, set up especially **for you** to make ample use of!
++ BM student hours are Wed 11:00-noon in the Workshop.
 
 ## Getting Started with RStudio
 
