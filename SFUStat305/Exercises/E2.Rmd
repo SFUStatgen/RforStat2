@@ -209,7 +209,7 @@ Chapter 15, #18. Alcohol and miscarriages. A study investigating the association
 <p>
 
 Below is a revised code chunk using the style of
-the revised chapter 15, part 4 R demo.
+the chapter 15, part 4 R demo.
 For parts a-d below, you may **modify** this R code chunk as necessary (and then run it) if you find it helpful.
 ```{r, message=FALSE, warning=FALSE}
 group=c("1-2", "3-6", "7-20", "21+")
