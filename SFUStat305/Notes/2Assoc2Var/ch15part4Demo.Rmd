@@ -108,3 +108,15 @@ mydf <- mutate(mydf,
 round(mydf,2) # 
 ```
 
+## Software Notes
+
+* Simple arithmetic in R such as `a*d` generalizes to the case where
+`a` and `d` are comprised of more than one number.
+* In the example on the previous page, where
+`a=c(340,445,566)` and `d=c(61,61,61)`, the result
+is `c(340*61,445*61,566*61)`; i.e., the multiplication
+is done element-wise.
+* Many other functions, such as `log()`, `exp()` and `sqrt()` also
+act element-wise.
+* This allows use to calculate multiple ORs, SEs and CIs
+simultaneously.
