@@ -180,7 +180,7 @@ $$ \mbox{minimize} \quad Q = \sum_{i=1}^n(y_i-\hat{y}_i)^2.$$
 \hat\alpha & = & \overline{y} - \hat\beta \, \overline{x},
 \end{eqnarray*}
 where $r, s_y, s_x, \overline{y}$ and $\overline{x}$ are, respectively: 
-    + the sample correlation, the sample SD of $y$, the sample SD of $x$, the sample mean of $y$ and the sample mean of $x$.
+    + the sample correlation (see your prereq. Stats class), the sample SD of $y$, the sample SD of $x$, the sample mean of $y$ and the sample mean of $x$.
 * However, we'll use computer software to get
 the least-squares estimates of the parameters $\alpha$ and $\beta$.
 
